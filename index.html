@@ -10,6 +10,8 @@
 <meta property="og:title" content="地政說書人｜玖靈地政士事務所">
 <meta property="og:description" content="說地政，聽得懂的故事。事務所承辦、實戰課程、地政工具與社群，都在這一站。">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://aa44014401.github.io/">
+<link rel="canonical" href="https://aa44014401.github.io/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%230F1014'/%3E%3Crect x='8' y='8' width='48' height='48' rx='4' fill='none' stroke='%23D5B15C' stroke-width='3'/%3E%3Ctext x='32' y='43' font-size='26' text-anchor='middle' fill='%23D5B15C' font-family='serif' font-weight='700'%3E說%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -239,6 +241,13 @@
   .fab a:hover,.fab button:hover{background:var(--gold);color:#14150F;}
   .fab .lbl{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);}
   @media (max-width:560px){ .pager{grid-template-columns:1fr;} .pager .next{text-align:left;} }
+  ol.lectures{list-style:none;padding:0;margin:26px 0 0;display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1px;background:var(--line-soft);border:1px solid var(--line);}
+  ol.lectures li{background:var(--ink);padding:13px 16px;font-size:14.5px;color:var(--paper);display:flex;gap:12px;align-items:baseline;}
+  ol.lectures li span{flex:none;font-family:var(--serif);font-size:12.5px;color:var(--gold-deep);letter-spacing:.06em;font-variant-numeric:tabular-nums;}
+  @media (max-width:860px){
+    nav.main{-webkit-mask-image:linear-gradient(90deg,#000 85%,transparent);mask-image:linear-gradient(90deg,#000 85%,transparent);padding-right:28px;}
+    nav.main.end{-webkit-mask-image:none;mask-image:none;}
+  }
   .page{display:none;}
   .page.on{display:block;animation:fade .35s ease;}
   @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
@@ -312,8 +321,7 @@
     <span class="eyebrow">地政說書人 × 玖靈地政士事務所｜台中</span>
     <h1>簽約桌上，<br><em>講的不算，寫的才算。</em></h1>
     <p class="lede">
-      我是地政士張兆億。平常在台中北區承辦買賣、繼承、贈與與各類登記案件，
-      也把簽約現場會卡住、會出事的環節，整理成課程、工具和一則則講得懂的地政故事。
+      我是地政士張兆億。平常在台中北區承辦買賣、繼承、贈與與各類登記案件，也把簽約現場會卡住、會出事的環節，整理成課程、工具和一則則講得懂的地政故事。
     </p>
     <div class="cta-row">
       <a class="btn solid" href="#contact">諮詢案件</a>
@@ -570,12 +578,7 @@
       <span class="tag">專題系列</span>
       <h3>代書實務講解｜24 講專題</h3>
       <p class="lede">以單一主題為單位的實務講解，從謄本判讀一路到遺產贈與稅申報。可整套進修，也可挑你手上正在卡的那一講。</p>
-      <div class="tablewrap">
-        <table>
-          <thead><tr><th>講次</th><th>主題</th><th>講次</th><th>主題</th></tr></thead>
-          <tbody id="lectures"></tbody>
-        </table>
-      </div>
+      <ol class="lectures" id="lectures"></ol>
       <div class="grid1px plans">
         <div class="plan hi"><span class="kind">單講</span><h4>單講簡報講解</h4><p>含該講完整簡報教材。</p><div class="foot"><span class="price"><span class="cur">NT$</span><b>1,500</b><span class="per">／講</span></span></div></div>
         <div class="plan"><span class="kind">加購</span><h4>錄製音檔</h4><p>加購該講的錄製音檔，可反覆回聽。</p><div class="foot"><span class="price"><span class="cur">NT$</span><b>1,500</b><span class="per">／講加購</span></span></div></div>
@@ -777,12 +780,9 @@
 (function(){
   // 24 講清單（兩欄排列）
   var L = ["謄本完全解析","國有地交換實務","108 年案件回顧與案例分享","車位贈與實務","特定工廠登記實務","搭排搭橋與補辦","一般工廠登記","買賣解約實務","繼承登記","抵押權","共有物處分與分割","建物第一次登記","房地合一稅與土增稅","地政士法與洗錢防制","農地與農業用地移轉","預告登記、查封與限制登記","信託登記","都市更新與危老重建","公同共有與祭祀公業","土地徵收與區段徵收","身分核對、印鑑證明與冒名風險","地上權、農育權與不動產役權","時效取得與相鄰關係","遺產稅與贈與稅申報"];
-  var rows = "";
-  for (var i = 0; i < 12; i++) {
-    var a = i, b = i + 12, pad = function(n){ return n < 9 ? "0" + (n + 1) : String(n + 1); };
-    rows += '<tr><td class="n">第 ' + pad(a) + ' 講</td><td>' + L[a] + '</td><td class="n">第 ' + pad(b) + ' 講</td><td>' + L[b] + '</td></tr>';
-  }
-  document.getElementById("lectures").innerHTML = rows;
+  document.getElementById("lectures").innerHTML = L.map(function(t, i){
+    return '<li><span>第 ' + (i < 9 ? "0" : "") + (i + 1) + ' 講</span>' + t + '</li>';
+  }).join("");
   document.getElementById("yr").textContent = new Date().getFullYear();
 
   // 路由：#home #office ...
@@ -820,6 +820,11 @@
       '<a class="next" href="#' + next + '"><small>' + (next === "home" ? "回到 →" : "下一頁 →") + '</small><b>' + names[next] + '</b></a>';
     (page.querySelector(".bio") || page).appendChild(pager);
   });
+  var navEl = document.querySelector("nav.main");
+  function navFade(){ navEl.classList.toggle("end", navEl.scrollLeft + navEl.clientWidth >= navEl.scrollWidth - 4); }
+  navEl.addEventListener("scroll", navFade, { passive: true });
+  window.addEventListener("resize", navFade);
+  setTimeout(navFade, 0);
   var fab = document.getElementById("fab");
   function onScroll(){ fab.classList.toggle("on", window.scrollY > 480); }
   window.addEventListener("scroll", onScroll, { passive: true });
