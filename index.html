@@ -12,6 +12,11 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://aa44014401.github.io/">
 <link rel="canonical" href="https://aa44014401.github.io/">
+<meta property="og:image" content="https://aa44014401.github.io/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="zh_TW">
+<meta name="twitter:card" content="summary_large_image">
 <meta property="og:site_name" content="地政說書人">
 <meta property="og:locale" content="zh_TW">
 <meta property="og:image" content="https://aa44014401.github.io/og-image.png">
@@ -36,6 +41,9 @@
 {"@type":"Question","name":"線上工具算出來的數字可以直接用嗎？","acceptedAnswer":{"@type":"Answer","text":"工具是依你填的資料與現行規定估算，用來先抓方向。實際稅額以稽徵機關核定為準，地號與面積以謄本為準，使用分區以分區證明為準。"}}
 ]}
 </script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "服務費怎麼算？會不會辦到一半加價？", "acceptedAnswer": {"@type": "Answer", "text": "網站上的收費表是參考價，委任前會依標的筆數、當事人人數與管轄地政事務所先完整報價。政府規費、稅捐、謄本費是實支實付，另外列出來給你看。"}}, {"@type": "Question", "name": "不在台中也可以委託嗎？", "acceptedAnswer": {"@type": "Answer", "text": "可以，全台案件都承辦。跨縣市標的的送件安排與費用，會在報價時一併說明。台中市區可預約外出簽約。"}}, {"@type": "Question", "name": "只是想先問問，要收費嗎？", "acceptedAnswer": {"@type": "Answer", "text": "初步詢問不收費。先說明標的、當事人和時間壓力，我會先判斷這件事能不能做、要先查什麼。需要深入調查或出具書面意見時，才會報價。"}}, {"@type": "Question", "name": "課程適合什麼人？", "acceptedAnswer": {"@type": "Answer", "text": "主要是房仲與新手地政士。內容以簽約現場的判斷順序為主軸，不從法條開始，從你會被問倒的地方開始。每堂都有片段預覽。"}}, {"@type": "Question", "name": "線上工具算出來的數字可以直接用嗎？", "acceptedAnswer": {"@type": "Answer", "text": "工具是依你填的資料與現行規定估算，用來先抓方向。實際稅額以稽徵機關核定為準，地號與面積以謄本為準，使用分區以分區證明為準。"}}]}
+</script>
 <style>
   /* ========== 色票：墨金（全站顏色只改這裡） ========== */
   :root{
@@ -46,7 +54,7 @@
     --line-soft:#23252E;
     --gold:#D5B15C;     /* 金：重點 */
     --gold-hi:#F1D99A;
-    --gold-deep:#8D7440;
+    --gold-deep:#A68A50;
     --brick:#B9604D;    /* 朱：印章、提醒 */
     --paper:#EFE9DC;    /* 主文字 */
     --paper-2:#B6B0A4;
@@ -239,6 +247,9 @@
   footer{border-top:1px solid var(--line-soft);background:var(--ink-2);}
   .foot-in{max-width:var(--w);margin:0 auto;padding:38px 24px;display:grid;gap:10px;}
   .foot-in .sig{font-family:var(--serif);letter-spacing:.16em;color:var(--paper);}
+  .foot-nav{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:13.5px;}
+  .foot-nav a{color:var(--paper-2);text-decoration:none;}
+  .foot-nav a:hover{color:var(--gold-hi);}
   .foot-in small{font-size:12.5px;color:var(--paper-3);line-height:1.9;}
 
 
@@ -257,7 +268,7 @@
   .fab a,.fab button{width:46px;height:46px;border-radius:50%;border:1px solid var(--gold-deep);background:rgba(22,23,30,.94);color:var(--gold);display:grid;place-items:center;font-size:18px;text-decoration:none;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,.35);font-family:var(--sans);}
   .fab a:hover,.fab button:hover{background:var(--gold);color:#14150F;}
   .fab .lbl{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);}
-  @media (max-width:560px){ .pager{grid-template-columns:1fr;} .pager .next{text-align:left;} }
+  @media (max-width:560px){ .pager{grid-template-columns:1fr;} .pager .next{text-align:left;} .foot-in{padding-bottom:96px;} }
   ol.lectures{list-style:none;padding:0;margin:26px 0 0;display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1px;background:var(--line-soft);border:1px solid var(--line);}
   ol.lectures li{background:var(--ink);padding:13px 16px;font-size:14.5px;color:var(--paper);display:flex;gap:12px;align-items:baseline;}
   ol.lectures li span{flex:none;font-family:var(--serif);font-size:12.5px;color:var(--gold-deep);letter-spacing:.06em;font-variant-numeric:tabular-nums;}
@@ -781,6 +792,7 @@
 <footer>
   <div class="foot-in">
     <span class="sig">地政說書人｜玖靈地政士事務所</span>
+    <nav class="foot-nav" aria-label="頁尾導覽"><a href="#office">事務所</a><a href="#pricing">收費標準</a><a href="#course">課程</a><a href="#tools">工具・社群</a><a href="#contact">聯絡</a><a href="https://www.threads.net/@changyi8584" target="_blank" rel="noopener noreferrer">Threads</a><a href="https://www.instagram.com/feathers0804/" target="_blank" rel="noopener noreferrer">Instagram</a></nav>
     <small>地政士 張兆億・開業執照 112中市地士字002314號・台中市北區國泰街97號6樓・0962-023773</small>
     <small>本網站內容為不動產登記與簽約實務的經驗整理，不構成個案法律、稅務或投資意見。© <span id="yr">2026</span></small>
   </div>
@@ -811,12 +823,13 @@
     if (!pages[k]) k = "home";
     Object.keys(pages).forEach(function(p){ document.getElementById(pages[p]).classList.toggle("on", p === k); });
     links.forEach(function(a){
-      if (a.getAttribute("href") === "#" + k) { a.setAttribute("aria-current","page"); try { a.scrollIntoView({block:"nearest",inline:"nearest"}); } catch(e){} }
+      if (a.getAttribute("href") === "#" + k) { a.setAttribute("aria-current","page"); try { a.scrollIntoView({block:"nearest",inline:"center"}); } catch(e){} }
       else a.removeAttribute("aria-current");
     });
     document.title = titles[k];
     var th = document.getElementById("toHome"); if (th) th.style.display = (k === "home") ? "none" : "grid";
     window.scrollTo(0, 0);
+    if (typeof navFade === "function") setTimeout(navFade, 350);
   }
 
   // 分頁導覽：麵包屑＋上一頁／下一頁＋浮動按鈕
@@ -830,11 +843,11 @@
     crumb.className = "crumb"; crumb.setAttribute("aria-label", "目前位置");
     crumb.innerHTML = '<a href="#home">首頁</a><span aria-hidden="true">›</span><span aria-current="page">' + names[k] + '</span>';
     if (host) host.insertBefore(crumb, host.firstChild);
-    var next = order[i + 1] || "home";
+    var next = order[i + 1];
     var pager = document.createElement("nav");
     pager.className = "pager"; pager.setAttribute("aria-label", "頁面導覽");
     pager.innerHTML = '<a href="#home"><small>← 回到</small><b>首頁</b></a>' +
-      '<a class="next" href="#' + next + '"><small>' + (next === "home" ? "回到 →" : "下一頁 →") + '</small><b>' + names[next] + '</b></a>';
+      (next ? '<a class="next" href="#' + next + '"><small>下一頁 →</small><b>' + names[next] + '</b></a>' : '');
     (page.querySelector(".bio") || page).appendChild(pager);
   });
   var navEl = document.querySelector("nav.main");
