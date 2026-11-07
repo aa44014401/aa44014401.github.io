@@ -6,11 +6,11 @@
 <title>這一頁不在書裡｜地政說書人</title>
 <meta name="robots" content="noindex">
 <script>
-  // 短網址轉址：/links → /#links、/pricing → /#pricing
+  // 舊網址轉址：/links/ → /links.html
   (function () {
     var pages = ["home", "office", "pricing", "course", "tools", "about", "links", "contact"];
     var seg = location.pathname.replace(/^\/+|\/+$/g, "").split("/").pop().toLowerCase();
-    if (pages.indexOf(seg) > -1) location.replace("/#" + seg);
+    if (pages.indexOf(seg) > -1) location.replace("/" + seg + ".html");
   })();
 </script>
 <style>
