@@ -267,6 +267,28 @@
   .art-cats{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px;}
   .art-cats a{font-size:13px;letter-spacing:.1em;padding:5px 14px;border:1px solid var(--line);color:var(--paper-2);text-decoration:none;}
   .art-cats a:hover{border-color:var(--gold-deep);color:var(--gold-hi);}
+  .cls-how{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:var(--line-soft);border:1px solid var(--line-soft);margin-top:10px;}
+  .cls-how div{background:var(--ink);padding:18px 20px;display:flex;gap:14px;align-items:flex-start;font-size:15px;color:var(--paper-2);}
+  .cls-how b{color:var(--gold);font-size:20px;line-height:1.2;}
+  .cls{margin-top:34px;}
+  .cls-msg{padding:28px;border:1px dashed var(--line-soft);color:var(--paper-2);text-align:center;}
+  .cls-course{margin-bottom:36px;}
+  .cls-course>h2{font-size:22px;color:var(--gold);letter-spacing:.1em;margin-bottom:14px;}
+  .cls-list{list-style:none;padding:0;margin:0;border:1px solid var(--line-soft);}
+  .cls-list li{border-top:1px solid var(--line-soft);display:flex;flex-wrap:wrap;align-items:center;}
+  .cls-list li:first-child{border-top:0;}
+  .cls-item{flex:1;display:flex;align-items:center;gap:16px;min-height:56px;padding:12px 20px;background:none;border:0;color:var(--paper);font:inherit;font-size:16px;text-align:left;cursor:pointer;}
+  .cls-item:hover{background:var(--ink-2);}
+  .cls-no{color:var(--gold-deep);font-size:13px;letter-spacing:.1em;}
+  .cls-t{flex:1;}
+  .cls-go{font-size:13px;color:var(--gold);border:1px solid var(--gold-deep);padding:4px 12px;}
+  .cls-item[aria-expanded="true"] .cls-go{visibility:hidden;}
+  .cls-open{font-size:13px;color:var(--paper-3);padding:12px 20px;}
+  .cls-video{flex-basis:100%;position:relative;aspect-ratio:16/9;background:#000;}
+  .cls-video iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
+  .member-in{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;border:1px solid var(--gold-deep);padding:20px 24px;margin-bottom:34px;}
+  .member-in p{margin:0;color:var(--paper-2);font-size:15px;}
+  .member-in b{color:var(--gold);}
   .cat-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px;}
   .cat-chips a{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:8px 16px;border:1px solid var(--line-soft);color:var(--paper-2);text-decoration:none;font-size:15px;letter-spacing:.08em;transition:.18s;}
   .cat-chips a:hover{border-color:var(--gold);color:var(--gold);}
@@ -379,6 +401,7 @@
   </section>
 
   <section class="blk" style="padding-top:12px;">
+    <div class="member-in"><p><b>已經是學員？</b>用報名時的 Gmail 登入，就能在會員教室看課程影片。</p><a class="btn solid" href="classroom.html">進入會員教室</a></div>
     <div class="course lead">
       <span class="tag">主力課程</span>
       <h2>簽約代書實戰 v4.1</h2>
