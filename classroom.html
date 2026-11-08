@@ -461,6 +461,60 @@
     .deed{gap:12px;}
     .deed > a,.deed > a:last-child{border:1px solid var(--soft);}
   }
+
+  /* ================= 去 AI 感：平實、印刷品式的黑金 ================= */
+  :root{--r:8px;--r-sm:6px;}
+  body::before{background:radial-gradient(80% 50% at 15% -15%,rgba(213,177,92,.06),transparent 60%);}
+  .eyebrow{letter-spacing:.12em;text-transform:none;font-size:14px;font-family:var(--serif);color:var(--gold-deep);gap:0;margin-bottom:10px;}
+  .eyebrow::before{display:none;}
+  .btn{border-radius:6px;letter-spacing:.04em;}
+  .btn.solid{background:var(--gold);box-shadow:none;}
+  .btn.solid:hover{background:var(--gold-hi);transform:none;}
+  .btn:not(.solid){background:none;border-color:var(--gold-deep);}
+  nav.main a{border-radius:4px;padding:7px 12px;}
+  nav.main a[aria-current="page"]{background:none;border-color:transparent!important;color:var(--gold);box-shadow:inset 0 -2px 0 var(--gold);border-radius:0;}
+  .tag,.cls-go,.art-cats a,.cat-chips a,.toast{border-radius:4px;}
+  .deed > a,.deed > a:last-child,.course,.card-id{box-shadow:none;}
+  .deed > a,.deed > a:last-child{background:var(--card);border-color:var(--hair);}
+  .deed > a:hover,.art-list a:hover,a.lk:hover,.pager a:hover{transform:none;}
+  .deed > a::after{height:1px;}
+  .deed .num{letter-spacing:.12em;font-size:13px;}
+  .course{background:var(--card);}
+  .card-band,.art-cta,.member-in{background:var(--card);}
+  /* 四個問題：改成報紙式兩欄條列，不用卡片 */
+  .grid1px.pains{grid-template-columns:repeat(2,minmax(0,1fr));gap:0 48px;}
+  .grid1px.pains > .pain,.band .grid1px.pains > .pain{background:none;border:0;border-top:1px solid var(--line);border-radius:0;padding:24px 0 26px;}
+  .grid1px.pains > .pain:hover{border-color:var(--line);}
+  .pains .pain::before{display:none;}
+  .pain q{font-size:21px;}
+  /* 委任流程：一、二、三、四 */
+  .steps{counter-reset:st;gap:0 32px;}
+  .steps li{padding:18px 0 0;border-top:1px solid var(--line);}
+  .steps li::before{content:counter(st,cjk-ideographic) "、";display:inline;width:auto;height:auto;border:0;border-radius:0;background:none;font-size:20px;margin:0;color:var(--gold);}
+  .steps li::after{display:none;}
+  .steps h3{display:inline;font-size:20px;}
+  .steps p{margin-top:8px;}
+  /* 名片 */
+  .card-id{background:var(--card);border-color:var(--gold-deep);}
+  .card-id::before{display:none;}
+  .card-id .k{letter-spacing:.2em;font-size:13px;color:var(--gold-deep);}
+  .card-id .stamp{border-radius:6px;}
+  .card-id .facts{margin-top:18px;font-size:14px;color:var(--paper-2);}
+  .card-id .facts b{color:var(--gold);font-weight:500;}
+  .card-id dl div{border-top-style:dashed;border-top-color:var(--line);}
+  .steps li::before,.fab a,.fab button{box-shadow:none;}
+  .faq details{background:none;border-width:0 0 1px;border-radius:0;padding:0;}
+  .faq{gap:0;border-top:1px solid var(--line);}
+  .faq details[open]{border-color:var(--line);}
+  .mod{background:none;}
+  .art-list{gap:0;border-top:1px solid var(--line);}
+  .art-list a{background:none;border:0;border-bottom:1px solid var(--line);border-radius:0;padding:22px 4px;}
+  .art-list a:hover{background:rgba(213,177,92,.04);border-color:var(--line);}
+  @media (max-width:900px){ .grid1px.pains{grid-template-columns:1fr;} }
+  @media (max-width:560px){
+    .steps li{display:block;padding:16px 0 0;}
+    .steps li::before{grid-row:auto;}
+  }
   @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;}}
 </style>
 <script type="application/ld+json">
@@ -514,7 +568,6 @@
 <div class="page on" id="p-classroom">
   <section class="page-hero">
     <nav class="crumb" aria-label="目前位置"><a href="index.html">首頁</a><span aria-hidden="true">›</span><a href="course.html">課程</a><span aria-hidden="true">›</span><span aria-current="page">會員教室</span></nav>
-    <span class="eyebrow">Members Only</span>
     <h1>會員教室</h1>
     <p class="lede">課程影片只開放給已付款學員。請先用報名時填的 Google 帳號（Gmail）登入，再回到這一頁觀看。</p>
   </section>
