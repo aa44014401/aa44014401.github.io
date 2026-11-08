@@ -27,9 +27,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://aa44014401.github.io/og-image.png">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%230F1014'/%3E%3Crect x='8' y='8' width='48' height='48' rx='4' fill='none' stroke='%23D5B15C' stroke-width='3'/%3E%3Ctext x='32' y='43' font-size='26' text-anchor='middle' fill='%23D5B15C' font-family='serif' font-weight='700'%3E說%3C/text%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700;900&family=Noto+Sans+TC:wght@300;400;500;700&display=swap">
+<link rel="preload" href="dz-serif-bold.woff2" as="font" type="font/woff2" crossorigin>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"LegalService","name":"玖靈地政士事務所","alternateName":"地政說書人","founder":{"@type":"Person","name":"張兆億","jobTitle":"地政士"},"telephone":"+886-962-023773","email":"aa44014401@gmail.com","address":{"@type":"PostalAddress","streetAddress":"國泰街97號6樓","addressLocality":"北區","addressRegion":"臺中市","addressCountry":"TW"},"sameAs":["https://www.threads.net/@changyi8584","https://www.instagram.com/feathers0804/"],"url":"https://aa44014401.github.io/","image":"https://aa44014401.github.io/og-image.png","openingHours":"Mo-Fr 09:00-18:00","areaServed":"TW"}
 </script>
@@ -43,6 +41,9 @@
 ]}
 </script>
 <style>
+  /* 標題字型：自託管 Noto Serif TC 子集（只含本站用字，建置時自動產生） */
+  @font-face{font-family:"DZ Serif";src:url("dz-serif-bold.woff2") format("woff2");font-weight:100 799;font-display:swap;}
+  @font-face{font-family:"DZ Serif";src:url("dz-serif-black.woff2") format("woff2");font-weight:800 900;font-display:swap;}
   /* ========== 色票：墨金（全站顏色只改這裡） ========== */
   :root{
     --ink:#0F1014;      /* 底色：墨 */
@@ -57,13 +58,13 @@
     --paper:#EFE9DC;    /* 主文字 */
     --paper-2:#B6B0A4;
     --paper-3:#8C877D;
-    --serif:"Noto Serif TC","Songti TC","PMingLiU",Georgia,serif;
-    --sans:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
+    --serif:"DZ Serif","Noto Serif TC","Songti TC","PMingLiU",Georgia,serif;
+    --sans:"PingFang TC","Microsoft JhengHei","Noto Sans TC","Noto Sans CJK TC",system-ui,sans-serif;
     --w:1120px;
   }
   *{box-sizing:border-box;}
   html{scroll-padding-top:80px;}
-  body{margin:0;background:var(--ink);color:var(--paper);font-family:var(--sans);font-weight:300;font-size:16px;line-height:1.9;-webkit-font-smoothing:antialiased;}
+  body{margin:0;background:var(--ink);color:var(--paper);font-family:var(--sans);font-weight:400;font-size:16px;line-height:1.9;-webkit-font-smoothing:antialiased;}
   body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
     background:radial-gradient(120% 80% at 50% -10%,rgba(213,177,92,.10),transparent 60%),radial-gradient(60% 40% at 100% 100%,rgba(141,116,64,.07),transparent 70%);}
   .wrap{position:relative;z-index:1;}
@@ -112,7 +113,7 @@
   .deed > a{padding:24px 22px;border-right:1px solid var(--line);text-decoration:none;transition:.18s;}
   .deed > a:hover{background:var(--ink-3);}
   .deed > a:last-child{border-right:0;}
-  .deed h4{font-size:17px;color:var(--paper);margin-bottom:8px;}
+  .deed h2{font-size:17px;color:var(--paper);margin-bottom:8px;}
   .deed p{font-size:14px;color:var(--paper-2);}
   .deed .num{font-family:var(--serif);font-size:12px;color:var(--gold);letter-spacing:.3em;display:block;margin-bottom:12px;}
   .deed .go{display:block;margin-top:14px;font-size:13px;color:var(--gold);letter-spacing:.1em;}
@@ -126,7 +127,7 @@
   .mods{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;margin-top:34px;}
   .mod{border-top:2px solid var(--gold-deep);padding-top:18px;}
   .mod .step{font-family:var(--serif);font-size:12px;letter-spacing:.24em;color:var(--gold);display:block;margin-bottom:8px;}
-  .mod h4{font-size:18px;margin-bottom:8px;}
+  .mod h4,.mod h3{font-size:18px;margin-bottom:8px;}
   .mod p{font-size:14px;color:var(--paper-2);}
 
   /* ---------- 服務 ---------- */
@@ -152,7 +153,7 @@
   tbody tr:hover:not(.cat){background:var(--ink-2);}
   .price-table td.item{color:var(--paper);font-weight:400;min-width:180px;}
   .price-table td.fee{color:var(--gold-hi);font-family:var(--serif);white-space:nowrap;font-variant-numeric:tabular-nums;}
-  .price-table td.note{font-size:13px;color:var(--paper-3);}
+  .price-table td.memo{font-size:13px;color:var(--paper-3);}
   .price-table tr.cat td{background:linear-gradient(90deg,rgba(213,177,92,.10),transparent);font-family:var(--serif);font-weight:600;color:var(--gold);letter-spacing:.16em;font-size:14px;}
   @media (max-width:720px){
     .price-table thead{display:none;}
@@ -161,7 +162,7 @@
     .price-table td{border:0;padding:3px 18px;}
     .price-table td.item{padding-top:8px;font-size:15.5px;}
     .price-table td.fee::before{content:"服務費　";color:var(--paper-3);font-family:var(--sans);font-size:12px;}
-    .price-table td.note:empty{display:none;}
+    .price-table td.memo:empty{display:none;}
     .price-table tr.cat td{padding:10px 18px;}
   }
 
@@ -173,7 +174,7 @@
   .plans{grid-template-columns:repeat(auto-fit,minmax(240px,1fr));}
   .plan{display:flex;flex-direction:column;gap:12px;}
   .plan.hi{background:var(--ink-2)!important;box-shadow:inset 3px 0 0 var(--gold);}
-  .plan h4{font-size:18px;}
+  .plan h4,.plan h3{font-size:18px;}
   .plan .kind{font-size:11px;letter-spacing:.26em;color:var(--gold-deep);font-weight:500;}
   .plan p{font-size:14px;color:var(--paper-3);}
   .plan .foot{margin-top:auto;padding-top:6px;}
@@ -181,7 +182,7 @@
   .course{border:1px solid var(--line);background:var(--ink-2);padding:34px 32px;margin-top:28px;}
   .course.lead{border-color:var(--gold-deep);}
   .tag{display:inline-block;font-size:11px;letter-spacing:.24em;color:var(--gold);border:1px solid var(--gold-deep);padding:3px 11px;border-radius:2px;margin-bottom:16px;}
-  .course h3{font-size:clamp(22px,3vw,29px);margin-bottom:12px;}
+  .course h2{font-size:clamp(22px,3vw,29px);margin-bottom:12px;}
   .meta{display:flex;gap:26px;flex-wrap:wrap;margin:22px 0 4px;padding-top:20px;border-top:1px solid var(--line-soft);}
   .meta dt{font-size:11px;letter-spacing:.2em;color:var(--paper-3);margin-bottom:5px;}
   .meta dd{margin:0;font-family:var(--serif);font-size:17px;color:var(--gold-hi);}
@@ -325,7 +326,7 @@
 
 <header class="top">
   <div class="top-in">
-    <a class="brand" href="index.html" aria-label="回首頁">
+    <a class="brand" href="index.html">
       <span class="seal" aria-hidden="true">說<br>書</span>
       <span><b>地政說書人</b><span>玖靈地政士事務所</span></span>
     </a>
@@ -355,14 +356,14 @@
   <section class="blk" style="padding-top:12px;">
     <div class="course lead">
       <span class="tag">主力課程</span>
-      <h3>簽約代書實戰 v4.1</h3>
+      <h2>簽約代書實戰 v4.1</h2>
       <p class="lede">把產權與當事人查核、貸款條件判讀、成屋／預售屋簽約流程、特約條文與話術、特殊案件、稅費、交屋與違約處理，拆成能直接帶著走的工作方法。</p>
 
       <div class="mods">
-        <div class="mod"><span class="step">上場前</span><h4>產權查核與當事人評估</h4><p>謄本十項必查、標的預讀、身分別文件、財力四項與貸款條件判讀。</p></div>
-        <div class="mod"><span class="step">簽約中</span><h4>成屋／預售屋簽約流程</h4><p>成屋簽約 16 步、付款時程、瑕疵揭露、放行條件與特約條文。</p></div>
-        <div class="mod"><span class="step">簽約後</span><h4>稅費、交屋與違約</h4><p>稅費計算與時程、交屋點交、違約處理與後續補救順序。</p></div>
-        <div class="mod"><span class="step">進階現場</span><h4>特殊當事人與協議書</h4><p>海外、外籍、法人、繼承、設定塗銷；契約與各式協議書的實務寫法。</p></div>
+        <div class="mod"><span class="step">上場前</span><h3>產權查核與當事人評估</h3><p>謄本十項必查、標的預讀、身分別文件、財力四項與貸款條件判讀。</p></div>
+        <div class="mod"><span class="step">簽約中</span><h3>成屋／預售屋簽約流程</h3><p>成屋簽約 16 步、付款時程、瑕疵揭露、放行條件與特約條文。</p></div>
+        <div class="mod"><span class="step">簽約後</span><h3>稅費、交屋與違約</h3><p>稅費計算與時程、交屋點交、違約處理與後續補救順序。</p></div>
+        <div class="mod"><span class="step">進階現場</span><h3>特殊當事人與協議書</h3><p>海外、外籍、法人、繼承、設定塗銷；契約與各式協議書的實務寫法。</p></div>
       </div>
 
       <ul class="check">
@@ -380,19 +381,19 @@
       </dl>
 
       <div class="grid1px plans">
-        <div class="plan hi"><span class="kind">全套</span><h4>12 堂完整課程</h4><p>全部章節與後續更新版教材，並可參加線上交流答疑。</p><div class="foot"><span class="price"><span class="cur">NT$</span><b>19,999</b><span class="per">／全套</span></span></div></div>
-        <div class="plan"><span class="kind">單堂</span><h4>單堂購買</h4><p>只想補特定環節，挑你正在卡的那一堂。</p><div class="foot"><span class="price"><span class="cur">NT$</span><b>3,000</b><span class="per">／堂</span></span></div></div>
+        <div class="plan hi"><span class="kind">全套</span><h3>12 堂完整課程</h3><p>全部章節與後續更新版教材，並可參加線上交流答疑。</p><div class="foot"><span class="price"><span class="cur">NT$</span><b>19,999</b><span class="per">／全套</span></span></div></div>
+        <div class="plan"><span class="kind">單堂</span><h3>單堂購買</h3><p>只想補特定環節，挑你正在卡的那一堂。</p><div class="foot"><span class="price"><span class="cur">NT$</span><b>3,000</b><span class="per">／堂</span></span></div></div>
       </div>
     </div>
 
     <div class="course">
       <span class="tag">專題系列</span>
-      <h3>代書實務講解｜24 講專題</h3>
+      <h2>代書實務講解｜24 講專題</h2>
       <p class="lede">以單一主題為單位的實務講解，從謄本判讀一路到遺產贈與稅申報。可整套進修，也可挑你手上正在卡的那一講。</p>
       <ol class="lectures" id="lectures"></ol>
       <div class="grid1px plans">
-        <div class="plan hi"><span class="kind">單講</span><h4>單講簡報講解</h4><p>含該講完整簡報教材。</p><div class="foot"><span class="price"><span class="cur">NT$</span><b>1,500</b><span class="per">／講</span></span></div></div>
-        <div class="plan"><span class="kind">加購</span><h4>錄製音檔</h4><p>加購該講的錄製音檔，可反覆回聽。</p><div class="foot"><span class="price"><span class="cur">NT$</span><b>1,500</b><span class="per">／講加購</span></span></div></div>
+        <div class="plan hi"><span class="kind">單講</span><h3>單講簡報講解</h3><p>含該講完整簡報教材。</p><div class="foot"><span class="price"><span class="cur">NT$</span><b>1,500</b><span class="per">／講</span></span></div></div>
+        <div class="plan"><span class="kind">加購</span><h3>錄製音檔</h3><p>加購該講的錄製音檔，可反覆回聽。</p><div class="foot"><span class="price"><span class="cur">NT$</span><b>1,500</b><span class="per">／講加購</span></span></div></div>
       </div>
     </div>
 
