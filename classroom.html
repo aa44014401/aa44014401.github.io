@@ -293,10 +293,25 @@
   .cls-no{color:var(--gold-deep);font-size:13px;letter-spacing:.1em;}
   .cls-t{flex:1;}
   .cls-go{font-size:13px;color:var(--gold);border:1px solid var(--gold-deep);padding:4px 12px;}
-  .cls-item[aria-expanded="true"] .cls-go{visibility:hidden;}
+  
   .cls-open{font-size:13px;color:var(--paper-3);padding:12px 20px;}
   .cls-video{flex-basis:100%;position:relative;aspect-ratio:16/9;background:#000;}
   .cls-video iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
+  .cls-player{flex-basis:100%;border-top:1px solid var(--line);background:#0B0C10;}
+  .cls-bar{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding:10px 14px;}
+  .cls-btn{font:inherit;font-size:14px;color:var(--gold);background:none;border:1px solid var(--gold-deep);border-radius:6px;padding:6px 14px;min-height:36px;cursor:pointer;}
+  .cls-btn:hover{border-color:var(--gold);background:rgba(213,177,92,.06);}
+  .cls-tip{font-size:12.5px;color:var(--paper-3);margin-left:auto;}
+  .cls-list li{scroll-margin-top:130px;}
+  html.cls-lock .fab,html.cls-lock header.top{display:none;}
+  .cls-player.big{position:fixed;inset:0;z-index:60;display:flex;flex-direction:column;border:0;}
+  .cls-player.big .cls-video{flex:1;max-height:none;aspect-ratio:auto;}
+  .cls-player.big .cls-bar{background:#0B0C10;border-bottom:1px solid var(--line);}
+  html.cls-lock{overflow:hidden;}
+  .cls-video:fullscreen{background:#000;}
+  li.open .cls-item{background:rgba(213,177,92,.06);}
+  li.open .cls-go{background:var(--gold);color:#14150F;}
+  @media (max-width:560px){ .cls-tip{margin-left:0;flex-basis:100%;} }
   .member-in{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;border:1px solid var(--gold-deep);padding:20px 24px;margin-bottom:34px;}
   .member-in p{margin:0;color:var(--paper-2);font-size:15px;}
   .member-in b{color:var(--gold);}
@@ -643,13 +658,50 @@
 (function(){
   var box = document.getElementById("cls"); if (!box) return;
   function el(t, c, x){ var e = document.createElement(t); if (c) e.className = c; if (x != null) e.textContent = x; return e; }
+  function closeAll(except){
+    Array.prototype.forEach.call(box.querySelectorAll("li.open"), function(o){ if (o !== except) shut(o); });
+  }
+  function shut(li){
+    var w = li.querySelector(".cls-player"); if (w) w.parentNode.removeChild(w);
+    li.classList.remove("open");
+    var b = li.querySelector(".cls-item"); b.setAttribute("aria-expanded", "false");
+    b.querySelector(".cls-go").textContent = li.dataset.go;
+  }
   function play(li, id){
-    if (li.querySelector("iframe")) return;
-    var w = el("div", "cls-video"); var f = document.createElement("iframe");
+    if (li.classList.contains("open")) { shut(li); return; }
+    closeAll(li);
+    li.classList.add("open");
+    var b = li.querySelector(".cls-item"); b.setAttribute("aria-expanded", "true");
+    b.querySelector(".cls-go").textContent = "收起";
+    var wrap = el("div", "cls-player");
+    var v = el("div", "cls-video"); var f = document.createElement("iframe");
     f.src = "https://drive.google.com/file/d/" + encodeURIComponent(id) + "/preview";
     f.allow = "autoplay; fullscreen"; f.setAttribute("allowfullscreen", ""); f.title = li.dataset.t;
-    w.appendChild(f); li.appendChild(w);
+    v.appendChild(f);
+    var bar = el("div", "cls-bar");
+    var big = el("button", "cls-btn", "放大"); big.type = "button";
+    big.addEventListener("click", function(){
+      var on = wrap.classList.toggle("big"); big.textContent = on ? "縮小" : "放大";
+      document.documentElement.classList.toggle("cls-lock", on);
+      if (!on) li.scrollIntoView({block: "nearest"});
+    });
+    var fs = el("button", "cls-btn", "全螢幕"); fs.type = "button";
+    fs.addEventListener("click", function(){
+      if (document.fullscreenElement) { document.exitFullscreen(); return; }
+      if (v.requestFullscreen) v.requestFullscreen(); else if (v.webkitRequestFullscreen) v.webkitRequestFullscreen();
+    });
+    var cl = el("button", "cls-btn", "收起"); cl.type = "button";
+    cl.addEventListener("click", function(){ document.documentElement.classList.remove("cls-lock"); shut(li); li.scrollIntoView({block: "nearest"}); });
+    var tip = el("span", "cls-tip", "看不到畫面？請先用開通的 Gmail 登入 Google，或點「在雲端開啟」。");
+    bar.appendChild(big); bar.appendChild(fs); bar.appendChild(cl); bar.appendChild(tip);
+    wrap.appendChild(bar); wrap.appendChild(v); li.appendChild(wrap);
   }
+  document.addEventListener("keydown", function(e){
+    if (e.key !== "Escape") return;
+    var w = box.querySelector(".cls-player.big"); if (!w) return;
+    w.classList.remove("big"); document.documentElement.classList.remove("cls-lock");
+    var bb = w.querySelector(".cls-btn"); if (bb) bb.textContent = "放大";
+  });
   function render(d){
     box.innerHTML = "";
     var cs = (d && d.courses) || [];
@@ -659,10 +711,10 @@
       var sec = el("section", "cls-course"); sec.appendChild(el("h2", null, c.name));
       var ol = el("ol", "cls-list");
       c.lessons.forEach(function(l, n){
-        var li = el("li"); li.dataset.t = l.t;
+        var li = el("li"); li.dataset.t = l.t; li.dataset.go = l.k === "d" ? "翻閱簡報" : "播放";
         var b = el("button", "cls-item"); b.type = "button";
-        b.appendChild(el("span", "cls-no", l.k === "d" ? "教材" : String(c.lessons.slice(0, n + 1).filter(function(x){ return x.k !== "d"; }).length).padStart(2, "0"))); b.appendChild(el("span", "cls-t", l.t)); b.appendChild(el("span", "cls-go", l.k === "d" ? "翻閱簡報" : "播放"));
-        b.addEventListener("click", function(){ play(li, l.id); b.setAttribute("aria-expanded", "true"); });
+        b.appendChild(el("span", "cls-no", l.k === "d" ? "教材" : String(c.lessons.slice(0, n + 1).filter(function(x){ return x.k !== "d"; }).length).padStart(2, "0"))); b.appendChild(el("span", "cls-t", l.t)); b.appendChild(el("span", "cls-go", li.dataset.go)); b.setAttribute("aria-expanded", "false");
+        b.addEventListener("click", function(){ play(li, l.id); });
         var a = el("a", "cls-open", "在雲端開啟"); a.href = "https://drive.google.com/file/d/" + encodeURIComponent(l.id) + "/view"; a.target = "_blank"; a.rel = "noopener noreferrer";
         li.appendChild(b); li.appendChild(a); ol.appendChild(li);
       });
