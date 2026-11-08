@@ -661,7 +661,7 @@
       c.lessons.forEach(function(l, n){
         var li = el("li"); li.dataset.t = l.t;
         var b = el("button", "cls-item"); b.type = "button";
-        b.appendChild(el("span", "cls-no", String(n + 1).padStart(2, "0"))); b.appendChild(el("span", "cls-t", l.t)); b.appendChild(el("span", "cls-go", "播放"));
+        b.appendChild(el("span", "cls-no", l.k === "d" ? "教材" : String(c.lessons.slice(0, n + 1).filter(function(x){ return x.k !== "d"; }).length).padStart(2, "0"))); b.appendChild(el("span", "cls-t", l.t)); b.appendChild(el("span", "cls-go", l.k === "d" ? "翻閱簡報" : "播放"));
         b.addEventListener("click", function(){ play(li, l.id); b.setAttribute("aria-expanded", "true"); });
         var a = el("a", "cls-open", "在雲端開啟"); a.href = "https://drive.google.com/file/d/" + encodeURIComponent(l.id) + "/view"; a.target = "_blank"; a.rel = "noopener noreferrer";
         li.appendChild(b); li.appendChild(a); ol.appendChild(li);
