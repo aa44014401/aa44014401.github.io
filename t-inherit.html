@@ -1,0 +1,235 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style><meta name="description" content="家人過世後，繼承登記的規費、印花稅、遺產稅與逾期罰鍰，先試算再決定。">
+<link rel="canonical" href="https://aa44014401.github.io/t-inherit.html">
+<meta property="og:type" content="website"><meta property="og:title" content="繼承登記試算｜地政說書人"><meta property="og:description" content="家人過世後，繼承登記的規費、印花稅、遺產稅與逾期罰鍰，先試算再決定。"><meta property="og:url" content="https://aa44014401.github.io/t-inherit.html"><meta property="og:image" content="https://aa44014401.github.io/og.png"><meta name="theme-color" content="#0F1014">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%230F1014'/%3E%3Crect x='8' y='8' width='48' height='48' rx='4' fill='none' stroke='%23D5B15C' stroke-width='3'/%3E%3Ctext x='32' y='43' font-size='26' text-anchor='middle' fill='%23D5B15C' font-family='serif' font-weight='700'%3E說%3C/text%3E%3C/svg%3E">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "繼承登記試算", "description": "家人過世後，繼承登記的規費、印花稅、遺產稅與逾期罰鍰，先試算再決定。", "url": "https://aa44014401.github.io/t-inherit.html", "applicationCategory": "FinanceApplication", "operatingSystem": "Web", "inLanguage": "zh-Hant-TW", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "TWD"}, "publisher": {"@type": "Organization", "name": "地政說書人｜玖靈地政士事務所", "url": "https://aa44014401.github.io/"}}</script>
+</head><body>
+<style>
+.dzbar{position:sticky;top:0;box-sizing:border-box;width:100vw;margin-left:calc(50% - 50vw);z-index:999;display:flex;align-items:center;gap:14px;padding:10px 16px;background:#0F1014;border-bottom:1px solid rgba(213,177,92,.25);font:14px/1.4 "Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}
+.dzbar a{color:#EFE9DC;text-decoration:none}
+.dzbar .dz-brand{display:flex;align-items:center;gap:8px;font-family:"Noto Serif TC","Songti TC",serif;font-weight:900;letter-spacing:.06em;color:#D5B15C}
+.dzbar .dz-seal{width:26px;height:26px;border:1.5px solid #B9604D;color:#B9604D;border-radius:5px;display:grid;place-items:center;font-size:11px;line-height:1.05;text-align:center}
+.dzbar .dz-sp{flex:1}
+.dzbar .dz-link{color:#C9C2B3;padding:6px 4px}
+.dzbar .dz-link:hover{color:#D5B15C}
+.dzbar .dz-cta{border:1px solid #A68A50;color:#D5B15C;border-radius:6px;padding:6px 12px}
+@media (max-width:480px){.dzbar .dz-hide{display:none}}
+.dzfoot{max-width:1080px;margin:40px auto 0;padding:22px 16px 40px;border-top:1px solid rgba(213,177,92,.25);color:#9B9586;font:13px/1.8 "Noto Sans TC","PingFang TC",sans-serif}
+.dzfoot a{color:#D5B15C}
+</style>
+<nav class="dzbar" aria-label="網站導覽"><a class="dz-brand" href="index.html"><span class="dz-seal" aria-hidden="true">說<br>書</span>地政說書人</a><span class="dz-sp"></span><a class="dz-link" href="tools.html">← 所有工具</a><a class="dz-link dz-hide" href="articles.html">地政知識</a><a class="dz-cta" href="contact.html">問地政士</a></nav>
+
+<title>繼承登記試算｜地政說書人線上工具</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600;900&family=Noto+Sans+TC:wght@400;500;700&display=swap">
+<style>
+/* Layout: one ledger column — inputs on the left like a 申請書, live 試算單 on the right; stacks on phones */
+:root{
+  --ink:#161310; --panel:#1f1b16; --line:#3a3227; --gold:#d4af37; --gold-dim:#8a7535;
+  --cream:#f3ead8; --mute:#b9ab92; --warn:#e07a5f; --ok:#8fbf8a;
+  --f-display:"Noto Serif TC","Songti TC",serif; --f-body:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
+  color-scheme:dark;
+}
+body{background:var(--ink);color:var(--cream);font-family:var(--f-body);font-size:15px;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding-block:32px 56px;padding-inline:16px}
+header{display:grid;gap:6px;margin-bottom:28px;border-bottom:1px solid var(--line);padding-bottom:20px}
+.eyebrow{color:var(--gold);letter-spacing:.18em;font-size:12px}
+h1{font-family:var(--f-display);font-weight:900;font-size:clamp(28px,5vw,42px);line-height:1.2;margin:0;text-wrap:balance}
+.lede{color:var(--mute);max-width:62ch;margin:0}
+.grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:28px;align-items:start}
+@media (max-width:820px){.grid{grid-template-columns:1fr}}
+fieldset{border:1px solid var(--line);border-radius:6px;padding:16px 18px 18px;margin:0 0 18px;display:grid;gap:12px;min-width:0}
+legend{font-family:var(--f-display);font-weight:600;color:var(--gold);padding:0 6px;font-size:16px}
+.row{display:grid;grid-template-columns:minmax(0,1fr) 170px;gap:12px;align-items:center}
+@media (max-width:460px){.row{grid-template-columns:1fr}}
+label{font-size:14px}
+label small{display:block;color:var(--mute);font-size:12px;line-height:1.45}
+input{width:100%;box-sizing:border-box;background:var(--ink);color:var(--cream);border:1px solid var(--line);border-radius:4px;padding:9px 10px;font:inherit;font-variant-numeric:tabular-nums;text-align:right}
+input[type=date]{text-align:left}
+input:focus{outline:2px solid var(--gold);outline-offset:1px;border-color:var(--gold)}
+.slip{position:sticky;top:calc(env(safe-area-inset-top,0px) + 16px);background:var(--panel);border:1px solid var(--gold-dim);border-radius:6px;padding:20px 20px 18px;display:grid;gap:14px}
+.slip h2{font-family:var(--f-display);margin:0;font-size:20px;display:flex;justify-content:space-between;gap:8px;align-items:baseline}
+.slip h2 span{font-family:var(--f-body);font-size:12px;color:var(--mute);font-weight:400}
+dl{margin:0;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 12px;font-variant-numeric:tabular-nums}
+dt{color:var(--mute)} dd{margin:0;text-align:right}
+.sep{grid-column:1/-1;border-top:1px dashed var(--line);margin:4px 0}
+.big dt{color:var(--cream);font-weight:700}
+.big dd{font-family:var(--f-display);font-size:24px;color:var(--gold);font-weight:900}
+.pill{display:inline-block;font-size:12px;padding:2px 10px;border-radius:999px;border:1px solid currentColor}
+.pill.warn{color:var(--warn)} .pill.ok{color:var(--ok)}
+.note{font-size:13px;color:var(--mute);margin:0}
+.tips{display:grid;gap:8px;margin:0;padding-left:1.2em;font-size:13.5px;color:var(--mute)}
+.tips b{color:var(--cream)}
+.cta{border-top:1px solid var(--line);padding-top:14px;display:grid;gap:10px}
+.cta p{margin:0;font-size:14px}
+.btns{display:flex;flex-wrap:wrap;gap:10px}
+button,.btn{font:inherit;font-size:14px;cursor:pointer;border-radius:4px;padding:9px 16px;text-decoration:none;display:inline-block}
+.primary{background:var(--gold);color:var(--ink);border:1px solid var(--gold);font-weight:700}
+.ghost{background:transparent;color:var(--cream);border:1px solid var(--line)}
+button:focus-visible,.btn:focus-visible{outline:2px solid var(--cream);outline-offset:2px}
+#copyMsg{font-size:12px;color:var(--ok)}
+.plans{margin-top:36px;display:grid;gap:14px}
+.plans h2{font-family:var(--f-display);margin:0;font-size:22px;text-wrap:balance}
+.plan-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
+.plan{border:1px solid var(--line);border-radius:6px;padding:16px;display:grid;gap:6px;align-content:start;min-width:0}
+.plan p{margin:0;font-size:13.5px;color:var(--mute)}
+.p-name{font-weight:700}
+.p-price{font-family:var(--f-display);font-weight:900;color:var(--gold);font-size:20px}
+footer{margin-top:36px;border-top:1px solid var(--line);padding-top:16px;font-size:12.5px;color:var(--mute);display:grid;gap:4px}
+.sample{font-size:12px;color:var(--gold-dim)}
+.crumb{font-size:13px;margin-bottom:14px}.crumb a{color:var(--mute);text-decoration:none;border-bottom:1px solid var(--line)}.crumb a:hover,.crumb a:focus-visible{color:var(--gold);border-color:var(--gold);outline:none}
+</style>
+
+<div class="wrap">
+<nav class="crumb"><a href="tools.html" target="_blank" rel="noopener">← 地政說書人工具箱</a></nav>
+<header>
+  <div class="eyebrow">地政說書人 · 繼承費用試算</div>
+  <h1>家人過世後，繼承要花多少錢？</h1>
+  <p class="lede">輸入遺產與繼承人，一次算出遺產稅、登記規費，以及是否已經逾期被罰。數字適用民國115年（2026）發生的繼承。</p>
+</header>
+
+<div class="grid">
+<form id="f" novalidate>
+  <fieldset>
+    <legend>一、死亡日期</legend>
+    <div class="row"><label for="dod">被繼承人死亡日<small>繼承登記與遺產稅都要在 6 個月內辦</small></label><input type="date" id="dod" value="2026-03-15"></div>
+  </fieldset>
+
+  <fieldset>
+    <legend>二、遺產（元）</legend>
+    <div class="row"><label for="land">土地公告現值合計<small>公告現值 × 面積 × 持分，地籍謄本可查</small></label><input id="land" inputmode="numeric" value="18,000,000"></div>
+    <div class="row"><label for="house">房屋評定現值合計<small>看房屋稅單上的「現值」</small></label><input id="house" inputmode="numeric" value="1,200,000"></div>
+    <div class="row"><label for="cash">存款、股票等其他財產<small>指定受益人的人壽保險金不計入</small></label><input id="cash" inputmode="numeric" value="6,000,000"></div>
+    <div class="row"><label for="debt">未償債務、應納未納稅捐<small>房貸餘額、生前欠稅等</small></label><input id="debt" inputmode="numeric" value="0"></div>
+    <div class="row"><label for="excl">其中不計入遺產總額的土地<small>公共設施保留地、農地農用等，以公告現值計</small></label><input id="excl" inputmode="numeric" value="0"></div>
+    <div class="row"><label for="claim">配偶剩餘財產差額分配<small>婚後財產差額的一半，由配偶主張，可自遺產扣除</small></label><input id="claim" inputmode="numeric" value="0"></div>
+    <div class="row"><label for="units">土地筆數＋建物棟數<small>估算書狀張數用</small></label><input id="units" inputmode="numeric" value="2"></div>
+  </fieldset>
+
+  <fieldset>
+    <legend>三、繼承人（人數）</legend>
+    <div class="row"><label for="spouse">配偶（0 或 1）</label><input id="spouse" inputmode="numeric" value="1"></div>
+    <div class="row"><label for="kids">子女（直系血親卑親屬）</label><input id="kids" inputmode="numeric" value="2"></div>
+    <div class="row"><label for="minorYrs">未成年子女距 18 歲年數合計<small>例：一個 15 歲＝3 年；不滿一年以一年計</small></label><input id="minorYrs" inputmode="numeric" value="0"></div>
+    <div class="row"><label for="parents">在世父母</label><input id="parents" inputmode="numeric" value="0"></div>
+    <div class="row"><label for="disabled">身心障礙繼承人（含配偶、父母）</label><input id="disabled" inputmode="numeric" value="0"></div>
+    <div class="row"><label for="deps">受扶養兄弟姊妹、祖父母</label><input id="deps" inputmode="numeric" value="0"></div>
+  </fieldset>
+  <p class="sample">表單預先填入一組範例數字，改成你家的狀況即可。資料只在你的瀏覽器計算，不會上傳。</p>
+</form>
+
+<aside class="slip" aria-live="polite">
+  <h2>試算單 <span id="status"></span></h2>
+  <dl>
+    <dt>遺產總額</dt><dd id="o_gross"></dd>
+    <dt>減：不計入遺產總額</dt><dd id="o_excl"></dd>
+    <dt>減：免稅額</dt><dd>13,330,000</dd>
+    <dt>減：各項扣除額</dt><dd id="o_ded"></dd>
+    <dt>課稅遺產淨額</dt><dd id="o_net"></dd>
+    <div class="sep"></div>
+    <div class="big" style="display:contents"><dt>遺產稅</dt><dd id="o_tax"></dd></div>
+    <div class="sep"></div>
+    <dt>登記規費（權利價值 1‰）</dt><dd id="o_fee"></dd>
+    <dt>書狀費（約 <span id="o_n"></span> 張 × 80）</dt><dd id="o_book"></dd>
+    <dt>逾期罰鍰</dt><dd id="o_fine"></dd>
+    <div class="sep"></div>
+    <div class="big" style="display:contents"><dt>政府規費＋稅合計</dt><dd id="o_total"></dd></div>
+  </dl>
+  <p class="note" id="o_deadline"></p>
+  <ol class="tips" id="tips"></ol>
+  <div class="cta">
+    <p>想知道你家能不能再省？傳試算結果給我，免費幫你看一次。</p>
+    <div class="btns">
+      <button type="button" class="primary" id="copy">複製試算結果</button>
+      <a class="btn ghost" href="https://www.threads.net/@changyi8584" target="_blank" rel="noopener">到 Threads 私訊 @changyi8584</a>
+    </div>
+    <span id="copyMsg" role="status"></span>
+  </div>
+</aside>
+</div>
+
+<section class="plans" aria-labelledby="plansH">
+  <h2 id="plansH">自己辦，還是交給我？</h2>
+  <div class="plan-row">
+    <div class="plan"><div class="p-name">免費看一次</div><div class="p-price">NT$0</div><p>把試算結果私訊給我，我回你最該先處理的一件事。</p></div>
+    <div class="plan"><div class="p-name">自辦繼承登記懶人包</div><div class="p-price">NT$990</div><p>期限時間軸、文件清單、遺產稅與省稅點、分割協議書範本、送件前 11 項自我檢查。</p></div>
+    <div class="plan"><div class="p-name">30 分鐘線上諮詢</div><div class="p-price">NT$1,500</div><p>針對你家的繼承系統表與稅額逐項確認。之後委任代辦可全額折抵。</p></div>
+    <div class="plan"><div class="p-name">全程代辦</div><div class="p-price">依案件報價</div><p>遺產稅申報、繼承登記、分割協議一次處理，逾期案件優先排程。</p></div>
+  </div>
+  <p class="note">購買或預約：Threads 私訊 @changyi8584，註明方案名稱。</p>
+  <p class="note">父母還在、想先規劃？用 <a href="t-transfer.html" target="_blank" rel="noopener" style="color:var(--gold)">過戶方式比較</a> 看贈與、繼承、買賣哪個最省。</p>
+</section>
+
+<footer>
+  <div>玖靈地政士事務所　地政士 張兆億　證號 112中市地士字002314號</div>
+  <div>台中市北區國泰街97號6樓</div>
+  <div>本試算依財政部公告 115 年遺產稅免稅額、扣除額及級距，與土地法第 67、73 條、土地登記規則第 50 條規定估算，僅供參考；實際稅額以國稅局核定、規費罰鍰以地政事務所核算為準。不含代書服務費、保險金與農地等免稅項目判斷。</div>
+</footer>
+</div>
+
+<script>
+const $=id=>document.getElementById(id);
+const num=id=>{const v=Number(String($(id).value).replace(/[^\d.]/g,''));return isFinite(v)&&v>0?v:0};
+const fmt=n=>Math.round(n).toLocaleString('zh-TW');
+const ids=['land','house','cash','debt','excl','claim','units','spouse','kids','minorYrs','parents','disabled','deps'];
+
+function estateTax(net){
+  if(net<=0) return 0;
+  if(net<=56210000) return net*0.10;
+  if(net<=112420000) return net*0.15-2810500;
+  return net*0.20-8431500;
+}
+function addMonths(d,m){const r=new Date(d);r.setMonth(r.getMonth()+m);return r}
+function overdueMonths(dod,today){
+  const due=addMonths(dod,6); if(today<=due) return {m:0,due};
+  let m=0,c=new Date(due); while(c<today){m++;c=addMonths(due,m)} return {m,due};
+}
+function calc(){
+  const land=num('land'),house=num('house'),cash=num('cash'),debt=num('debt'),claim=num('claim');
+  const excl=Math.min(num('excl'),land);
+  const units=Math.max(1,Math.round(num('units')));
+  const spouse=Math.min(1,Math.round(num('spouse'))),kids=Math.round(num('kids')),minorYrs=Math.round(num('minorYrs'));
+  const parents=Math.min(2,Math.round(num('parents'))),disabled=Math.round(num('disabled')),deps=Math.round(num('deps'));
+  const heirs=Math.max(1,spouse+kids+parents);
+  const gross=land+house+cash;
+  const ded=spouse*5530000+kids*560000+minorYrs*560000+parents*1380000+disabled*6930000+deps*560000+1380000+debt+(spouse?claim:0);
+  const net=Math.max(0,gross-excl-13330000-ded);
+  const tax=Math.round(estateTax(net));
+  const fee=Math.max(1,Math.round((land+house)*0.001));
+  const books=units*heirs; const book=books*80;
+  const dodv=$('dod').value; let fine=0,months=0,due=null;
+  const today=new Date(); today.setHours(0,0,0,0);
+  if(dodv){const r=overdueMonths(new Date(dodv+'T00:00:00'),today);months=r.m;due=r.due;fine=fee*Math.min(20,months)}
+  const total=tax+fee+book+fine;
+  $('o_gross').textContent=fmt(gross);$('o_excl').textContent=fmt(excl);$('o_ded').textContent=fmt(ded);$('o_net').textContent=fmt(net);
+  $('o_tax').textContent=tax?fmt(tax):'0（免稅）';$('o_fee').textContent=fmt(fee);$('o_n').textContent=books;
+  $('o_book').textContent=fmt(book);$('o_fine').textContent=fine?fmt(fine)+'（'+Math.min(20,months)+' 倍）':'0';
+  $('o_total').textContent=fmt(total);
+  const st=$('status');
+  if(!dodv){st.innerHTML='';$('o_deadline').textContent='';}
+  else if(months>0){st.innerHTML='<span class="pill warn">已逾期 '+months+' 個月</span>';
+    $('o_deadline').textContent='申請期限 '+due.toLocaleDateString('zh-TW')+' 已過。罰鍰每逾一個月加罰一倍規費，最高 20 倍，越晚越貴；辦理遺產稅期間可依規定扣除，實際以地政事務所核算為準。';}
+  else {const left=Math.ceil((due-today)/864e5);st.innerHTML='<span class="pill ok">還剩 '+left+' 天</span>';
+    $('o_deadline').textContent='繼承登記期限：'+due.toLocaleDateString('zh-TW')+'。遺產稅也要在同一期限內申報（可申請延長 3 個月）。';}
+  const tips=[];
+  if(dodv && new Date(dodv)<new Date('2024-01-01')) tips.push('<b>死亡日在 113 年以前</b>：免稅額與扣除額金額不同，本表數字不適用，請找專人核算。');
+  if(spouse&&tax>0&&!claim) tips.push('<b>配偶剩餘財產差額分配請求權</b>：婚後財產差額的一半可從遺產總額扣除，常常一主張就從要繳稅變成免稅。');
+  if(tax>0&&land>0&&!excl) tips.push('<b>公共設施保留地、農地農用</b>可不計入遺產總額，土地若有這類地目值得逐筆確認。');
+  if(heirs>=2) tips.push('<b>公同共有還是分別共有？</b>先辦公同共有可以爭取時間避免罰鍰，但之後賣房要全體同意，各有利弊。');
+  if(gross>0&&net===0) tips.push('<b>不用繳遺產稅也要申報</b>：沒有國稅局核發的免稅證明書，就不能辦繼承登記。');
+  tips.push('<b>房地合一稅</b>：繼承來的房子將來出售，取得成本是繼承時的公告現值與評定現值，現在就要留好資料。');
+  $('tips').innerHTML=tips.map(t=>'<li>'+t+'</li>').join('');
+  window.__summary=`【繼承費用試算】\n死亡日：${dodv||'未填'}\n遺產總額：${fmt(gross)}（不計入 ${fmt(excl)}）\n課稅淨額：${fmt(net)}\n遺產稅：${fmt(tax)}\n登記規費：${fmt(fee)}／書狀費：${fmt(book)}\n逾期罰鍰：${fmt(fine)}\n合計：${fmt(total)}\n繼承人：配偶${spouse}、子女${kids}、父母${parents}`;
+}
+ids.forEach(id=>{const el=$(id);el.addEventListener('input',calc);
+  el.addEventListener('blur',()=>{const v=num(id);el.value=v?fmt(v):'0'})});
+$('dod').addEventListener('input',calc);
+$('copy').addEventListener('click',()=>{
+  const t=window.__summary;
+  navigator.clipboard.writeText(t).then(()=>{$('copyMsg').textContent='已複製，貼到私訊即可'})
+  .catch(()=>{$('copyMsg').textContent='無法自動複製，請手動選取下方文字';const p=document.createElement('pre');p.textContent=t;p.style.whiteSpace='pre-wrap';p.style.fontSize='12px';$('copyMsg').after(p)});
+});
+calc();
+</script>
+
+<footer class="dzfoot">本工具由<a href="index.html">地政說書人｜玖靈地政士事務所</a>提供，結果為依輸入資料與現行規定的估算，實際稅額與規費以主管機關核定為準。個案請<a href="contact.html">先問地政士</a>，或回到<a href="tools.html">所有工具</a>。</footer></body></html>

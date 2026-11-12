@@ -1,0 +1,140 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style><meta name="description" content="想把財產給孩子，用每年免稅額分幾年給，可以不繳贈與稅。">
+<link rel="canonical" href="https://aa44014401.github.io/t-gift-years.html">
+<meta property="og:type" content="website"><meta property="og:title" content="分年贈與規劃｜地政說書人"><meta property="og:description" content="想把財產給孩子，用每年免稅額分幾年給，可以不繳贈與稅。"><meta property="og:url" content="https://aa44014401.github.io/t-gift-years.html"><meta property="og:image" content="https://aa44014401.github.io/og.png"><meta name="theme-color" content="#0F1014">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%230F1014'/%3E%3Crect x='8' y='8' width='48' height='48' rx='4' fill='none' stroke='%23D5B15C' stroke-width='3'/%3E%3Ctext x='32' y='43' font-size='26' text-anchor='middle' fill='%23D5B15C' font-family='serif' font-weight='700'%3E說%3C/text%3E%3C/svg%3E">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "分年贈與規劃", "description": "想把財產給孩子，用每年免稅額分幾年給，可以不繳贈與稅。", "url": "https://aa44014401.github.io/t-gift-years.html", "applicationCategory": "FinanceApplication", "operatingSystem": "Web", "inLanguage": "zh-Hant-TW", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "TWD"}, "publisher": {"@type": "Organization", "name": "地政說書人｜玖靈地政士事務所", "url": "https://aa44014401.github.io/"}}</script>
+</head><body>
+<style>
+.dzbar{position:sticky;top:0;box-sizing:border-box;width:100vw;margin-left:calc(50% - 50vw);z-index:999;display:flex;align-items:center;gap:14px;padding:10px 16px;background:#0F1014;border-bottom:1px solid rgba(213,177,92,.25);font:14px/1.4 "Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}
+.dzbar a{color:#EFE9DC;text-decoration:none}
+.dzbar .dz-brand{display:flex;align-items:center;gap:8px;font-family:"Noto Serif TC","Songti TC",serif;font-weight:900;letter-spacing:.06em;color:#D5B15C}
+.dzbar .dz-seal{width:26px;height:26px;border:1.5px solid #B9604D;color:#B9604D;border-radius:5px;display:grid;place-items:center;font-size:11px;line-height:1.05;text-align:center}
+.dzbar .dz-sp{flex:1}
+.dzbar .dz-link{color:#C9C2B3;padding:6px 4px}
+.dzbar .dz-link:hover{color:#D5B15C}
+.dzbar .dz-cta{border:1px solid #A68A50;color:#D5B15C;border-radius:6px;padding:6px 12px}
+@media (max-width:480px){.dzbar .dz-hide{display:none}}
+.dzfoot{max-width:1080px;margin:40px auto 0;padding:22px 16px 40px;border-top:1px solid rgba(213,177,92,.25);color:#9B9586;font:13px/1.8 "Noto Sans TC","PingFang TC",sans-serif}
+.dzfoot a{color:#D5B15C}
+</style>
+<nav class="dzbar" aria-label="網站導覽"><a class="dz-brand" href="index.html"><span class="dz-seal" aria-hidden="true">說<br>書</span>地政說書人</a><span class="dz-sp"></span><a class="dz-link" href="tools.html">← 所有工具</a><a class="dz-link dz-hide" href="articles.html">地政知識</a><a class="dz-cta" href="contact.html">問地政士</a></nav>
+
+<title>分年贈與規劃｜地政說書人線上工具</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600;900&family=Noto+Sans+TC:wght@400;500;700&display=swap">
+<style>
+/* Layout: 輸入在上，下方「一次給 vs 分年給」對照與逐年進度條 */
+:root{--ink:#161310;--panel:#1f1b16;--line:#3a3227;--gold:#d4af37;--gold-dim:#8a7535;--cream:#f3ead8;--mute:#b9ab92;--ok:#8fbf8a;--warn:#e07a5f;
+--f-display:"Noto Serif TC","Songti TC",serif;--f-body:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;color-scheme:dark}
+body{background:var(--ink);color:var(--cream);font-family:var(--f-body);font-size:15px;line-height:1.65}
+.wrap{max-width:960px;margin:0 auto;padding-block:32px 56px;padding-inline:16px;display:grid;gap:24px}
+header{display:grid;gap:6px;border-bottom:1px solid var(--line);padding-bottom:20px}
+.eyebrow{color:var(--gold);letter-spacing:.18em;font-size:12px}
+h1{font-family:var(--f-display);font-weight:900;font-size:clamp(26px,5vw,40px);line-height:1.2;margin:0;text-wrap:balance}
+.lede{color:var(--mute);max-width:64ch;margin:0}
+form{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px 24px;border:1px solid var(--line);border-radius:6px;padding:16px 18px}
+.row{display:grid;grid-template-columns:minmax(0,1fr) 150px;gap:10px;align-items:center}
+label{font-size:14px} label small{display:block;color:var(--mute);font-size:12px;line-height:1.45}
+input{width:100%;box-sizing:border-box;background:var(--ink);color:var(--cream);border:1px solid var(--line);border-radius:4px;padding:8px 10px;font:inherit;font-variant-numeric:tabular-nums;text-align:right}
+input[type=checkbox]{width:20px;height:20px;justify-self:end;accent-color:var(--gold)}
+input:focus{outline:2px solid var(--gold);outline-offset:1px}
+.vs{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.box{border:1px solid var(--line);border-radius:6px;padding:16px 18px;display:grid;gap:4px;background:var(--panel)}
+.box.win{border-color:var(--gold-dim)}
+.box span{color:var(--mute);font-size:13px}
+.box strong{font-family:var(--f-display);font-size:30px;font-variant-numeric:tabular-nums}
+.box.win strong{color:var(--gold)}
+.box em{font-style:normal;font-size:13px;color:var(--mute)}
+h2{font-family:var(--f-display);font-size:20px;margin:0}
+.years{display:grid;gap:8px}
+.yr{display:grid;grid-template-columns:90px minmax(0,1fr) 120px;gap:12px;align-items:center;font-variant-numeric:tabular-nums;font-size:14px}
+.yr .track{height:16px;background:var(--panel);border-radius:3px;overflow:hidden;border:1px solid var(--line)}
+.yr .fill{height:100%;background:var(--gold)}
+.yr .fill.w{background:var(--ok)}
+.yr b{text-align:right;font-weight:500}
+.yr .y{color:var(--mute)}
+ul.notes{margin:0;padding-left:1.1em;display:grid;gap:6px;font-size:13.5px;color:var(--mute)}
+ul.notes b{color:var(--cream)}
+.cta{border-top:1px solid var(--line);padding-top:14px;display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.cta p{margin:0;flex:1 1 280px;font-size:14px}
+.btn{display:inline-block;font-size:14px;border-radius:4px;padding:9px 16px;text-decoration:none;background:var(--gold);color:var(--ink);font-weight:700}
+.btn:focus-visible{outline:2px solid var(--cream);outline-offset:2px}
+footer{border-top:1px solid var(--line);padding-top:16px;font-size:12.5px;color:var(--mute);display:grid;gap:4px}
+.crumb{font-size:13px;margin-bottom:14px}.crumb a{color:var(--mute);text-decoration:none;border-bottom:1px solid var(--line)}.crumb a:hover,.crumb a:focus-visible{color:var(--gold);border-color:var(--gold);outline:none}
+</style>
+
+<div class="wrap">
+<nav class="crumb"><a href="tools.html" target="_blank" rel="noopener">← 地政說書人工具箱</a></nav>
+<header>
+  <div class="eyebrow">地政說書人 · 分年贈與</div>
+  <h1>想把財產給孩子，分幾年給可以不繳贈與稅？</h1>
+  <p class="lede">父母每人每年各有 244 萬元免稅額，子女結婚時再各多 100 萬元。輸入想給的總額，看一次給要繳多少，分年給要幾年。</p>
+</header>
+
+<form id="f" novalidate>
+  <div class="row"><label for="total">想給的總額（元）<small>現金、股票，或不動產的公告現值＋評定現值</small></label><input id="total" inputmode="numeric" value="12,000,000"></div>
+  <div class="row"><label for="start">從哪一年開始</label><input id="start" inputmode="numeric" value="2026"></div>
+  <div class="row"><label for="dad">父親贈與</label><input type="checkbox" id="dad" checked></div>
+  <div class="row"><label for="mom">母親贈與</label><input type="checkbox" id="mom" checked></div>
+  <div class="row"><label for="wed">第一年有子女結婚的人數<small>婚嫁贈與每位子女父母各 100 萬元</small></label><input id="wed" inputmode="numeric" value="0"></div>
+</form>
+
+<div class="vs">
+  <div class="box" id="bOnce"><span>一次給完</span><strong id="once"></strong><em id="onceNote"></em></div>
+  <div class="box win" id="bPlan"><span>分年給，贈與稅</span><strong id="plan"></strong><em id="planNote"></em></div>
+</div>
+
+<section style="display:grid;gap:10px">
+  <h2>逐年進度</h2>
+  <div class="years" id="years"></div>
+</section>
+
+<ul class="notes">
+  <li><b>跨年度最快</b>：12 月給一次、隔年 1 月再給一次，一個月內就能用掉兩個年度的免稅額。</li>
+  <li><b>婚嫁贈與</b>：父母各自 100 萬元以內不計入贈與總額，要在子女結婚登記前後 6 個月內贈與並保留證明。</li>
+  <li><b>贈與後 2 年內過世</b>：贈與給配偶、子女等的財產會併入遺產課稅，越早規劃越好（遺產及贈與稅法第 15 條）。</li>
+  <li><b>不動產分年給</b>：每年移轉一部分持分，每次都要繳契稅、規費，土增稅也要分次計算，且孩子日後出售時的成本與持有期間會受影響，先用「過戶方式比較」看整體。</li>
+  <li><b>免稅也要申報</b>：免稅額內的贈與可不申報，但不動產移轉一定要申報取得證明才能辦登記。</li>
+</ul>
+
+<div class="cta">
+  <p>分年贈與的節奏、要給現金還是給不動產，跟家裡的總資產有關。可以先私訊，免費看一次。</p>
+  <a class="btn" href="https://www.threads.net/@changyi8584" target="_blank" rel="noopener">Threads 私訊 @changyi8584</a>
+</div>
+
+<footer>
+  <div>玖靈地政士事務所　地政士 張兆億　證號 112中市地士字002314號　台中市北區國泰街97號6樓</div>
+  <div>依據：遺產及贈與稅法第 15、19、20、22 條；115 年贈與稅免稅額 244 萬元、級距 2,811 萬元／5,621 萬元（財政部公告）。假設父母每年無其他贈與、平均分攤。僅供參考。</div>
+</footer>
+</div>
+
+<script>
+const $=id=>document.getElementById(id);
+const num=id=>{const v=Number(String($(id).value).replace(/[^\d.]/g,''));return isFinite(v)&&v>0?v:0};
+const fmt=n=>Math.round(n).toLocaleString('zh-TW');
+const EX=2440000, WED=1000000;
+function giftTax(n){if(n<=0)return 0;if(n<=28110000)return n*.10;if(n<=56210000)return n*.15-1405500;return n*.20-4216000}
+function calc(){
+  const total=num('total'), start=Math.round(num('start'))||2026, wed=Math.round(num('wed'));
+  const donors=($('dad').checked?1:0)+($('mom').checked?1:0);
+  if(!donors){$('once').textContent='—';$('plan').textContent='—';$('onceNote').textContent='請至少勾選一位贈與人';$('planNote').textContent='';$('years').innerHTML='';return}
+  const share=total/donors;
+  const onceTax=donors*giftTax(Math.max(0,share-EX-wed*WED));
+  $('once').textContent=fmt(onceTax)+' 元';
+  $('onceNote').textContent=`每位贈與人 ${fmt(share)} 元，扣除免稅額${wed?'與婚嫁贈與':''}後課稅`;
+  let left=total,y=0,rows=[];
+  while(left>0&&y<60){
+    const cap=donors*EX+(y===0?donors*wed*WED:0);
+    const give=Math.min(left,cap); left-=give;
+    rows.push({year:start+y,give,cum:total-left,cap}); y++;
+  }
+  $('plan').textContent='0 元';
+  $('planNote').textContent=`用 ${rows.length} 個年度的免稅額給完${rows.length>1?`；從 12 月開始，約 ${rows.length-1} 年又 1 個月`:''}`;
+  $('years').innerHTML=rows.map(r=>`<div class="yr"><span class="y">${r.year} 年</span><div class="track"><div class="fill${r.cum>=total?' w':''}" style="width:${(r.cum/total*100).toFixed(1)}%"></div></div><b>${fmt(r.give)}</b></div>`).join('');
+}
+['total','start','wed'].forEach(id=>{const el=$(id);el.addEventListener('input',calc);if(id==='total')el.addEventListener('blur',()=>{const v=num(id);el.value=v?fmt(v):'0'})});
+['dad','mom'].forEach(id=>$(id).addEventListener('change',calc));
+calc();
+</script>
+
+<footer class="dzfoot">本工具由<a href="index.html">地政說書人｜玖靈地政士事務所</a>提供，結果為依輸入資料與現行規定的估算，實際稅額與規費以主管機關核定為準。個案請<a href="contact.html">先問地政士</a>，或回到<a href="tools.html">所有工具</a>。</footer></body></html>

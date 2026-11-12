@@ -1,0 +1,234 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style><meta name="description" content="房子給孩子：贈與、繼承、買賣三種方式的現在稅負與將來賣屋稅負，一張表比清楚。">
+<link rel="canonical" href="https://aa44014401.github.io/t-transfer.html">
+<meta property="og:type" content="website"><meta property="og:title" content="過戶方式比較｜地政說書人"><meta property="og:description" content="房子給孩子：贈與、繼承、買賣三種方式的現在稅負與將來賣屋稅負，一張表比清楚。"><meta property="og:url" content="https://aa44014401.github.io/t-transfer.html"><meta property="og:image" content="https://aa44014401.github.io/og.png"><meta name="theme-color" content="#0F1014">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%230F1014'/%3E%3Crect x='8' y='8' width='48' height='48' rx='4' fill='none' stroke='%23D5B15C' stroke-width='3'/%3E%3Ctext x='32' y='43' font-size='26' text-anchor='middle' fill='%23D5B15C' font-family='serif' font-weight='700'%3E說%3C/text%3E%3C/svg%3E">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "過戶方式比較", "description": "房子給孩子：贈與、繼承、買賣三種方式的現在稅負與將來賣屋稅負，一張表比清楚。", "url": "https://aa44014401.github.io/t-transfer.html", "applicationCategory": "FinanceApplication", "operatingSystem": "Web", "inLanguage": "zh-Hant-TW", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "TWD"}, "publisher": {"@type": "Organization", "name": "地政說書人｜玖靈地政士事務所", "url": "https://aa44014401.github.io/"}}</script>
+</head><body>
+<style>
+.dzbar{position:sticky;top:0;box-sizing:border-box;width:100vw;margin-left:calc(50% - 50vw);z-index:999;display:flex;align-items:center;gap:14px;padding:10px 16px;background:#0F1014;border-bottom:1px solid rgba(213,177,92,.25);font:14px/1.4 "Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}
+.dzbar a{color:#EFE9DC;text-decoration:none}
+.dzbar .dz-brand{display:flex;align-items:center;gap:8px;font-family:"Noto Serif TC","Songti TC",serif;font-weight:900;letter-spacing:.06em;color:#D5B15C}
+.dzbar .dz-seal{width:26px;height:26px;border:1.5px solid #B9604D;color:#B9604D;border-radius:5px;display:grid;place-items:center;font-size:11px;line-height:1.05;text-align:center}
+.dzbar .dz-sp{flex:1}
+.dzbar .dz-link{color:#C9C2B3;padding:6px 4px}
+.dzbar .dz-link:hover{color:#D5B15C}
+.dzbar .dz-cta{border:1px solid #A68A50;color:#D5B15C;border-radius:6px;padding:6px 12px}
+@media (max-width:480px){.dzbar .dz-hide{display:none}}
+.dzfoot{max-width:1080px;margin:40px auto 0;padding:22px 16px 40px;border-top:1px solid rgba(213,177,92,.25);color:#9B9586;font:13px/1.8 "Noto Sans TC","PingFang TC",sans-serif}
+.dzfoot a{color:#D5B15C}
+</style>
+<nav class="dzbar" aria-label="網站導覽"><a class="dz-brand" href="index.html"><span class="dz-seal" aria-hidden="true">說<br>書</span>地政說書人</a><span class="dz-sp"></span><a class="dz-link" href="tools.html">← 所有工具</a><a class="dz-link dz-hide" href="articles.html">地政知識</a><a class="dz-cta" href="contact.html">問地政士</a></nav>
+
+<title>過戶方式比較｜地政說書人線上工具</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600;900&family=Noto+Sans+TC:wght@400;500;700&display=swap">
+<style>
+/* Layout: 輸入欄（左）＋三欄比較表（右下全寬），一眼比出贈與、繼承、買賣的現在與將來稅負 */
+:root{
+  --ink:#161310; --panel:#1f1b16; --line:#3a3227; --gold:#d4af37; --gold-dim:#8a7535;
+  --cream:#f3ead8; --mute:#b9ab92; --warn:#e07a5f; --ok:#8fbf8a;
+  --f-display:"Noto Serif TC","Songti TC",serif; --f-body:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
+  color-scheme:dark;
+}
+body{background:var(--ink);color:var(--cream);font-family:var(--f-body);font-size:15px;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding-block:32px 56px;padding-inline:16px}
+header{display:grid;gap:6px;margin-bottom:24px;border-bottom:1px solid var(--line);padding-bottom:20px}
+.eyebrow{color:var(--gold);letter-spacing:.18em;font-size:12px}
+h1{font-family:var(--f-display);font-weight:900;font-size:clamp(26px,5vw,40px);line-height:1.2;margin:0;text-wrap:balance}
+.lede{color:var(--mute);max-width:64ch;margin:0}
+form{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
+fieldset{border:1px solid var(--line);border-radius:6px;padding:14px 16px 16px;margin:0;display:grid;gap:10px;min-width:0;align-content:start}
+legend{font-family:var(--f-display);font-weight:600;color:var(--gold);padding:0 6px;font-size:16px}
+.row{display:grid;grid-template-columns:minmax(0,1fr) 150px;gap:10px;align-items:center}
+@media (max-width:420px){.row{grid-template-columns:1fr}}
+label{font-size:14px}
+label small{display:block;color:var(--mute);font-size:12px;line-height:1.45}
+input{width:100%;box-sizing:border-box;background:var(--ink);color:var(--cream);border:1px solid var(--line);border-radius:4px;padding:8px 10px;font:inherit;font-variant-numeric:tabular-nums;text-align:right}
+input[type=checkbox]{width:20px;height:20px;justify-self:end;accent-color:var(--gold)}
+input:focus{outline:2px solid var(--gold);outline-offset:1px}
+.sample{font-size:12px;color:var(--gold-dim);margin:10px 0 0}
+h2{font-family:var(--f-display);font-size:22px;margin:32px 0 6px;text-wrap:balance}
+#verdict{margin:0 0 14px;color:var(--mute);max-width:70ch}
+#verdict b{color:var(--gold)}
+.tablewrap{overflow-x:auto;border:1px solid var(--gold-dim);border-radius:6px;background:var(--panel)}
+table{border-collapse:collapse;width:100%;min-width:620px;font-variant-numeric:tabular-nums}
+th,td{padding:9px 14px;text-align:right;border-bottom:1px solid var(--line);font-size:14px}
+th:first-child,td:first-child{text-align:left;color:var(--mute)}
+thead th{font-family:var(--f-display);font-size:16px;color:var(--cream);border-bottom:1px solid var(--gold-dim)}
+tr.sub td{font-weight:700;color:var(--cream)}
+tr.total td{font-family:var(--f-display);font-size:19px;font-weight:900;color:var(--gold);border-bottom:0}
+td.best{background:rgba(212,175,55,.10)}
+.tag{display:inline-block;font-size:11px;border:1px solid var(--ok);color:var(--ok);border-radius:999px;padding:0 8px;margin-left:6px;vertical-align:middle;font-family:var(--f-body);font-weight:500}
+.notes{display:grid;gap:8px;margin:16px 0 0;padding-left:1.2em;font-size:13.5px;color:var(--mute)}
+.notes b{color:var(--cream)}
+.cta{margin-top:24px;border-top:1px solid var(--line);padding-top:16px;display:grid;gap:10px}
+.cta p{margin:0}
+.btns{display:flex;flex-wrap:wrap;gap:10px}
+button,.btn{font:inherit;font-size:14px;cursor:pointer;border-radius:4px;padding:9px 16px;text-decoration:none;display:inline-block}
+.primary{background:var(--gold);color:var(--ink);border:1px solid var(--gold);font-weight:700}
+.ghost{background:transparent;color:var(--cream);border:1px solid var(--line)}
+button:focus-visible,.btn:focus-visible{outline:2px solid var(--cream);outline-offset:2px}
+#copyMsg{font-size:12px;color:var(--ok)}
+footer{margin-top:32px;border-top:1px solid var(--line);padding-top:16px;font-size:12.5px;color:var(--mute);display:grid;gap:4px}
+.crumb{font-size:13px;margin-bottom:14px}.crumb a{color:var(--mute);text-decoration:none;border-bottom:1px solid var(--line)}.crumb a:hover,.crumb a:focus-visible{color:var(--gold);border-color:var(--gold);outline:none}
+</style>
+
+<div class="wrap">
+<nav class="crumb"><a href="tools.html" target="_blank" rel="noopener">← 地政說書人工具箱</a></nav>
+<header>
+  <div class="eyebrow">地政說書人 · 過戶方式比較</div>
+  <h1>房子給孩子：贈與、繼承、買賣，哪個最省？</h1>
+  <p class="lede">同一間房，三種過戶方式現在要繳的稅、孩子將來賣掉要繳的稅，一張表並排比較。依民國115年（2026）稅率估算。</p>
+</header>
+
+<form id="f" novalidate>
+  <fieldset>
+    <legend>房地資料（元）</legend>
+    <div class="row"><label for="land">土地公告現值<small>公告現值 × 面積 × 持分</small></label><input id="land" inputmode="numeric" value="6,000,000"></div>
+    <div class="row"><label for="prev">前次移轉現值×物價指數<small>土增稅單或試算可查，已含物價調整</small></label><input id="prev" inputmode="numeric" value="3,000,000"></div>
+    <div class="row"><label for="house">房屋評定現值</label><input id="house" inputmode="numeric" value="800,000"></div>
+    <div class="row"><label for="mkt">目前市價</label><input id="mkt" inputmode="numeric" value="18,000,000"></div>
+  </fieldset>
+  <fieldset>
+    <legend>父母這一手</legend>
+    <div class="row"><label for="pYear">父母取得年份（西元）<small>2016 以前取得，繼承後出售適用舊制</small></label><input id="pYear" inputmode="numeric" value="2010"></div>
+    <div class="row"><label for="pCost">父母當年買價<small>只有「買賣」情境會用到</small></label><input id="pCost" inputmode="numeric" value="9,000,000"></div>
+    <div class="row"><label for="selfUse">父母自住且符合自用住宅<small>買賣時土增稅可用 10%</small></label><input type="checkbox" id="selfUse" checked></div>
+  </fieldset>
+  <fieldset>
+    <legend>繼承情境</legend>
+    <div class="row"><label for="other">這間房以外的其他遺產</label><input id="other" inputmode="numeric" value="15,000,000"></div>
+    <div class="row"><label for="spouse">配偶（0 或 1）</label><input id="spouse" inputmode="numeric" value="1"></div>
+    <div class="row"><label for="kids">子女人數</label><input id="kids" inputmode="numeric" value="2"></div>
+  </fieldset>
+  <fieldset>
+    <legend>孩子將來出售</legend>
+    <div class="row"><label for="sale">預估出售價</label><input id="sale" inputmode="numeric" value="20,000,000"></div>
+    <div class="row"><label for="cYears">孩子取得後幾年賣</label><input id="cYears" inputmode="numeric" value="3"></div>
+  </fieldset>
+</form>
+<p class="sample">預先填入一組範例數字，改成你家的即可。資料只在瀏覽器計算，不會上傳。</p>
+
+<h2>比較結果</h2>
+<p id="verdict"></p>
+<div class="tablewrap">
+<table>
+  <thead><tr><th>項目（元）</th><th>生前贈與</th><th>繼承</th><th>父母賣給孩子</th></tr></thead>
+  <tbody id="tb"></tbody>
+</table>
+</div>
+<ol class="notes" id="notes"></ol>
+
+<div class="cta">
+  <p>每個家庭的最佳解都不一樣，尤其是父母年紀、其他財產、孩子會不會賣。算完把結果傳給我，免費幫你看一次。</p>
+  <div class="btns">
+    <button type="button" class="primary" id="copy">複製比較結果</button>
+    <a class="btn ghost" href="https://www.threads.net/@changyi8584" target="_blank" rel="noopener">到 Threads 私訊 @changyi8584</a>
+    <a class="btn ghost" href="t-inherit.html" target="_blank" rel="noopener">繼承費用試算</a>
+  </div>
+  <span id="copyMsg" role="status"></span>
+</div>
+
+<footer>
+  <div>玖靈地政士事務所　地政士 張兆億　證號 112中市地士字002314號　台中市北區國泰街97號6樓</div>
+  <div>估算依據：遺產及贈與稅法（115年免稅額、扣除額、級距，第5、21條）、土地稅法第28、33、34條、契稅條例、印花稅法、土地法第76條、所得稅法第4條之4、第14條之4至之5。簡化假設：贈與當年無其他贈與；將來出售時公告現值不變故不計土增稅；費用以成交價3%、上限30萬元估；未計自住房地合一優惠與重購退稅。結果僅供參考，以稅捐機關核定為準。</div>
+</footer>
+</div>
+
+<script>
+const $=id=>document.getElementById(id);
+const num=id=>{const v=Number(String($(id).value).replace(/[^\d.]/g,''));return isFinite(v)&&v>0?v:0};
+const fmt=n=>Math.round(n).toLocaleString('zh-TW');
+const NOW=2026;
+
+function estateTax(n){if(n<=0)return 0;if(n<=56210000)return n*.10;if(n<=112420000)return n*.15-2810500;return n*.20-8431500}
+function giftTax(n){if(n<=0)return 0;if(n<=28110000)return n*.10;if(n<=56210000)return n*.15-1405500;return n*.20-4216000}
+// 土地增值稅：分段累進，持有超過20年第二、三段稅率減徵（土地稅法第33條）
+function lvt(land,base,years,selfUse){
+  const g=Math.max(0,land-base); if(!g||!base) return {tax:0,g};
+  if(selfUse) return {tax:g*.10,g};
+  let r2=.30,r3=.40;
+  if(years>40){r2=.26;r3=.32}else if(years>30){r2=.27;r3=.34}else if(years>20){r2=.28;r3=.36}
+  const t=Math.min(g,base)*.20+Math.max(0,Math.min(g,2*base)-base)*r2+Math.max(0,g-2*base)*r3;
+  return {tax:t,g};
+}
+function hRate(y){return y<=2?.45:y<=5?.35:y<=10?.20:.15}
+// 房地合一：所得 = 售價 − 成本 − 費用 − 已課土增稅之土地漲價總數額
+function hTax(sale,cost,landGain,years){
+  const fee=Math.min(sale*.03,300000);
+  const gain=Math.max(0,sale-cost-fee-landGain);
+  return {tax:gain*hRate(years),gain,rate:hRate(years)};
+}
+
+function calc(){
+  const land=num('land'),prev=num('prev'),house=num('house'),mkt=num('mkt');
+  const pYear=Math.round(num('pYear'))||NOW,pCost=num('pCost'),selfUse=$('selfUse').checked;
+  const other=num('other'),spouse=Math.min(1,Math.round(num('spouse'))),kids=Math.round(num('kids'));
+  const sale=num('sale'),cYears=Math.max(0,Math.round(num('cYears')));
+  const pYears=Math.max(0,NOW-pYear);
+  const val=land+house, fee=Math.round(val*.001), book=160, stamp=Math.round(val*.001), deed=Math.round(house*.06);
+
+  // 生前贈與
+  const gLvt=lvt(land,prev,pYears,false);
+  const gNet=Math.max(0,val-2440000-gLvt.tax-deed);
+  const gTax=giftTax(gNet);
+  const gFut=hTax(sale,val,0,cYears);
+  const G={now:[gTax,gLvt.tax,deed,stamp,fee+book,0,0],fut:gFut.tax,futNote:`新制 ${gFut.rate*100}%（持有 ${cYears} 年重新起算）`};
+
+  // 繼承
+  const ded=spouse*5530000+kids*560000+1380000;
+  const eWith=estateTax(Math.max(0,other+val-13330000-ded)), eWo=estateTax(Math.max(0,other-13330000-ded));
+  const eTax=eWith-eWo;
+  const oldRule=pYear<2016;
+  const iFut=hTax(sale,val,0,pYears+cYears);
+  const I={now:[eTax,0,0,0,fee+book,0,0],fut:oldRule?0:iFut.tax,futNote:oldRule?'舊制：只就房屋部分課所得稅，金額通常很低，本表以 0 計':`新制 ${iFut.rate*100}%（持有期間合併 ${pYears+cYears} 年）`};
+
+  // 父母賣給孩子（以市價成交）
+  const sLvt=lvt(land,prev,pYears,selfUse);
+  const sNew=pYear>=2016;
+  const sH=sNew?hTax(mkt,pCost,sLvt.g,pYears):{tax:0};
+  const bFut=hTax(sale,mkt,0,cYears);
+  const S={now:[0,sLvt.tax,deed,stamp,fee+book,sH.tax,0],fut:bFut.tax,futNote:`新制 ${bFut.rate*100}%（成本為買價 ${fmt(mkt)}）`};
+
+  const labels=['遺產稅／贈與稅','土地增值稅','契稅（6%）','印花稅（1‰）','登記規費＋書狀費','父母賣屋房地合一稅'];
+  const sum=a=>a.reduce((x,y)=>x+y,0);
+  const cols=[G,I,S];
+  cols.forEach(c=>{c.nowT=sum(c.now);c.total=c.nowT+c.fut});
+  const best=cols.indexOf(cols.reduce((a,b)=>b.total<a.total?b:a));
+  const td=(v,i)=>`<td class="${i===best?'best':''}">${fmt(v)}</td>`;
+  let h='';
+  labels.forEach((l,k)=>{h+=`<tr><td>${l}</td>${cols.map((c,i)=>td(c.now[k],i)).join('')}</tr>`});
+  h+=`<tr class="sub"><td>現在要繳</td>${cols.map((c,i)=>td(c.nowT,i)).join('')}</tr>`;
+  h+=`<tr><td>孩子將來出售房地合一稅</td>${cols.map((c,i)=>td(c.fut,i)).join('')}</tr>`;
+  h+=`<tr><td></td>${cols.map(c=>`<td style="font-size:12px;color:var(--mute);text-align:right">${c.futNote}</td>`).join('')}</tr>`;
+  h+=`<tr class="total"><td>兩代合計</td>${cols.map((c,i)=>`<td class="${i===best?'best':''}">${fmt(c.total)}${i===best?'<span class="tag">最省</span>':''}</td>`).join('')}</tr>`;
+  $('tb').innerHTML=h;
+
+  const names=['生前贈與','繼承','父母賣給孩子'];
+  const sorted=[...cols].map((c,i)=>({i,t:c.total})).sort((a,b)=>a.t-b.t);
+  $('verdict').innerHTML=`以這組數字，<b>${names[best]}</b>兩代合計最省，比最貴的「${names[sorted[2].i]}」少 <b>${fmt(sorted[2].t-sorted[0].t)}</b> 元。`;
+
+  const n=[];
+  n.push('<b>贈與最常見的陷阱</b>：現在看似只多繳一點，但孩子日後賣屋的成本只能用「公告現值＋評定現值」，持有期間也重新起算，房地合一稅往往是最大一筆。');
+  if(oldRule) n.push('<b>父母在 2016 年以前取得</b>：留到繼承，孩子出售適用舊制，這是繼承最大的優勢。');
+  n.push('<b>二親等間買賣</b>依遺產及贈與稅法第 5 條視為贈與，除非能提出孩子確實支付價款的資金證明。');
+  n.push('<b>繼承的遺產稅</b>是加入這間房後多繳的部分，已依你輸入的其他遺產與繼承人計算。');
+  n.push('<b>贈與稅</b>已扣除受贈人負擔的土增稅與契稅（遺產及贈與稅法第 21 條）；父母各自每年有 244 萬元免稅額，可分年分人規劃。');
+  $('notes').innerHTML=n.map(x=>'<li>'+x+'</li>').join('');
+
+  window.__summary=`【過戶方式比較】\n土地公告現值 ${fmt(land)}／房屋評定現值 ${fmt(house)}／市價 ${fmt(mkt)}\n父母取得 ${pYear} 年\n${names.map((nm,i)=>`${nm}：現在 ${fmt(cols[i].nowT)}＋將來 ${fmt(cols[i].fut)}＝${fmt(cols[i].total)}`).join('\n')}`;
+}
+['land','prev','house','mkt','pYear','pCost','other','spouse','kids','sale','cYears'].forEach(id=>{
+  const el=$(id); el.addEventListener('input',calc);
+  if(id!=='pYear') el.addEventListener('blur',()=>{const v=num(id);el.value=v?fmt(v):'0'});
+});
+$('selfUse').addEventListener('change',calc);
+$('copy').addEventListener('click',()=>{
+  const t=window.__summary;
+  navigator.clipboard.writeText(t).then(()=>{$('copyMsg').textContent='已複製，貼到私訊即可'})
+  .catch(()=>{$('copyMsg').textContent='無法自動複製，請手動選取下方文字';const p=document.createElement('pre');p.textContent=t;p.style.whiteSpace='pre-wrap';p.style.fontSize='12px';$('copyMsg').after(p)});
+});
+calc();
+</script>
+
+<footer class="dzfoot">本工具由<a href="index.html">地政說書人｜玖靈地政士事務所</a>提供，結果為依輸入資料與現行規定的估算，實際稅額與規費以主管機關核定為準。個案請<a href="contact.html">先問地政士</a>，或回到<a href="tools.html">所有工具</a>。</footer></body></html>

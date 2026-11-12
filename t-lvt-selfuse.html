@@ -1,0 +1,130 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style><meta name="description" content="檢查你家的地價稅有沒有用到自用住宅 2‰ 稅率，是不是多繳了 5 倍。">
+<link rel="canonical" href="https://aa44014401.github.io/t-lvt-selfuse.html">
+<meta property="og:type" content="website"><meta property="og:title" content="地價稅自用住宅檢查｜地政說書人"><meta property="og:description" content="檢查你家的地價稅有沒有用到自用住宅 2‰ 稅率，是不是多繳了 5 倍。"><meta property="og:url" content="https://aa44014401.github.io/t-lvt-selfuse.html"><meta property="og:image" content="https://aa44014401.github.io/og.png"><meta name="theme-color" content="#0F1014">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%230F1014'/%3E%3Crect x='8' y='8' width='48' height='48' rx='4' fill='none' stroke='%23D5B15C' stroke-width='3'/%3E%3Ctext x='32' y='43' font-size='26' text-anchor='middle' fill='%23D5B15C' font-family='serif' font-weight='700'%3E說%3C/text%3E%3C/svg%3E">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "地價稅自用住宅檢查", "description": "檢查你家的地價稅有沒有用到自用住宅 2‰ 稅率，是不是多繳了 5 倍。", "url": "https://aa44014401.github.io/t-lvt-selfuse.html", "applicationCategory": "FinanceApplication", "operatingSystem": "Web", "inLanguage": "zh-Hant-TW", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "TWD"}, "publisher": {"@type": "Organization", "name": "地政說書人｜玖靈地政士事務所", "url": "https://aa44014401.github.io/"}}</script>
+</head><body>
+<style>
+.dzbar{position:sticky;top:0;box-sizing:border-box;width:100vw;margin-left:calc(50% - 50vw);z-index:999;display:flex;align-items:center;gap:14px;padding:10px 16px;background:#0F1014;border-bottom:1px solid rgba(213,177,92,.25);font:14px/1.4 "Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}
+.dzbar a{color:#EFE9DC;text-decoration:none}
+.dzbar .dz-brand{display:flex;align-items:center;gap:8px;font-family:"Noto Serif TC","Songti TC",serif;font-weight:900;letter-spacing:.06em;color:#D5B15C}
+.dzbar .dz-seal{width:26px;height:26px;border:1.5px solid #B9604D;color:#B9604D;border-radius:5px;display:grid;place-items:center;font-size:11px;line-height:1.05;text-align:center}
+.dzbar .dz-sp{flex:1}
+.dzbar .dz-link{color:#C9C2B3;padding:6px 4px}
+.dzbar .dz-link:hover{color:#D5B15C}
+.dzbar .dz-cta{border:1px solid #A68A50;color:#D5B15C;border-radius:6px;padding:6px 12px}
+@media (max-width:480px){.dzbar .dz-hide{display:none}}
+.dzfoot{max-width:1080px;margin:40px auto 0;padding:22px 16px 40px;border-top:1px solid rgba(213,177,92,.25);color:#9B9586;font:13px/1.8 "Noto Sans TC","PingFang TC",sans-serif}
+.dzfoot a{color:#D5B15C}
+</style>
+<nav class="dzbar" aria-label="網站導覽"><a class="dz-brand" href="index.html"><span class="dz-seal" aria-hidden="true">說<br>書</span>地政說書人</a><span class="dz-sp"></span><a class="dz-link" href="tools.html">← 所有工具</a><a class="dz-link dz-hide" href="articles.html">地政知識</a><a class="dz-cta" href="contact.html">問地政士</a></nav>
+
+<title>地價稅自用住宅檢查｜地政說書人線上工具</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600;900&family=Noto+Sans+TC:wght@400;500;700&display=swap">
+<style>
+/* Layout: 條件勾選清單（左）＋每年可省金額與申請期限（右） */
+:root{--ink:#161310;--panel:#1f1b16;--line:#3a3227;--gold:#d4af37;--gold-dim:#8a7535;--cream:#f3ead8;--mute:#b9ab92;--ok:#8fbf8a;--warn:#e07a5f;
+--f-display:"Noto Serif TC","Songti TC",serif;--f-body:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;color-scheme:dark}
+body{background:var(--ink);color:var(--cream);font-family:var(--f-body);font-size:15px;line-height:1.65}
+.wrap{max-width:1000px;margin:0 auto;padding-block:32px 56px;padding-inline:16px}
+header{display:grid;gap:6px;margin-bottom:24px;border-bottom:1px solid var(--line);padding-bottom:20px}
+.eyebrow{color:var(--gold);letter-spacing:.18em;font-size:12px}
+h1{font-family:var(--f-display);font-weight:900;font-size:clamp(26px,5vw,40px);line-height:1.2;margin:0;text-wrap:balance}
+.lede{color:var(--mute);max-width:64ch;margin:0}
+.grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:28px;align-items:start}
+@media (max-width:820px){.grid{grid-template-columns:1fr}}
+.checks{display:grid;gap:0;border-top:1px solid var(--line)}
+.ck{display:grid;grid-template-columns:28px minmax(0,1fr);gap:12px;padding:14px 4px;border-bottom:1px solid var(--line);cursor:pointer}
+.ck input{width:20px;height:20px;margin-top:3px;accent-color:var(--gold)}
+.ck b{display:block;font-size:15.5px}
+.ck span{color:var(--mute);font-size:13.5px}
+.calc{display:grid;gap:10px;margin-top:20px;border:1px solid var(--line);border-radius:6px;padding:14px 16px}
+.row{display:grid;grid-template-columns:minmax(0,1fr) 160px;gap:10px;align-items:center}
+@media (max-width:420px){.row{grid-template-columns:1fr}}
+label small{display:block;color:var(--mute);font-size:12px;line-height:1.45}
+input.n{width:100%;box-sizing:border-box;background:var(--ink);color:var(--cream);border:1px solid var(--line);border-radius:4px;padding:8px 10px;font:inherit;font-variant-numeric:tabular-nums;text-align:right}
+input:focus{outline:2px solid var(--gold);outline-offset:1px}
+.res{background:var(--panel);border:1px solid var(--gold-dim);border-radius:6px;padding:18px;position:sticky;top:calc(env(safe-area-inset-top,0px) + 16px);display:grid;gap:12px}
+.verdict{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.verdict h2{font-family:var(--f-display);margin:0;font-size:21px}
+.pill{font-size:12.5px;border:1px solid currentColor;border-radius:999px;padding:1px 10px}
+.ok{color:var(--ok)} .warn{color:var(--warn)}
+.big{display:grid;gap:2px}
+.big span{font-size:13px;color:var(--mute)}
+.big strong{font-family:var(--f-display);font-size:32px;color:var(--gold);font-variant-numeric:tabular-nums;line-height:1.2}
+#miss{margin:0;padding-left:1.1em;font-size:14px;display:grid;gap:4px}
+.dead{font-size:14px;border-top:1px solid var(--line);padding-top:10px}
+.dead b{color:var(--gold)}
+.btn{display:inline-block;font-size:14px;border-radius:4px;padding:9px 16px;text-decoration:none;background:var(--gold);color:var(--ink);font-weight:700;justify-self:start}
+.btn:focus-visible{outline:2px solid var(--cream);outline-offset:2px}
+footer{margin-top:32px;border-top:1px solid var(--line);padding-top:16px;font-size:12.5px;color:var(--mute);display:grid;gap:4px}
+.crumb{font-size:13px;margin-bottom:14px}.crumb a{color:var(--mute);text-decoration:none;border-bottom:1px solid var(--line)}.crumb a:hover,.crumb a:focus-visible{color:var(--gold);border-color:var(--gold);outline:none}
+</style>
+
+<div class="wrap">
+<nav class="crumb"><a href="tools.html" target="_blank" rel="noopener">← 地政說書人工具箱</a></nav>
+<header>
+  <div class="eyebrow">地政說書人 · 地價稅</div>
+  <h1>你家的地價稅，是不是多繳了 5 倍？</h1>
+  <p class="lede">自用住宅用地的地價稅率是千分之二，一般用地從千分之十起跳。符合條件卻沒申請，稅單就照一般稅率開。勾一勾，看你符不符合、每年能省多少。</p>
+</header>
+
+<div class="grid">
+<div>
+  <div class="checks" id="checks">
+    <label class="ck"><input type="checkbox" checked data-k="籍"><div><b>本人、配偶或直系親屬在這裡設籍</b><span>辦竣戶籍登記</span></div></label>
+    <label class="ck"><input type="checkbox" checked data-k="屋"><div><b>地上房屋是本人、配偶或直系親屬所有</b><span>房屋所有人跟土地所有人不同也可以，只要在這個範圍內</span></div></label>
+    <label class="ck"><input type="checkbox" checked data-k="租"><div><b>沒有出租、沒有營業</b><span>部分營業的，非營業部分仍可申請</span></div></label>
+    <label class="ck"><input type="checkbox" checked data-k="積"><div><b>面積在限額內</b><span>都市土地 300 平方公尺、非都市土地 700 平方公尺以內；超過部分按一般稅率</span></div></label>
+    <label class="ck"><input type="checkbox" checked data-k="處"><div><b>全家只申請這一處</b><span>本人、配偶與未成年受扶養親屬合計一處為限</span></div></label>
+  </div>
+  <div class="calc">
+    <div class="row"><label for="val">這筆土地的申報地價總額（元）<small>地價稅單上的「課稅地價」，或申報地價 × 面積 × 持分</small></label><input class="n" id="val" inputmode="numeric" value="3,200,000"></div>
+  </div>
+</div>
+
+<aside class="res" aria-live="polite">
+  <div class="verdict"><h2 id="vt"></h2><span class="pill" id="vp"></span></div>
+  <div class="big"><span>每年可省（與一般稅率千分之十相比）</span><strong id="save"></strong><span id="pair"></span></div>
+  <ul id="miss"></ul>
+  <div class="dead" id="dead"></div>
+  <a class="btn" href="https://www.threads.net/@changyi8584" target="_blank" rel="noopener">不確定符不符合？Threads 私訊</a>
+</aside>
+</div>
+
+<footer>
+  <div>玖靈地政士事務所　地政士 張兆億　證號 112中市地士字002314號　台中市北區國泰街97號6樓</div>
+  <div>依據：土地稅法第 9、17、41 條；財政部稅務入口網「自用住宅土地好康報您知」。一般稅率以千分之十估算（申報地價總額未超過累進起點地價時）；超過累進起點者實際可省更多。僅供參考，以稅捐機關核定為準。</div>
+</footer>
+</div>
+
+<script>
+const $=id=>document.getElementById(id);
+const fmt=n=>Math.round(n).toLocaleString('zh-TW');
+const num=id=>{const v=Number(String($(id).value).replace(/[^\d.]/g,''));return isFinite(v)&&v>0?v:0};
+function nextDeadline(){
+  const t=new Date(); t.setHours(0,0,0,0);
+  let d=new Date(t.getFullYear(),8,22);
+  if(t>d) d=new Date(t.getFullYear()+1,8,22);
+  return {d,days:Math.round((d-t)/864e5),applies:d.getFullYear()};
+}
+function calc(){
+  const boxes=[...document.querySelectorAll('#checks input')];
+  const miss=boxes.filter(b=>!b.checked).map(b=>b.closest('.ck').querySelector('b').textContent);
+  const val=num('val'), gen=val*.010, self=val*.002;
+  if(!miss.length){$('vt').textContent='符合自用住宅';$('vp').className='pill ok';$('vp').textContent='可申請';}
+  else{$('vt').textContent='目前不符合';$('vp').className='pill warn';$('vp').textContent=`差 ${miss.length} 項`;}
+  $('save').textContent=fmt(gen-self)+' 元';
+  $('pair').textContent=`一般稅率約 ${fmt(gen)} 元 → 自用住宅 ${fmt(self)} 元`;
+  $('miss').innerHTML=miss.map(m=>`<li class="warn">還沒做到：${m}</li>`).join('');
+  const n=nextDeadline();
+  $('dead').innerHTML=`下一個申請期限：<b>${n.d.getFullYear()} 年 9 月 22 日</b>，還有 ${n.days} 天。期限前申請，${n.applies} 年 11 月的地價稅就能適用；逾期從次年起適用。`;
+}
+document.getElementById('checks').addEventListener('change',calc);
+$('val').addEventListener('input',calc);
+$('val').addEventListener('blur',()=>{const v=num('val');$('val').value=v?fmt(v):'0'});
+calc();
+</script>
+
+<footer class="dzfoot">本工具由<a href="index.html">地政說書人｜玖靈地政士事務所</a>提供，結果為依輸入資料與現行規定的估算，實際稅額與規費以主管機關核定為準。個案請<a href="contact.html">先問地政士</a>，或回到<a href="tools.html">所有工具</a>。</footer></body></html>

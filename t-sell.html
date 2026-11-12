@@ -1,0 +1,172 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style><meta name="description" content="賣掉這間房，扣掉土地增值稅、房地合一稅與各項費用，實際拿到多少。">
+<link rel="canonical" href="https://aa44014401.github.io/t-sell.html">
+<meta property="og:type" content="website"><meta property="og:title" content="賣房稅費試算｜地政說書人"><meta property="og:description" content="賣掉這間房，扣掉土地增值稅、房地合一稅與各項費用，實際拿到多少。"><meta property="og:url" content="https://aa44014401.github.io/t-sell.html"><meta property="og:image" content="https://aa44014401.github.io/og.png"><meta name="theme-color" content="#0F1014">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%230F1014'/%3E%3Crect x='8' y='8' width='48' height='48' rx='4' fill='none' stroke='%23D5B15C' stroke-width='3'/%3E%3Ctext x='32' y='43' font-size='26' text-anchor='middle' fill='%23D5B15C' font-family='serif' font-weight='700'%3E說%3C/text%3E%3C/svg%3E">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "賣房稅費試算", "description": "賣掉這間房，扣掉土地增值稅、房地合一稅與各項費用，實際拿到多少。", "url": "https://aa44014401.github.io/t-sell.html", "applicationCategory": "FinanceApplication", "operatingSystem": "Web", "inLanguage": "zh-Hant-TW", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "TWD"}, "publisher": {"@type": "Organization", "name": "地政說書人｜玖靈地政士事務所", "url": "https://aa44014401.github.io/"}}</script>
+</head><body>
+<style>
+.dzbar{position:sticky;top:0;box-sizing:border-box;width:100vw;margin-left:calc(50% - 50vw);z-index:999;display:flex;align-items:center;gap:14px;padding:10px 16px;background:#0F1014;border-bottom:1px solid rgba(213,177,92,.25);font:14px/1.4 "Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}
+.dzbar a{color:#EFE9DC;text-decoration:none}
+.dzbar .dz-brand{display:flex;align-items:center;gap:8px;font-family:"Noto Serif TC","Songti TC",serif;font-weight:900;letter-spacing:.06em;color:#D5B15C}
+.dzbar .dz-seal{width:26px;height:26px;border:1.5px solid #B9604D;color:#B9604D;border-radius:5px;display:grid;place-items:center;font-size:11px;line-height:1.05;text-align:center}
+.dzbar .dz-sp{flex:1}
+.dzbar .dz-link{color:#C9C2B3;padding:6px 4px}
+.dzbar .dz-link:hover{color:#D5B15C}
+.dzbar .dz-cta{border:1px solid #A68A50;color:#D5B15C;border-radius:6px;padding:6px 12px}
+@media (max-width:480px){.dzbar .dz-hide{display:none}}
+.dzfoot{max-width:1080px;margin:40px auto 0;padding:22px 16px 40px;border-top:1px solid rgba(213,177,92,.25);color:#9B9586;font:13px/1.8 "Noto Sans TC","PingFang TC",sans-serif}
+.dzfoot a{color:#D5B15C}
+</style>
+<nav class="dzbar" aria-label="網站導覽"><a class="dz-brand" href="index.html"><span class="dz-seal" aria-hidden="true">說<br>書</span>地政說書人</a><span class="dz-sp"></span><a class="dz-link" href="tools.html">← 所有工具</a><a class="dz-link dz-hide" href="articles.html">地政知識</a><a class="dz-cta" href="contact.html">問地政士</a></nav>
+
+<title>賣房稅費試算｜地政說書人線上工具</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600;900&family=Noto+Sans+TC:wght@400;500;700&display=swap">
+<style>
+/* Layout: 左輸入、右雙欄帳單（賣方／買方），賣方實拿為主數字 */
+:root{--ink:#161310;--panel:#1f1b16;--line:#3a3227;--gold:#d4af37;--gold-dim:#8a7535;--cream:#f3ead8;--mute:#b9ab92;--ok:#8fbf8a;--warn:#e07a5f;
+--f-display:"Noto Serif TC","Songti TC",serif;--f-body:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;color-scheme:dark}
+body{background:var(--ink);color:var(--cream);font-family:var(--f-body);font-size:15px;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding-block:32px 56px;padding-inline:16px}
+header{display:grid;gap:6px;margin-bottom:24px;border-bottom:1px solid var(--line);padding-bottom:20px}
+.eyebrow{color:var(--gold);letter-spacing:.18em;font-size:12px}
+h1{font-family:var(--f-display);font-weight:900;font-size:clamp(26px,5vw,40px);line-height:1.2;margin:0;text-wrap:balance}
+.lede{color:var(--mute);max-width:64ch;margin:0}
+.grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px;align-items:start}
+@media (max-width:820px){.grid{grid-template-columns:1fr}}
+fieldset{border:1px solid var(--line);border-radius:6px;padding:14px 16px 16px;margin:0 0 14px;display:grid;gap:10px;min-width:0}
+legend{font-family:var(--f-display);font-weight:600;color:var(--gold);padding:0 6px;font-size:16px}
+.row{display:grid;grid-template-columns:minmax(0,1fr) 160px;gap:10px;align-items:center}
+@media (max-width:420px){.row{grid-template-columns:1fr}}
+label{font-size:14px}
+label small{display:block;color:var(--mute);font-size:12px;line-height:1.45}
+input{width:100%;box-sizing:border-box;background:var(--ink);color:var(--cream);border:1px solid var(--line);border-radius:4px;padding:8px 10px;font:inherit;font-variant-numeric:tabular-nums;text-align:right}
+input[type=date]{text-align:left}
+input[type=checkbox]{width:20px;height:20px;justify-self:end;accent-color:var(--gold)}
+input:focus{outline:2px solid var(--gold);outline-offset:1px}
+.sample{font-size:12px;color:var(--gold-dim);margin:0}
+.bill{background:var(--panel);border:1px solid var(--gold-dim);border-radius:6px;padding:18px 20px;position:sticky;top:calc(env(safe-area-inset-top,0px) + 16px);display:grid;gap:14px}
+.hero{display:grid;gap:2px}
+.hero span{color:var(--mute);font-size:13px}
+.hero strong{font-family:var(--f-display);font-size:34px;color:var(--gold);font-variant-numeric:tabular-nums;line-height:1.2}
+h3{margin:0;font-size:14px;letter-spacing:.12em;color:var(--mute);font-weight:500}
+dl{margin:0;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 12px;font-variant-numeric:tabular-nums}
+dt{color:var(--mute)} dd{margin:0;text-align:right}
+dt.t,dd.t{color:var(--cream);font-weight:700;border-top:1px dashed var(--line);padding-top:6px}
+.sub{font-size:12px;color:var(--mute)}
+ul.notes{margin:0;padding-left:1.1em;display:grid;gap:6px;font-size:13px;color:var(--mute)}
+ul.notes b{color:var(--cream)}
+.cta{border-top:1px solid var(--line);padding-top:12px;display:grid;gap:8px;font-size:14px}
+.cta p{margin:0}
+.btn{display:inline-block;font-size:14px;border-radius:4px;padding:9px 16px;text-decoration:none;background:var(--gold);color:var(--ink);font-weight:700;justify-self:start}
+.btn:focus-visible{outline:2px solid var(--cream);outline-offset:2px}
+footer{margin-top:32px;border-top:1px solid var(--line);padding-top:16px;font-size:12.5px;color:var(--mute);display:grid;gap:4px}
+.crumb{font-size:13px;margin-bottom:14px}.crumb a{color:var(--mute);text-decoration:none;border-bottom:1px solid var(--line)}.crumb a:hover,.crumb a:focus-visible{color:var(--gold);border-color:var(--gold);outline:none}
+</style>
+
+<div class="wrap">
+<nav class="crumb"><a href="tools.html" target="_blank" rel="noopener">← 地政說書人工具箱</a></nav>
+<header>
+  <div class="eyebrow">地政說書人 · 賣房稅費</div>
+  <h1>賣掉這間房，實際拿到多少？</h1>
+  <p class="lede">一次算出賣方的土地增值稅、房地合一稅，以及買方的契稅、印花稅、登記規費。依民國115年（2026）稅率估算，不含仲介費與代書費。</p>
+</header>
+
+<div class="grid">
+<form id="f" novalidate>
+  <fieldset><legend>成交與取得</legend>
+    <div class="row"><label for="price">成交價</label><input id="price" inputmode="numeric" value="16,000,000"></div>
+    <div class="row"><label for="cost">當初買價<small>含當時的契稅、規費等取得成本</small></label><input id="cost" inputmode="numeric" value="11,000,000"></div>
+    <div class="row"><label for="buyDate">取得日期<small>以登記日或契約日為準</small></label><input type="date" id="buyDate" value="2019-06-01"></div>
+    <div class="row"><label for="sellDate">出售日期</label><input type="date" id="sellDate"></div>
+    <div class="row"><label for="fees">有單據的費用<small>仲介費、裝修等；填 0 以成交價 3%、上限 30 萬估</small></label><input id="fees" inputmode="numeric" value="0"></div>
+  </fieldset>
+  <fieldset><legend>現值（稅單或謄本可查）</legend>
+    <div class="row"><label for="land">土地公告現值<small>公告現值 × 面積 × 持分</small></label><input id="land" inputmode="numeric" value="4,500,000"></div>
+    <div class="row"><label for="prev">前次移轉現值×物價指數</label><input id="prev" inputmode="numeric" value="3,600,000"></div>
+    <div class="row"><label for="house">房屋評定現值</label><input id="house" inputmode="numeric" value="700,000"></div>
+  </fieldset>
+  <fieldset><legend>自住優惠</legend>
+    <div class="row"><label for="lvtSelf">土增稅適用自用住宅 10%<small>設籍、出售前 1 年無出租營業、面積在限額內</small></label><input type="checkbox" id="lvtSelf"></div>
+    <div class="row"><label for="incSelf">房地合一自住優惠<small>本人、配偶或未成年子女設籍並居住滿 6 年</small></label><input type="checkbox" id="incSelf"></div>
+  </fieldset>
+  <p class="sample">預先填入一組範例數字，改成你的即可。資料只在瀏覽器計算，不會上傳。</p>
+</form>
+
+<aside class="bill" aria-live="polite">
+  <div class="hero"><span>賣方扣稅後實拿（未扣房貸、仲介費）</span><strong id="net"></strong><span id="hold"></span></div>
+  <h3>賣方要繳</h3>
+  <dl>
+    <dt>土地增值稅</dt><dd id="lvt"></dd>
+    <dt>房地合一稅</dt><dd id="inc"></dd>
+    <dt class="t">合計</dt><dd class="t" id="sTot"></dd>
+  </dl>
+  <h3>買方要繳</h3>
+  <dl>
+    <dt>契稅（評定現值 6%）</dt><dd id="deed"></dd>
+    <dt>印花稅（1‰）</dt><dd id="stamp"></dd>
+    <dt>登記規費＋書狀費</dt><dd id="fee"></dd>
+    <dt class="t">合計</dt><dd class="t" id="bTot"></dd>
+  </dl>
+  <ul class="notes" id="notes"></ul>
+  <div class="cta">
+    <p>自用住宅、自住優惠的條件很細，送件前讓專人確認一次，常常能省一大筆。</p>
+    <a class="btn" href="https://www.threads.net/@changyi8584" target="_blank" rel="noopener">Threads 私訊 @changyi8584</a>
+  </div>
+</aside>
+</div>
+
+<footer>
+  <div>玖靈地政士事務所　地政士 張兆億　證號 112中市地士字002314號　台中市北區國泰街97號6樓</div>
+  <div>依據：土地稅法第 33、34 條；所得稅法第 4 條之 4、第 4 條之 5、第 14 條之 4、第 14 條之 5；契稅條例；印花稅法；土地法第 76 條。簡化假設：個人境內居住者、一般買賣取得；未計重購退稅、繼承或合建取得等特殊稅率。結果僅供參考，以稅捐機關核定為準。</div>
+</footer>
+</div>
+
+<script>
+const $=id=>document.getElementById(id);
+const num=id=>{const v=Number(String($(id).value).replace(/[^\d.]/g,''));return isFinite(v)&&v>0?v:0};
+const fmt=n=>Math.round(n).toLocaleString('zh-TW');
+$('sellDate').value=new Date().toISOString().slice(0,10);
+function lvt(land,base,years,self){
+  const g=Math.max(0,land-base); if(!g||!base) return {tax:0,g};
+  if(self) return {tax:g*.10,g};
+  let r2=.30,r3=.40;
+  if(years>40){r2=.26;r3=.32}else if(years>30){r2=.27;r3=.34}else if(years>20){r2=.28;r3=.36}
+  return {tax:Math.min(g,base)*.20+Math.max(0,Math.min(g,2*base)-base)*r2+Math.max(0,g-2*base)*r3,g};
+}
+function months(a,b){return (b.getFullYear()-a.getFullYear())*12+(b.getMonth()-a.getMonth())-(b.getDate()<a.getDate()?1:0)}
+function calc(){
+  const price=num('price'),cost=num('cost'),land=num('land'),prev=num('prev'),house=num('house');
+  const bd=new Date($('buyDate').value+'T00:00:00'), sd=new Date($('sellDate').value+'T00:00:00');
+  const ok=!isNaN(bd)&&!isNaN(sd)&&sd>=bd;
+  const m=ok?months(bd,sd):0, yrs=m/12;
+  const L=lvt(land,prev,yrs,$('lvtSelf').checked);
+  const fees=num('fees')||Math.min(price*.03,300000);
+  const gain=Math.max(0,price-cost-fees-L.g);
+  const oldRule=ok&&bd<new Date('2016-01-01T00:00:00');
+  let inc=0,rateTxt='';
+  const notes=[];
+  if(oldRule){rateTxt='舊制';notes.push('<b>2016 年以前取得</b>：適用舊制，只就房屋部分的交易所得併入綜合所得稅，本表以 0 計。')}
+  else if($('incSelf').checked){inc=Math.max(0,gain-4000000)*.10;rateTxt='自住 400 萬免稅，超過部分 10%';}
+  else{const r=m<=24?.45:m<=60?.35:m<=120?.20:.15;inc=gain*r;rateTxt=`持有 ${Math.floor(m/12)} 年 ${m%12} 個月，稅率 ${r*100}%`;}
+  const deed=Math.round(house*.06), stamp=Math.round((land+house)*.001), fee=Math.round((land+house)*.001)+160;
+  const sTot=L.tax+inc, bTot=deed+stamp+fee;
+  $('lvt').textContent=fmt(L.tax);$('inc').textContent=fmt(inc);$('sTot').textContent=fmt(sTot);
+  $('deed').textContent=fmt(deed);$('stamp').textContent=fmt(stamp);$('fee').textContent=fmt(fee);$('bTot').textContent=fmt(bTot);
+  $('net').textContent=fmt(price-sTot)+' 元';
+  $('hold').textContent=!ok?'請確認取得與出售日期':oldRule?'房地合一：2016 年以前取得，適用舊制':`房地合一：${rateTxt}；課稅所得 ${fmt(gain)} 元`;
+  if(ok&&!oldRule&&$('incSelf').checked&&m<72) notes.unshift('<b>持有未滿 6 年</b>：自住優惠要求設籍並居住滿 6 年，目前持有期間不符，請取消勾選。');
+  if(!oldRule&&!$('incSelf').checked&&m<=24) notes.push('<b>持有未滿 2 年</b>適用 45%，晚幾個月賣可能差很多，先看看跨過門檻的日期。');
+  if(!oldRule&&!$('incSelf').checked&&m>24&&m<=60) notes.push(`<b>再持有 ${61-m} 個月</b>可降到 20%（超過 5 年）。`);
+  notes.push('<b>土地漲價總數額</b>已課土增稅的部分，計算房地合一所得時已扣除。');
+  if(!$('lvtSelf').checked) notes.push('<b>自用住宅土增稅 10%</b>：一生一次或一生一屋，符合的話差距很大，可勾選比較。');
+  notes.push('<b>重購退稅</b>：賣自住、2 年內再買自住，土增稅與房地合一稅可申請退還，本表未計。');
+  $('notes').innerHTML=notes.map(x=>'<li>'+x+'</li>').join('');
+}
+['price','cost','fees','land','prev','house'].forEach(id=>{const el=$(id);el.addEventListener('input',calc);el.addEventListener('blur',()=>{const v=num(id);el.value=v?fmt(v):'0'})});
+['buyDate','sellDate','lvtSelf','incSelf'].forEach(id=>$(id).addEventListener('input',calc));
+['lvtSelf','incSelf'].forEach(id=>$(id).addEventListener('change',calc));
+calc();
+</script>
+
+<footer class="dzfoot">本工具由<a href="index.html">地政說書人｜玖靈地政士事務所</a>提供，結果為依輸入資料與現行規定的估算，實際稅額與規費以主管機關核定為準。個案請<a href="contact.html">先問地政士</a>，或回到<a href="tools.html">所有工具</a>。</footer></body></html>

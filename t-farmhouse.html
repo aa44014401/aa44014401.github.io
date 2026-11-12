@@ -1,0 +1,372 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style><meta name="description" content="勾選條件，初步判斷農地能不能申請興建農舍，並列出應備文件。">
+<link rel="canonical" href="https://aa44014401.github.io/t-farmhouse.html">
+<meta property="og:type" content="website"><meta property="og:title" content="農舍資格自評｜地政說書人"><meta property="og:description" content="勾選條件，初步判斷農地能不能申請興建農舍，並列出應備文件。"><meta property="og:url" content="https://aa44014401.github.io/t-farmhouse.html"><meta property="og:image" content="https://aa44014401.github.io/og.png"><meta name="theme-color" content="#0F1014">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%230F1014'/%3E%3Crect x='8' y='8' width='48' height='48' rx='4' fill='none' stroke='%23D5B15C' stroke-width='3'/%3E%3Ctext x='32' y='43' font-size='26' text-anchor='middle' fill='%23D5B15C' font-family='serif' font-weight='700'%3E說%3C/text%3E%3C/svg%3E">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "農舍資格自評", "description": "勾選條件，初步判斷農地能不能申請興建農舍，並列出應備文件。", "url": "https://aa44014401.github.io/t-farmhouse.html", "applicationCategory": "FinanceApplication", "operatingSystem": "Web", "inLanguage": "zh-Hant-TW", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "TWD"}, "publisher": {"@type": "Organization", "name": "地政說書人｜玖靈地政士事務所", "url": "https://aa44014401.github.io/"}}</script>
+</head><body>
+<style>
+.dzbar{position:sticky;top:0;box-sizing:border-box;width:100vw;margin-left:calc(50% - 50vw);z-index:999;display:flex;align-items:center;gap:14px;padding:10px 16px;background:#0F1014;border-bottom:1px solid rgba(213,177,92,.25);font:14px/1.4 "Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}
+.dzbar a{color:#EFE9DC;text-decoration:none}
+.dzbar .dz-brand{display:flex;align-items:center;gap:8px;font-family:"Noto Serif TC","Songti TC",serif;font-weight:900;letter-spacing:.06em;color:#D5B15C}
+.dzbar .dz-seal{width:26px;height:26px;border:1.5px solid #B9604D;color:#B9604D;border-radius:5px;display:grid;place-items:center;font-size:11px;line-height:1.05;text-align:center}
+.dzbar .dz-sp{flex:1}
+.dzbar .dz-link{color:#C9C2B3;padding:6px 4px}
+.dzbar .dz-link:hover{color:#D5B15C}
+.dzbar .dz-cta{border:1px solid #A68A50;color:#D5B15C;border-radius:6px;padding:6px 12px}
+@media (max-width:480px){.dzbar .dz-hide{display:none}}
+.dzfoot{max-width:1080px;margin:40px auto 0;padding:22px 16px 40px;border-top:1px solid rgba(213,177,92,.25);color:#9B9586;font:13px/1.8 "Noto Sans TC","PingFang TC",sans-serif}
+.dzfoot a{color:#D5B15C}
+</style>
+<nav class="dzbar" aria-label="網站導覽"><a class="dz-brand" href="index.html"><span class="dz-seal" aria-hidden="true">說<br>書</span>地政說書人</a><span class="dz-sp"></span><a class="dz-link" href="tools.html">← 所有工具</a><a class="dz-link dz-hide" href="articles.html">地政知識</a><a class="dz-cta" href="contact.html">問地政士</a></nav>
+
+<title>農舍資格自評｜地政說書人線上工具</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600;900&family=Noto+Sans+TC:wght@400;500;700&display=swap">
+<style>
+/* Layout: a ledger-like single column — intake form on top, live verdict beside it on wide screens, reference notes below */
+:root{
+  --bg:#f3f5ef; --paper:#ffffff; --ink:#1f2a1f; --muted:#5d6b5c; --line:#d6ddd0;
+  --accent:#3f6b2e; --accent-soft:#e3ecd9; --grain:#b5852a;
+  --ok:#2f7a3c; --warn:#a86a00; --bad:#b23a2e; --ok-bg:#e4f2e6; --warn-bg:#fbf0d9; --bad-bg:#f8e2df;
+  --f-display:"Noto Serif TC","Songti TC",serif; --f-body:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#141a14; --paper:#1c241c; --ink:#e4ebdf; --muted:#9fae9c; --line:#334033;
+  --accent:#9cc97f; --accent-soft:#263524; --grain:#e0b25a;
+  --ok:#7fcf8c; --warn:#f0b54d; --bad:#f08a7e; --ok-bg:#1d3322; --warn-bg:#3a2e14; --bad-bg:#3d1f1b; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#141a14; --paper:#1c241c; --ink:#e4ebdf; --muted:#9fae9c; --line:#334033;
+  --accent:#9cc97f; --accent-soft:#263524; --grain:#e0b25a;
+  --ok:#7fcf8c; --warn:#f0b54d; --bad:#f08a7e; --ok-bg:#1d3322; --warn-bg:#3a2e14; --bad-bg:#3d1f1b; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.7;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:28px 48px}
+.wrap{max-width:1080px;margin:0 auto;display:grid;gap:28px}
+header{display:grid;gap:6px;border-bottom:2px solid var(--ink);padding-bottom:16px}
+.eyebrow{font-size:12px;letter-spacing:.12em;color:var(--grain);font-weight:700}
+h1{font-family:var(--f-display);font-weight:900;font-size:clamp(28px,5vw,40px);margin:0;line-height:1.2;text-wrap:balance}
+header p{margin:0;color:var(--muted);max-width:62ch}
+h2{font-family:var(--f-display);font-size:21px;margin:0 0 12px;text-wrap:balance}
+h3{font-size:15px;margin:0 0 6px}
+.grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:24px;align-items:start}
+@media (max-width:820px){.grid{grid-template-columns:minmax(0,1fr)}}
+.panel{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:20px}
+form{display:grid;gap:16px}
+.q{display:grid;gap:6px;padding-bottom:14px;border-bottom:1px dashed var(--line)}
+.q:last-child{border-bottom:0;padding-bottom:0}
+.q label.t{font-weight:700}
+.q small{color:var(--muted);font-size:13px}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.opts label{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:999px;padding:4px 12px;cursor:pointer;font-size:14px;background:var(--bg)}
+.opts input{accent-color:var(--accent)}
+.opts label:has(input:checked){border-color:var(--accent);background:var(--accent-soft);font-weight:500}
+.opts label:focus-within{outline:2px solid var(--accent);outline-offset:2px}
+.num{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+input[type=number],input[type=text]{font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:4px;padding:6px 10px;width:150px}
+input:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.result{position:sticky;top:calc(env(safe-area-inset-top,0px) + 12px);display:grid;gap:14px}
+.verdict{border-radius:6px;padding:14px 16px;font-weight:700;font-size:17px}
+.verdict.ok{background:var(--ok-bg);color:var(--ok)} .verdict.warn{background:var(--warn-bg);color:var(--warn)} .verdict.bad{background:var(--bad-bg);color:var(--bad)}
+.verdict span{display:block;font-weight:400;font-size:13px;color:var(--ink);margin-top:2px}
+ul.checks{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+ul.checks li{display:grid;grid-template-columns:52px minmax(0,1fr);gap:8px;font-size:14px;align-items:baseline}
+.pill{font-size:12px;font-weight:700;border-radius:999px;text-align:center;padding:1px 0}
+.pill.ok{background:var(--ok-bg);color:var(--ok)} .pill.warn{background:var(--warn-bg);color:var(--warn)} .pill.bad{background:var(--bad-bg);color:var(--bad)}
+.figs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.fig{border:1px solid var(--line);border-radius:4px;padding:10px 12px}
+.fig b{display:block;font-family:var(--f-display);font-size:20px;font-variant-numeric:tabular-nums;color:var(--accent)}
+.fig small{color:var(--muted);font-size:12px}
+textarea{width:100%;min-height:220px;font:inherit;font-size:14px;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:4px;padding:10px;resize:vertical}
+.btns{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+button{font:inherit;font-weight:700;border:0;border-radius:4px;padding:8px 16px;cursor:pointer;background:var(--accent);color:var(--paper)}
+button.ghost{background:transparent;color:var(--accent);border:1px solid var(--accent)}
+.toast{font-size:13px;color:var(--ok)}
+.notes{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:16px}
+.notes .panel ul,.notes .panel ol{margin:0;padding-left:1.2em;display:grid;gap:4px;font-size:14px}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{border-bottom:1px solid var(--line);padding:8px 6px;text-align:left;vertical-align:top}
+th{color:var(--muted);font-weight:500;font-size:13px}
+.tbl{overflow-x:auto}
+.ref{font-size:12px;color:var(--muted)}
+footer{font-size:13px;color:var(--muted);border-top:1px solid var(--line);padding-top:14px;display:grid;gap:4px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+<header>
+  <div class="eyebrow">玖靈地政士事務所 · 農業用地興建農舍</div>
+  <h1>我的農地能不能蓋農舍？</h1>
+  <p>依《農業發展條例》第18條及《農業用地興建農舍辦法》整理。勾選下面的問題，右邊會即時顯示初步結果、還缺哪些文件。這是初步自評，正式結果仍以主管機關審查及現場會勘為準。</p>
+</header>
+
+<div class="grid">
+<section class="panel" aria-labelledby="h-form">
+  <h2 id="h-form">一、基本條件</h2>
+  <form id="f">
+    <div class="q">
+      <label class="t" for="area">1. 要蓋農舍的那一筆農地面積</label>
+      <div class="num"><input type="number" id="area" min="0" step="1" value="3000"> <span>平方公尺</span> <small id="areaPing"></small></div>
+      <small>看土地登記謄本的面積欄。0.25 公頃 = 2,500 ㎡。</small>
+    </div>
+    <div class="q">
+      <span class="t" style="font-weight:700">2. 這筆農地什麼時候取得？</span>
+      <div class="opts" role="radiogroup">
+        <label><input type="radio" name="acq" id="acq-new" value="new" checked> 民國89年1月28日以後</label>
+        <label><input type="radio" name="acq" id="acq-old" value="old"> 89年1月28日以前（老農地）</label>
+      </div>
+    </div>
+    <div class="q">
+      <span class="t" style="font-weight:700">3. 戶籍與農地在同一縣市，且「土地取得」和「戶籍設立」都滿2年？</span>
+      <div class="opts">
+        <label><input type="radio" name="hh" id="hh-y" value="y" checked> 都滿2年</label>
+        <label><input type="radio" name="hh" id="hh-n" value="n"> 還沒滿或不同縣市</label>
+      </div>
+    </div>
+    <div class="q">
+      <span class="t" style="font-weight:700">4. 您現在有農保，或是健保第三類（農會／漁會）嗎？</span>
+      <div class="opts">
+        <label><input type="radio" name="ins" id="ins-y" value="y" checked> 有</label>
+        <label><input type="radio" name="ins" id="ins-n" value="n"> 沒有（例如在公司上班投勞保）</label>
+      </div>
+    </div>
+    <div class="q">
+      <span class="t" style="font-weight:700">5. 過去2年，這筆地有實際耕作、能拿出單據嗎？</span>
+      <small>例如：農會公糧收購證明單、果菜市場或合作社對帳單、地磅單、肥料收據、轉作補貼證明</small>
+      <div class="opts">
+        <label><input type="radio" name="farm" id="farm-y" value="y" checked> 有持續耕作，有單據</label>
+        <label><input type="radio" name="farm" id="farm-p" value="p"> 有種，但單據不多</label>
+        <label><input type="radio" name="farm" id="farm-n" value="n"> 休耕／出租／給別人種</label>
+      </div>
+    </div>
+    <div class="q">
+      <label class="t" for="sales">6. 一年大約賣多少錢的自產農產品？</label>
+      <div class="num"><input type="number" id="sales" min="0" step="1000" value="100000"> <span>元／年</span></div>
+      <small>有農保的人也可能被要求提出產銷實績，所以建議都要準備。</small>
+    </div>
+    <div class="q">
+      <span class="t" style="font-weight:700">7. 您名下已經有農舍、或5年內拿過農舍建照嗎？</span>
+      <div class="opts">
+        <label><input type="radio" name="own" id="own-n" value="n" checked> 沒有</label>
+        <label><input type="radio" name="own" id="own-y" value="y"> 有</label>
+      </div>
+    </div>
+    <div class="q">
+      <span class="t" style="font-weight:700">8. 土地的使用分區／用地類別</span>
+      <small>看謄本「使用分區」「使用地類別」欄</small>
+      <div class="opts">
+        <label><input type="radio" name="zone" id="zone-ok" value="ok" checked> 農牧用地或都市計畫農業區</label>
+        <label><input type="radio" name="zone" id="zone-bad" value="bad"> 工業區、河川區、水利／生態保護／國土保安／林業用地、森林區養殖用地</label>
+        <label><input type="radio" name="zone" id="zone-unk" value="unk"> 不確定</label>
+      </div>
+    </div>
+    <div class="q">
+      <span class="t" style="font-weight:700">9. 這筆地是共有的嗎？</span>
+      <div class="opts">
+        <label><input type="radio" name="co" id="co-n" value="n" checked> 我單獨所有</label>
+        <label><input type="radio" name="co" id="co-y" value="y"> 跟別人共有</label>
+      </div>
+    </div>
+    <div class="q">
+      <span class="t" style="font-weight:700">10. 地上現在有房子、鐵皮屋、農業設施等有基礎的東西嗎？</span>
+      <div class="opts">
+        <label><input type="radio" name="bld" id="bld-n" value="n" checked> 沒有</label>
+        <label><input type="radio" name="bld" id="bld-legal" value="legal"> 有，而且有合法證明</label>
+        <label><input type="radio" name="bld" id="bld-ill" value="ill"> 有，但沒有申請過／當住家在用</label>
+      </div>
+    </div>
+    <div class="q">
+      <span class="t" style="font-weight:700">11. 您目前的工作</span>
+      <div class="opts">
+        <label><input type="radio" name="job" id="job-farm" value="farm" checked> 專職務農</label>
+        <label><input type="radio" name="job" id="job-other" value="other"> 有其他全職工作</label>
+        <label><input type="radio" name="job" id="job-gov" value="gov"> 公務人員</label>
+      </div>
+    </div>
+    <div class="q">
+      <label class="t" for="cname">客戶稱呼（產生回覆用，可不填）</label>
+      <input type="text" id="cname" placeholder="例如：陳大哥">
+    </div>
+  </form>
+</section>
+
+<aside class="result" aria-live="polite">
+  <section class="panel">
+    <h2>二、初步結果</h2>
+    <div id="verdict" class="verdict"></div>
+    <div class="figs" style="margin-top:14px">
+      <div class="fig"><small>農舍用地最多</small><b id="fUse">—</b><small>土地10%，且不超過330㎡</small></div>
+      <div class="fig"><small>產銷實績最低門檻</small><b id="fSales">—</b><small>每0.1公頃每年30,600元</small></div>
+    </div>
+    <ul class="checks" id="checks" style="margin-top:14px"></ul>
+  </section>
+  <section class="panel">
+    <h2>三、可直接傳給客戶的回覆</h2>
+    <textarea id="reply" aria-label="回覆內容"></textarea>
+    <div class="btns" style="margin-top:8px">
+      <button type="button" id="copy">複製回覆</button>
+      <span class="toast" id="toast"></span>
+    </div>
+  </section>
+</aside>
+</div>
+
+<section aria-labelledby="h-notes">
+  <h2 id="h-notes">四、重點整理</h2>
+  <div class="notes">
+    <div class="panel">
+      <h3>農舍不是一般住宅</h3>
+      <ul>
+        <li>農舍是「特許」蓋在農地上的農業附屬設施，有農地不等於能蓋。</li>
+        <li>土地最多10%當農舍用地（且≤330㎡），至少90%要維持完整的農業經營用地。</li>
+        <li>89年後取得的農地，農舍蓋好後要滿5年才能移轉（繼承、法拍除外），5年從使用執照核發日起算。</li>
+        <li>農舍要跟土地一起移轉、一起設定抵押；同一筆地不能重複申請。</li>
+        <li>不能出租、不能設公司或合作社營業登記、不能開便利商店或當教學場地。可零售自產農產品、農藥（限零售，不含批發）。</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h3>申請流程三關</h3>
+      <ol>
+        <li><b>申請人資格</b>（農業局／處）：農保或健保三類，或2年產銷實績。</li>
+        <li><b>農地興建審查</b>（農業局／處）：土地無違規、配置、經營計畫書、現場會勘訪談。</li>
+        <li><b>建造執照</b>（建管單位）：拿到資格核准後<b>6個月內</b>要申請建照，可展延一次、最多6個月，逾期重來。</li>
+      </ol>
+      <p class="ref" style="margin-top:8px">建照設計若改到農舍用地面積或配置，要回頭重審農民資格。</p>
+    </div>
+    <div class="panel">
+      <h3>沒有農保時，可用的實績證明</h3>
+      <ul>
+        <li>農業天然災害救助證明</li>
+        <li>轉（契）作補貼證明（休耕給付不算）</li>
+        <li>繳售公糧稻穀證明</li>
+        <li>農政補助計畫證明（人力培訓類不算）</li>
+        <li>自產農產品銷售單據（2年內，每0.1公頃每年≥30,600元）</li>
+        <li>有機、產銷履歷、優良農產品驗證或產地標章</li>
+      </ul>
+      <p class="ref" style="margin-top:8px">審查會拿航照圖比對經營規模；種很多種但量很少的「百果園」容易被質疑。</p>
+    </div>
+  </div>
+</section>
+
+<section class="panel" aria-labelledby="h-docs">
+  <h2 id="h-docs">五、應備文件</h2>
+  <div class="tbl">
+  <table>
+    <thead><tr><th>文件</th><th>去哪裡申請</th><th>注意</th></tr></thead>
+    <tbody>
+      <tr><td>申請書、興建農舍經營計畫書</td><td>農業局／處表單</td><td>計畫書寫現況、產銷計畫、整體配置、放流水排水計畫</td></tr>
+      <tr><td>無自用農舍切結書（或公所證明）</td><td>自行切結／公所</td><td>切結含5年內未取得農舍建照；不實會撤銷核定及建照</td></tr>
+      <tr><td>戶籍謄本</td><td>戶政事務所</td><td>3個月內</td></tr>
+      <tr><td>土地登記謄本、地籍圖謄本</td><td>地政事務所</td><td>3個月內</td></tr>
+      <tr><td>土地使用分區證明</td><td>都發局／公所</td><td>都市計畫區才需要，非都市土地免附</td></tr>
+      <tr><td>財產總歸戶查詢清單（房屋）＋清單上房屋的使照或建物謄本</td><td>國稅局分局</td><td>3個月內</td></tr>
+      <tr><td>農保或健保第三類投保證明</td><td>勞保局／健保署</td><td>3個月內</td></tr>
+      <tr><td>農業經營實績資料</td><td>農會、合作社、市場</td><td>2年內，姓名要跟申請人相符</td></tr>
+      <tr><td>農舍基本配置圖（含面積檢討表）</td><td>建築師／自行繪製</td><td>標示農舍大門到聯外道路動線；農舍用地矩形配置在地界線側並臨路</td></tr>
+      <tr><td>共有人切結書、身分證影本、分管契約、分管圖</td><td>共有人</td><td>共有土地才需要；需全體共有人同意</td></tr>
+      <tr><td>既有設施合法證明</td><td>原核准機關</td><td>地上有固定基礎設施時</td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<section class="panel" aria-labelledby="h-case">
+  <h2 id="h-case">六、最常被退件／補件的情況</h2>
+  <div class="tbl">
+  <table>
+    <thead><tr><th>情況</th><th>為什麼會卡</th><th>怎麼準備</th></tr></thead>
+    <tbody>
+      <tr><td>有農地但沒在耕作</td><td>沒有農業經營事實，就沒有「宅地合一」的需要</td><td>先實際耕作滿2年並留存銷售單據</td></tr>
+      <tr><td>父母的地，子女來申請</td><td>起造人必須是土地所有權人，且本人要有務農事實</td><td>土地先移轉到申請人名下，並由申請人本人經營、累積實績</td></tr>
+      <tr><td>農地出租或委託別人種</td><td>不是申請人本人直接從事農業生產</td><td>收回自耕，單據要是申請人姓名</td></tr>
+      <tr><td>文件和現場不一樣</td><td>會勘發現作物、面積、設施與計畫書不符</td><td>計畫書照實寫，申請前先拍照記錄現況</td></tr>
+      <tr><td>閒置的農業設施</td><td>設施存在不代表有在經營</td><td>附上設施實際使用與產出的證明</td></tr>
+      <tr><td>申報休耕</td><td>「生產環境維護」只是最低限度管理，不算經營實績</td><td>轉作、繳公糧可以算；109、110年停灌區可往前補足2年</td></tr>
+      <tr><td>在公司上班、投勞保</td><td>縣府會發函給公司查職務、全職或兼職、上班時段</td><td>要能說明實際務農時間；全職上班者通常很難通過</td></tr>
+      <tr><td>公務人員</td><td>公務人員服務法限制經營商業與經常性兼職</td><td>原則上不具興建農舍的合理性</td></tr>
+      <tr><td>違規鐵皮屋想就地合法</td><td>違反土地使用管制，違規未排除前不受理</td><td>先依區域計畫法或都市計畫法處理違規，再申請</td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<footer>
+  <div>玖靈地政士事務所　地政士 張兆億　台中市北區國泰街97號6樓</div>
+  <div>資料來源：雲林縣政府農業處《淺談農業用地申請農舍興建資格》講義；農業發展條例第18條、農業用地興建農舍辦法第2、3-1、5條及農業部相關函釋。各縣市應備文件與審查細節可能不同，送件前請以當地農業局公告為準。</div>
+</footer>
+</div>
+
+<script>
+const $=id=>document.getElementById(id);
+const val=n=>{const e=document.querySelector(`input[name="${n}"]:checked`);return e?e.value:null};
+const fmt=n=>Math.round(n).toLocaleString('zh-TW');
+function run(){
+  const area=Math.max(0,parseFloat($('area').value)||0);
+  const sales=Math.max(0,parseFloat($('sales').value)||0);
+  const ha=area/10000;
+  $('areaPing').textContent=area?`≈ ${ha.toFixed(4)} 公頃 · ${fmt(area*0.3025)} 坪`:'';
+  const minSales=area/1000*30600;
+  const useMax=Math.min(area*0.1,330);
+  $('fUse').textContent=area?`${fmt(useMax)} ㎡`:'—';
+  $('fSales').textContent=area?`${fmt(minSales)} 元/年`:'—';
+  const acq=val('acq'),hh=val('hh'),ins=val('ins'),farm=val('farm'),own=val('own'),zone=val('zone'),co=val('co'),bld=val('bld'),job=val('job');
+  const c=[];
+  // area
+  if(acq==='old') c.push(['warn','面積','89.1.28前取得的農地適用舊制（農發條例第18條第3項），面積與移轉限制不同，需個案確認']);
+  else if(area>=2500) c.push(['ok','面積',`${fmt(area)}㎡，達0.25公頃（2,500㎡）門檻`]);
+  else if(co==='y') c.push(['bad','面積',`整筆土地${fmt(area)}㎡未達0.25公頃。共有時看的是整筆面積，不是持分`]);
+  else c.push(['bad','面積',`${fmt(area)}㎡未達0.25公頃（2,500㎡）門檻`]);
+  if(co==='y'&&area>=2500&&acq==='new') c.push(['warn','共有','整筆達標即可，持分不足0.25公頃仍可申請；但要全體共有人同意並訂分管契約，只能蓋在分管範圍內，可蓋面積依持分計算']);
+  else if(co==='y'&&acq==='old') c.push(['warn','共有','需全體共有人同意並訂分管契約']);
+  c.push(hh==='y'?['ok','戶籍','戶籍與土地同縣市，取得及設籍皆滿2年']:['bad','戶籍','戶籍與土地須在同一縣市，土地取得及戶籍登記都要滿2年']);
+  // farmer identity
+  if(ins==='y') c.push(['ok','身分','有農保或健保第三類，身分可直接認定']);
+  else if(farm==='y') c.push(['warn','身分','沒有農保，要用農業生產佐證資料，經專家學者會勘認定']);
+  else c.push(['bad','身分','沒有農保，也缺乏農業生產佐證，身分無法認定']);
+  // operation
+  if(farm==='n') c.push(['bad','實績','休耕、出租或他人代耕，不算本人積極經營的事實']);
+  else if(farm==='p') c.push(['warn','實績','單據不足，現場會勘與航照圖比對容易被質疑']);
+  else c.push(['ok','實績','過去2年有持續耕作與單據']);
+  if(area&&acq==='new'){ if(sales>=minSales) c.push(['ok','銷售額',`年銷售${fmt(sales)}元 ≥ 門檻${fmt(minSales)}元`]); else c.push([ins==='y'?'warn':'bad','銷售額',`年銷售${fmt(sales)}元，低於門檻${fmt(minSales)}元`+(ins==='y'?'（有農保仍可能被要求提出）':'')]); }
+  c.push(own==='n'?['ok','自用農舍','無自用農舍']:['bad','自用農舍','已有自用農舍或5年內取得過農舍建照，不能再申請']);
+  if(zone==='bad') c.push(['bad','分區','這類分區／用地不得申請興建農舍']);
+  else if(zone==='unk') c.push(['warn','分區','請提供謄本確認使用分區與用地類別']);
+  else c.push(['ok','分區','農牧用地／農業區可申請']);
+  if(bld==='ill') c.push(['bad','地上物','有未經許可的設施或違規作住宅使用，違規排除前不受理，也不能直接轉成農舍']);
+  else if(bld==='legal') c.push(['warn','地上物','需附合法證明；既有設施與農舍要一起檢討配置，農舍配置規定優先']);
+  else c.push(['ok','地上物','無既有地上物']);
+  if(job==='gov') c.push(['bad','工作','公務人員受服務法限制，原則上不具興建農舍的合理性']);
+  else if(job==='other') c.push(['warn','工作','縣府可能函詢雇主職務、全職或兼職、上班時段，需能說明實際務農']);
+  else c.push(['ok','工作','專職務農']);
+  const bad=c.filter(x=>x[0]==='bad').length, warn=c.filter(x=>x[0]==='warn').length;
+  const v=$('verdict');
+  if(bad){v.className='verdict bad';v.innerHTML=`目前條件還不符合<span>有 ${bad} 項硬性條件未達，建議先處理再申請</span>`}
+  else if(warn){v.className='verdict warn';v.innerHTML=`有機會，但要補強<span>${warn} 項需要準備或個案確認</span>`}
+  else {v.className='verdict ok';v.innerHTML=`條件看起來符合<span>可以開始準備文件，送件前再核對謄本</span>`}
+  const lab={ok:'符合',warn:'注意',bad:'不符'};
+  $('checks').innerHTML=c.map(x=>`<li><span class="pill ${x[0]}">${lab[x[0]]}</span><span><b>${x[1]}</b>　${x[2]}</span></li>`).join('');
+  // reply
+  const name=($('cname').value||'').trim();
+  const hi=name?`${name}您好，`:'您好，';
+  const lead=bad?'依您目前提供的資料，還有幾個條件沒有達到，先跟您說明：':warn?'依您目前提供的資料，有機會申請，但有幾點需要先準備或確認：':'依您目前提供的資料，基本條件看起來是符合的：';
+  const items=c.filter(x=>x[0]!=='ok').map(x=>`・${x[1]}：${x[2]}`);
+  const okItems=c.filter(x=>x[0]==='ok').map(x=>x[1]).join('、');
+  let t=`${hi}關於農地蓋農舍，我先幫您初步看過。\n\n${lead}\n`;
+  if(items.length) t+=items.join('\n')+'\n';
+  if(okItems) t+=`\n已符合的部分：${okItems}。\n`;
+  if(area&&acq==='new') t+=`\n以您這筆地 ${fmt(area)}㎡ 計算：\n・農舍用地最多 ${fmt(useMax)}㎡（土地10%且不超過330㎡），其餘至少90%要維持耕作\n・自產農產品銷售額每年至少約 ${fmt(minSales)} 元\n`;
+  t+=`\n請先提供以下資料，我幫您確認：\n1. 土地登記謄本、地籍圖謄本（3個月內）\n2. 戶籍謄本（3個月內）\n3. 農保或健保第三類投保證明\n4. 近2年農產品銷售單據（公糧收購單、市場或合作社對帳單、地磅單等）\n5. 國稅局財產總歸戶清單（房屋）\n`;
+  if(co==='y') t+=`6. 共有人資料與分管契約\n`;
+  t+=`\n提醒：取得農舍資格後要在6個月內申請建照；89年後取得的農地，農舍蓋好滿5年才能移轉。以上為初步評估，實際仍以農業局審查與現場會勘為準。\n\n玖靈地政士事務所　張兆億 地政士`;
+  $('reply').value=t;
+}
+document.getElementById('f').addEventListener('input',run);
+document.getElementById('f').addEventListener('change',run);
+$('copy').addEventListener('click',()=>{
+  const ta=$('reply');const done=()=>{$('toast').textContent='已複製';setTimeout(()=>$('toast').textContent='',2000)};
+  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(ta.value).then(done).catch(()=>{ta.select();$('toast').textContent='已選取，請按 Ctrl+C 複製'})}
+  else{ta.select();$('toast').textContent='已選取，請按 Ctrl+C 複製'}
+});
+run();
+</script>
+
+<footer class="dzfoot">本工具由<a href="index.html">地政說書人｜玖靈地政士事務所</a>提供，結果為依輸入資料與現行規定的估算，實際稅額與規費以主管機關核定為準。個案請<a href="contact.html">先問地政士</a>，或回到<a href="tools.html">所有工具</a>。</footer></body></html>
