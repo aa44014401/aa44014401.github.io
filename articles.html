@@ -24,7 +24,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%230F1014'/%3E%3Crect x='8' y='8' width='48' height='48' rx='4' fill='none' stroke='%23D5B15C' stroke-width='3'/%3E%3Ctext x='32' y='43' font-size='26' text-anchor='middle' fill='%23D5B15C' font-family='serif' font-weight='700'%3E說%3C/text%3E%3C/svg%3E">
 <link rel="preload" href="dz-serif-bold.woff2" as="font" type="font/woff2" crossorigin>
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "LegalService", "name": "玖靈地政士事務所", "alternateName": "地政說書人", "founder": {"@type": "Person", "name": "張兆億", "jobTitle": "地政士"}, "telephone": "+886-962-023773", "email": "aa44014401@gmail.com", "address": {"@type": "PostalAddress", "streetAddress": "國泰街97號6樓", "addressLocality": "北區", "addressRegion": "臺中市", "addressCountry": "TW", "postalCode": "404"}, "sameAs": ["https://www.threads.net/@changyi8584", "https://www.instagram.com/feathers0804/"], "url": "https://aa44014401.github.io/", "image": "https://aa44014401.github.io/og.png", "areaServed": [{"@type": "City", "name": "臺中市"}, {"@type": "Country", "name": "臺灣"}], "priceRange": "NT$2,000–18,000 起", "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "09:00", "closes": "18:00"}], "knowsAbout": ["不動產買賣移轉登記", "繼承登記", "拋棄繼承", "贈與登記", "信託登記", "抵押權設定與塗銷", "特定工廠登記", "土地增值稅", "房地合一稅", "遺產稅與贈與稅申報"], "hasCredential": {"@type": "EducationalOccupationalCredential", "credentialCategory": "地政士開業執照", "identifier": "112中市地士字002314號"}}
+{"@context": "https://schema.org", "@type": "LegalService", "name": "玖靈地政士事務所", "alternateName": "地政說書人", "founder": {"@type": "Person", "name": "張兆億", "jobTitle": "地政士", "image": "https://aa44014401.github.io/yi-900.webp"}, "telephone": "+886-962-023773", "email": "aa44014401@gmail.com", "address": {"@type": "PostalAddress", "streetAddress": "國泰街97號6樓", "addressLocality": "北區", "addressRegion": "臺中市", "addressCountry": "TW", "postalCode": "404"}, "sameAs": ["https://www.threads.net/@changyi8584", "https://www.instagram.com/feathers0804/"], "url": "https://aa44014401.github.io/", "image": "https://aa44014401.github.io/og.png", "areaServed": [{"@type": "City", "name": "臺中市"}, {"@type": "Country", "name": "臺灣"}], "priceRange": "NT$2,000–18,000 起", "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "09:00", "closes": "18:00"}], "knowsAbout": ["不動產買賣移轉登記", "繼承登記", "拋棄繼承", "贈與登記", "信託登記", "抵押權設定與塗銷", "特定工廠登記", "土地增值稅", "房地合一稅", "遺產稅與贈與稅申報"], "hasCredential": {"@type": "EducationalOccupationalCredential", "credentialCategory": "地政士開業執照", "identifier": "112中市地士字002314號"}}
 </script>
 <style>
   /* 標題字型：自託管 Noto Serif TC 子集（只含本站用字，建置時自動產生） */
@@ -312,6 +312,14 @@
   li.open .cls-go{background:var(--gold);color:#14150F;}
   @media (max-width:560px){ .cls-tip{margin-left:0;flex-basis:100%;} }
   .chans > .chan:last-child{grid-column:1/-1;}
+  .about-hero{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:48px;align-items:center;}
+  .portrait{margin:0;justify-self:center;max-width:360px;width:100%;}
+  .portrait img{display:block;width:100%;height:auto;border-radius:var(--r);border:1px solid var(--hair);filter:contrast(1.05);}
+  .portrait figcaption{margin-top:10px;font-size:13px;color:var(--paper-3);letter-spacing:.1em;text-align:center;}
+  .card-id .who{display:flex;align-items:center;gap:14px;margin:8px 0 2px;}
+  .card-id .who .nm{margin:0;}
+  .card-id .avatar{width:56px;height:56px;border-radius:50%;object-fit:cover;border:1px solid var(--gold-deep);}
+  @media (max-width:900px){ .about-hero{grid-template-columns:1fr;gap:28px;} .portrait{max-width:300px;} }
   .member-in{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;border:1px solid var(--gold-deep);padding:20px 24px;margin-bottom:34px;}
   .member-in p{margin:0;color:var(--paper-2);font-size:15px;}
   .member-in b{color:var(--gold);}
