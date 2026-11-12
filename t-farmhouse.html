@@ -1,10 +1,11 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style><meta name="description" content="勾選條件，初步判斷農地能不能申請興建農舍，並列出應備文件。">
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style><style>html:root:not(#dz){color-scheme:dark;--bg:#0F1014;--paper:#17181F;--ink:#EFE9DC;--muted:#A9A293;--line:#2B2C33;--accent:#D5B15C;--accent-soft:#2A2518;--grain:#D5B15C;--ok:#8FBF8A;--warn:#E0B25A;--bad:#E07A5F;--ok-bg:#16241A;--warn-bg:#2E2614;--bad-bg:#33201B}</style><meta name="description" content="勾選條件，初步判斷農地能不能申請興建農舍，並列出應備文件。">
 <link rel="canonical" href="https://aa44014401.github.io/t-farmhouse.html">
 <meta property="og:type" content="website"><meta property="og:title" content="農舍資格自評｜地政說書人"><meta property="og:description" content="勾選條件，初步判斷農地能不能申請興建農舍，並列出應備文件。"><meta property="og:url" content="https://aa44014401.github.io/t-farmhouse.html"><meta property="og:image" content="https://aa44014401.github.io/og.png"><meta name="theme-color" content="#0F1014">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%230F1014'/%3E%3Crect x='8' y='8' width='48' height='48' rx='4' fill='none' stroke='%23D5B15C' stroke-width='3'/%3E%3Ctext x='32' y='43' font-size='26' text-anchor='middle' fill='%23D5B15C' font-family='serif' font-weight='700'%3E說%3C/text%3E%3C/svg%3E">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "農舍資格自評", "description": "勾選條件，初步判斷農地能不能申請興建農舍，並列出應備文件。", "url": "https://aa44014401.github.io/t-farmhouse.html", "applicationCategory": "FinanceApplication", "operatingSystem": "Web", "inLanguage": "zh-Hant-TW", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "TWD"}, "publisher": {"@type": "Organization", "name": "地政說書人｜玖靈地政士事務所", "url": "https://aa44014401.github.io/"}}</script>
 </head><body>
 <style>
+@font-face{font-family:"Noto Serif TC";src:url(dz-serif-tools.woff2) format("woff2");font-weight:100 900;font-display:swap}
 .dzbar{position:sticky;top:0;box-sizing:border-box;width:100vw;margin-left:calc(50% - 50vw);z-index:999;display:flex;align-items:center;gap:14px;padding:10px 16px;background:#0F1014;border-bottom:1px solid rgba(213,177,92,.25);font:14px/1.4 "Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}
 .dzbar a{color:#EFE9DC;text-decoration:none}
 .dzbar .dz-brand{display:flex;align-items:center;gap:8px;font-family:"Noto Serif TC","Songti TC",serif;font-weight:900;letter-spacing:.06em;color:#D5B15C}
@@ -21,14 +22,13 @@
 
 <title>農舍資格自評｜地政說書人線上工具</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600;900&family=Noto+Sans+TC:wght@400;500;700&display=swap">
 <style>
 /* Layout: a ledger-like single column — intake form on top, live verdict beside it on wide screens, reference notes below */
 :root{
   --bg:#f3f5ef; --paper:#ffffff; --ink:#1f2a1f; --muted:#5d6b5c; --line:#d6ddd0;
   --accent:#3f6b2e; --accent-soft:#e3ecd9; --grain:#b5852a;
   --ok:#2f7a3c; --warn:#a86a00; --bad:#b23a2e; --ok-bg:#e4f2e6; --warn-bg:#fbf0d9; --bad-bg:#f8e2df;
-  --f-display:"Noto Serif TC","Songti TC",serif; --f-body:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
+  --f-display:"Noto Serif TC","Songti TC",serif; --f-body:"PingFang TC","Microsoft JhengHei",sans-serif;
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
   --bg:#141a14; --paper:#1c241c; --ink:#e4ebdf; --muted:#9fae9c; --line:#334033;

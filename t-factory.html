@@ -5,6 +5,7 @@
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "工廠合法化檢查", "description": "農地上的未登記工廠，目前走到特定工廠登記的哪一步、下一步要做什麼。", "url": "https://aa44014401.github.io/t-factory.html", "applicationCategory": "FinanceApplication", "operatingSystem": "Web", "inLanguage": "zh-Hant-TW", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "TWD"}, "publisher": {"@type": "Organization", "name": "地政說書人｜玖靈地政士事務所", "url": "https://aa44014401.github.io/"}}</script>
 </head><body>
 <style>
+@font-face{font-family:"Noto Serif TC";src:url(dz-serif-tools.woff2) format("woff2");font-weight:100 900;font-display:swap}
 .dzbar{position:sticky;top:0;box-sizing:border-box;width:100vw;margin-left:calc(50% - 50vw);z-index:999;display:flex;align-items:center;gap:14px;padding:10px 16px;background:#0F1014;border-bottom:1px solid rgba(213,177,92,.25);font:14px/1.4 "Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}
 .dzbar a{color:#EFE9DC;text-decoration:none}
 .dzbar .dz-brand{display:flex;align-items:center;gap:8px;font-family:"Noto Serif TC","Songti TC",serif;font-weight:900;letter-spacing:.06em;color:#D5B15C}
@@ -20,12 +21,10 @@
 <nav class="dzbar" aria-label="網站導覽"><a class="dz-brand" href="index.html"><span class="dz-seal" aria-hidden="true">說<br>書</span>地政說書人</a><span class="dz-sp"></span><a class="dz-link" href="tools.html">← 所有工具</a><a class="dz-link dz-hide" href="articles.html">地政知識</a><a class="dz-cta" href="contact.html">問地政士</a></nav>
 
 <title>工廠合法化檢查｜地政說書人線上工具</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600;900&family=Noto+Sans+TC:wght@400;500;700&display=swap">
 <style>
 /* Layout: 上方兩個倒數期限，下方左側問答、右側判定與下一步 */
 :root{--ink:#161310;--panel:#1f1b16;--line:#3a3227;--gold:#d4af37;--gold-dim:#8a7535;--cream:#f3ead8;--mute:#b9ab92;--ok:#8fbf8a;--warn:#e07a5f;--q:#e0b45f;
---f-display:"Noto Serif TC","Songti TC",serif;--f-body:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;color-scheme:dark}
+--f-display:"Noto Serif TC","Songti TC",serif;--f-body:"PingFang TC","Microsoft JhengHei",sans-serif;color-scheme:dark}
 body{background:var(--ink);color:var(--cream);font-family:var(--f-body);font-size:15px;line-height:1.65}
 .wrap{max-width:1080px;margin:0 auto;padding-block:32px 56px;padding-inline:16px}
 header{display:grid;gap:6px;margin-bottom:20px}
@@ -65,7 +64,7 @@ footer a{color:var(--mute)}
 </style>
 
 <div class="wrap">
-<nav class="crumb"><a href="tools.html" target="_blank" rel="noopener">← 地政說書人工具箱</a></nav>
+<nav class="crumb"><a href="tools.html">← 所有工具</a></nav>
 <header>
   <div class="eyebrow">地政說書人 · 工廠合法化</div>
   <h1>農地上的工廠，現在走到哪一步？</h1>
