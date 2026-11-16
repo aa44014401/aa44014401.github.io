@@ -15,8 +15,18 @@
 .dzbar .dz-link:hover{color:#D5B15C}
 .dzbar .dz-cta{border:1px solid #A68A50;color:#D5B15C;border-radius:6px;padding:6px 12px}
 @media (max-width:480px){.dzbar .dz-hide{display:none}}
-.dzfoot{max-width:1080px;margin:40px auto 0;padding:22px 16px 40px;border-top:1px solid rgba(213,177,92,.25);color:#9B9586;font:13px/1.8 "Noto Sans TC","PingFang TC",sans-serif}
-.dzfoot a{color:#D5B15C}
+@media (max-width:760px){.dzbar a{min-height:40px;display:inline-flex;align-items:center}.dzbar .dz-cta{padding:6px 14px}}
+.dzfoot{display:block!important;text-align:left!important;max-width:1080px;margin:40px auto 0;padding:22px 16px 40px;border-top:1px solid rgba(213,177,92,.25);color:#9B9586;font:13px/1.8 "Noto Sans TC","PingFang TC",sans-serif}
+.dzfoot a{color:#D5B15C;display:inline!important;padding:0!important;border:0!important;background:none!important;width:auto!important}
+.dzfoot .dzrel{display:grid;gap:8px;margin:0 0 18px}
+.dzfoot .dzrel b{color:#EFE9DC;font-weight:600;font-size:14px}
+.dzfoot .dzrel ul{list-style:none;margin:0;padding:0;display:grid;gap:4px}
+.dzfoot .dzrel li a{display:inline-flex!important;align-items:center;min-height:36px}
+input[type=radio],input[type=checkbox]{accent-color:#D5B15C}
+@media (max-width:760px){input[type=radio]{width:20px;height:20px;margin-right:6px}
+.dzres{position:fixed;left:50%;bottom:calc(14px + env(safe-area-inset-bottom));transform:translate(-50%,140%);z-index:998;border:0;border-radius:999px;background:#D5B15C;color:#14150F;font:600 15px/1 "Noto Sans TC","PingFang TC",sans-serif;padding:13px 22px;box-shadow:0 10px 26px rgba(0,0,0,.45);transition:transform .22s;cursor:pointer}
+.dzres.on{transform:translate(-50%,0)}}
+@media (min-width:761px){.dzres{display:none}}
 </style>
 <nav class="dzbar" aria-label="網站導覽"><a class="dz-brand" href="index.html"><span class="dz-seal" aria-hidden="true">說<br>書</span>地政說書人</a><span class="dz-sp"></span><a class="dz-link" href="tools.html">← 所有工具</a><a class="dz-link dz-hide" href="articles.html">地政知識</a><a class="dz-cta" href="contact.html">問地政士</a></nav>
 
@@ -231,4 +241,9 @@ $('copy').addEventListener('click',()=>{
 calc();
 </script>
 
-<footer class="dzfoot">本工具由<a href="index.html">地政說書人｜玖靈地政士事務所</a>提供，結果為依輸入資料與現行規定的估算，實際稅額與規費以主管機關核定為準。個案請<a href="contact.html">先問地政士</a>，或回到<a href="tools.html">所有工具</a>。</footer></body></html>
+<footer class="dzfoot"><div class="dzrel"><b>延伸閱讀</b><ul><li><a href="a-inherit-deadline.html">繼承登記六個月內要辦，晚了每個月罰一倍登記費 →</a></li><li><a href="a-estate-tax-2026.html">遺產稅：六個月內申報，2026年免稅額1,333萬 →</a></li><li><a href="a-renounce-3months.html">拋棄繼承只有3個月：從哪天開始算、怎麼辦、誰會接手 →</a></li></ul></div>本工具由<a href="index.html">地政說書人｜玖靈地政士事務所</a>提供，結果為依輸入資料與現行規定的估算，實際稅額與規費以主管機關核定為準。個案請<a href="contact.html">先問地政士</a>，或回到<a href="tools.html">所有工具</a>。</footer><button class="dzres" id="dzres" type="button">看試算結果 ↓</button>
+<script>(function(){var r=document.querySelector("#o_total"),b=document.getElementById("dzres");if(!r||!b)return;
+function u(){var t=r.getBoundingClientRect().top,end=document.documentElement.scrollHeight-innerHeight-scrollY;b.classList.toggle("on",scrollY>120&&t>innerHeight-40&&end>500);}
+addEventListener("scroll",u,{passive:true});addEventListener("resize",u);u();
+b.addEventListener("click",function(){var y=r.getBoundingClientRect().top+scrollY-70;scrollTo({top:y,behavior:"smooth"});});})();</script>
+</body></html>

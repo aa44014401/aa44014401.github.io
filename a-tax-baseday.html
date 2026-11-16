@@ -539,6 +539,38 @@
     .steps li::before{grid-row:auto;}
   }
   @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;}}
+
+  /* 手機底部行動列＋觸控目標 */
+  .mbar{display:none}
+  @media (max-width:760px){
+    .mbar{position:fixed;left:10px;right:10px;bottom:calc(10px + env(safe-area-inset-bottom));z-index:45;display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;padding:6px;border:1px solid var(--soft,#6d5a33);border-radius:14px;background:rgba(17,18,24,.96);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 10px 28px rgba(0,0,0,.45);transform:translateY(130%);transition:transform .22s;}
+    .mbar.on{transform:none}
+    .mbar a{display:flex;align-items:center;justify-content:center;gap:6px;min-height:44px;border-radius:10px;color:var(--paper,#EFE9DC);text-decoration:none;font-size:14.5px;letter-spacing:.04em}
+    .mbar a.pri{background:var(--gold,#D5B15C);color:#14150F;font-weight:600}
+    .mbar svg{width:17px;height:17px;flex:none}
+    .fab{bottom:calc(84px + env(safe-area-inset-bottom))}
+    .fab #toHome{display:none}
+    .foot-in{padding-bottom:112px}
+    .foot-nav{gap:2px 6px}
+    .foot-nav a{display:inline-flex;align-items:center;min-height:40px;padding:0 6px}
+    .crumb a{display:inline-flex;align-items:center;min-height:36px}
+    .pager small{font-size:12.5px;letter-spacing:.2em}
+    .art-meta span{font-size:13px}
+  }
+  html.cls-lock .mbar{display:none}
+
+  .cls-resume{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:14px 18px;margin:0 0 18px;border:1px solid var(--soft,#6d5a33);border-radius:var(--r,10px);background:var(--ink-2);color:var(--paper)}
+  .cls-list li.seen .cls-no{color:var(--paper-3)}
+  .cls-list li.seen .cls-t::after{content:"已看";margin-left:8px;font-size:12px;padding:1px 7px;border:1px solid var(--line);border-radius:999px;color:var(--paper-3);vertical-align:2px}
+
+  .cls-go{white-space:nowrap;border-radius:6px}
+  .cls-list li.seen .cls-t::after{white-space:nowrap;display:inline-block}
+  @media (max-width:560px){
+    .cls-item{flex-basis:100%;gap:12px;padding:14px 16px 6px;font-size:15.5px}
+    .cls-open{margin-left:auto;padding:4px 16px 12px;min-height:36px;display:inline-flex;align-items:center}
+    .cls-tip{margin-left:0;flex-basis:100%}
+    .cls-resume{padding:12px 14px}
+  }
 </style>
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "Article", "headline": "房子賣掉了，今年地價稅誰繳？", "description": "地價稅看8月31日、房屋稅看2月底的登記名義人。買賣雙方怎麼分攤是私約，要寫進契約。", "datePublished": "2026-11-08", "dateModified": "2026-11-08", "inLanguage": "zh-TW", "mainEntityOfPage": "https://aa44014401.github.io/a-tax-baseday.html", "image": "https://aa44014401.github.io/og.png", "author": {"@type": "Person", "name": "張兆億", "jobTitle": "地政士", "url": "https://aa44014401.github.io/about.html"}, "publisher": {"@type": "Organization", "name": "玖靈地政士事務所", "url": "https://aa44014401.github.io/"}}
@@ -636,6 +668,11 @@
   <button type="button" id="toTop" title="回頂端">↑<span class="lbl">回頂端</span></button>
   <a href="index.html" id="toHome" title="回首頁">⌂<span class="lbl">回首頁</span></a>
 </div>
+<!--mbar--><nav class="mbar" id="mbar" aria-label="快速聯絡">
+  <a href="tel:0962023773"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>打電話</a>
+  <a class="pri" href="https://line.me/ti/p/~jtk1339" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 4C7 4 3 7.2 3 11.2c0 3.5 3 6.4 7.2 7l-.5 2.8 3.6-2.7C17.6 18 21 15 21 11.2 21 7.2 17 4 12 4z"/></svg>加 LINE</a>
+  <a href="t-lvt-selfuse.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8M8 12h2M12 12h2M16 12h0M8 16h2M12 16h2"/></svg>試算</a>
+</nav><!--/mbar-->
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script>
@@ -657,7 +694,8 @@
   window.addEventListener("resize", navFade);
   setTimeout(navFade, 400);
   var fab = document.getElementById("fab");
-  function onScroll(){ fab.classList.toggle("on", window.scrollY > 480); }
+  var mbar = document.getElementById("mbar");
+  function onScroll(){ fab.classList.toggle("on", window.scrollY > 480); if (mbar) mbar.classList.toggle("on", window.scrollY > 260); }
   window.addEventListener("scroll", onScroll, { passive: true });
   document.getElementById("toTop").addEventListener("click", function(){ window.scrollTo({ top: 0, behavior: "smooth" }); });
   onScroll();
