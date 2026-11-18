@@ -3,6 +3,19 @@
 <meta property="og:type" content="website"><meta property="og:title" content="繼承登記試算｜地政說書人"><meta property="og:description" content="家人過世後，繼承登記的規費、印花稅、遺產稅與逾期罰鍰，先試算再決定。"><meta property="og:url" content="https://aa44014401.github.io/t-inherit.html"><meta property="og:image" content="https://aa44014401.github.io/og.png"><meta name="theme-color" content="#0F1014">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%230F1014'/%3E%3Crect x='8' y='8' width='48' height='48' rx='4' fill='none' stroke='%23D5B15C' stroke-width='3'/%3E%3Ctext x='32' y='43' font-size='26' text-anchor='middle' fill='%23D5B15C' font-family='serif' font-weight='700'%3E說%3C/text%3E%3C/svg%3E">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "繼承登記試算", "description": "家人過世後，繼承登記的規費、印花稅、遺產稅與逾期罰鍰，先試算再決定。", "url": "https://aa44014401.github.io/t-inherit.html", "applicationCategory": "FinanceApplication", "operatingSystem": "Web", "inLanguage": "zh-Hant-TW", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "TWD"}, "publisher": {"@type": "Organization", "name": "地政說書人｜玖靈地政士事務所", "url": "https://aa44014401.github.io/"}}</script>
+<script>window.DZTAX=(function(){var L=[{"from": 2022, "name": "111–113 年", "st": "公告", "ex_e": 13330000, "ex_g": 2440000, "sp": 4930000, "kid": 500000, "par": 1230000, "fun": 1230000, "dis": 6180000, "dep": 500000, "eb": [50000000, 100000000], "gb": [25000000, 50000000], "src": "財政部 110.11.24 公告"}, {"from": 2025, "name": "114–115 年", "st": "公告", "ex_e": 13330000, "ex_g": 2440000, "sp": 5530000, "kid": 560000, "par": 1380000, "fun": 1380000, "dis": 6930000, "dep": 560000, "eb": [56210000, 112420000], "gb": [28110000, 56210000], "src": "財政部 113.11.28、114.11.27 公告"}, {"from": 2027, "name": "116 年", "st": "預估", "ex_e": 14920000, "ex_g": 2730000, "sp": 5530000, "kid": 560000, "par": 1380000, "fun": 1380000, "dis": 6930000, "dep": 560000, "eb": [56210000, 112420000], "gb": [28110000, 56210000], "src": "依主計總處 115 年 10 月 CPI 累計漲幅 11.91% 推估（免稅額）；級距與扣除額 114 年剛調整，預估不變"}],now=new Date().getFullYear(),last=L[L.length-1].from;
+function get(y){y=Number(y)||0;if(y<L[0].from)return null;var r=null;for(var i=0;i<L.length;i++)if(L[i].from<=y)r=L[i];return r}
+function prog(n,b){if(n<=0)return 0;if(n<=b[0])return n*.1;if(n<=b[1])return n*.15-b[0]*.05;return n*.2-b[0]*.05-b[1]*.05}
+var api={get:get,list:L,sel:Math.min(Math.max(now,2026),last),
+ estate:function(n,X){return prog(n,(X||get(api.sel)).eb)},gift:function(n,X){return prog(n,(X||get(api.sel)).gb)},
+ lock:function(msg){var b=document.getElementById('dzyr');if(!b)return;b.classList.toggle('locked',!!msg);var m=b.querySelector('.dzyr-lock');if(m)m.textContent=msg||''},
+ paint:function(){var X=get(api.sel);document.querySelectorAll('[data-tx]').forEach(function(e){var k=e.getAttribute('data-tx');
+   e.textContent=k==='name'?X.name:(X[k]/1e4).toLocaleString('zh-TW')});
+   document.querySelectorAll('#dzyr button').forEach(function(b){b.setAttribute('aria-pressed',String(Number(b.dataset.y)===api.sel))});
+   var n=document.querySelector('#dzyr .dzyr-n');if(n)n.textContent=X.st==='預估'?'預估值，財政部公告後更新':''},
+ set:function(y){api.sel=Number(y);var s=document.getElementById('start');if(s){s.value=api.sel}api.paint();if(typeof calc==='function')calc()}};
+document.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest('#dzyr button');if(b)api.set(b.dataset.y)});
+document.addEventListener('DOMContentLoaded',function(){api.paint();var s=document.getElementById('start');if(s)s.addEventListener('input',function(){var y=Number(s.value);if(y>=2026&&y<2100){api.sel=Math.min(y,last);api.paint()}})});return api})();</script>
 </head><body>
 <style>
 @font-face{font-family:"Noto Serif TC";src:url(dz-serif-tools.woff2) format("woff2");font-weight:100 900;font-display:swap}
@@ -27,8 +40,16 @@ input[type=radio],input[type=checkbox]{accent-color:#D5B15C}
 .dzres{position:fixed;left:50%;bottom:calc(14px + env(safe-area-inset-bottom));transform:translate(-50%,140%);z-index:998;border:0;border-radius:999px;background:#D5B15C;color:#14150F;font:600 15px/1 "Noto Sans TC","PingFang TC",sans-serif;padding:13px 22px;box-shadow:0 10px 26px rgba(0,0,0,.45);transition:transform .22s;cursor:pointer}
 .dzres.on{transform:translate(-50%,0)}}
 @media (min-width:761px){.dzres{display:none}}
+.dzyr{max-width:1080px;margin:14px auto 0;padding:0 20px;display:flex;flex-wrap:wrap;align-items:center;gap:8px;font:14px/1.4 "PingFang TC","Microsoft JhengHei",sans-serif;color:#A9A293}
+.dzyr-l{margin-right:4px}
+.dzyr button{font:inherit;min-height:38px;padding:6px 14px;border-radius:999px;border:1px solid #4a4130;background:transparent;color:#EFE9DC;cursor:pointer}
+.dzyr button[aria-pressed="true"]{background:#D5B15C;border-color:#D5B15C;color:#14150F;font-weight:600}
+.dzyr-n{color:#E0B25A;font-size:13px}.dzyr-lock{color:#D5B15C;font-size:13px}
+.dzyr.locked button{opacity:.45}
+.dzest{font-style:normal;font-size:11.5px;margin-left:6px;padding:0 6px;border:1px solid #6d5a33;border-radius:999px;color:#E0B25A}
 </style>
 <nav class="dzbar" aria-label="網站導覽"><a class="dz-brand" href="index.html"><span class="dz-seal" aria-hidden="true">說<br>書</span>地政說書人</a><span class="dz-sp"></span><a class="dz-link" href="tools.html">← 所有工具</a><a class="dz-link dz-hide" href="articles.html">地政知識</a><a class="dz-cta" href="contact.html">問地政士</a></nav>
+<div class="dzyr" id="dzyr" role="group" aria-label="遺贈稅適用年度"><span class="dzyr-l">死亡日未填時採用</span><button type="button" data-y="2026" aria-pressed="false">2026</button><button type="button" data-y="2027" aria-pressed="false">2027・預估</button><span class="dzyr-n"></span><span class="dzyr-lock"></span></div>
 
 <title>繼承登記試算｜地政說書人線上工具</title>
 <style>
@@ -132,7 +153,7 @@ footer{margin-top:36px;border-top:1px solid var(--line);padding-top:16px;font-si
   <dl>
     <dt>遺產總額</dt><dd id="o_gross"></dd>
     <dt>減：不計入遺產總額</dt><dd id="o_excl"></dd>
-    <dt>減：免稅額</dt><dd>13,330,000</dd>
+    <dt>減：免稅額（<span id="o_yr"></span>）</dt><dd id="o_ex"></dd>
     <dt>減：各項扣除額</dt><dd id="o_ded"></dd>
     <dt>課稅遺產淨額</dt><dd id="o_net"></dd>
     <div class="sep"></div>
@@ -172,7 +193,7 @@ footer{margin-top:36px;border-top:1px solid var(--line);padding-top:16px;font-si
 <footer>
   <div>玖靈地政士事務所　地政士 張兆億　證號 112中市地士字002314號</div>
   <div>台中市北區國泰街97號6樓</div>
-  <div>本試算依財政部公告 115 年遺產稅免稅額、扣除額及級距，與土地法第 67、73 條、土地登記規則第 50 條規定估算，僅供參考；實際稅額以國稅局核定、規費罰鍰以地政事務所核算為準。不含代書服務費、保險金與農地等免稅項目判斷。</div>
+  <div>本試算依財政部公告各年度遺產稅免稅額、扣除額及級距（依死亡日自動套用，111 年起），與土地法第 67、73 條、土地登記規則第 50 條規定估算，僅供參考；實際稅額以國稅局核定、規費罰鍰以地政事務所核算為準。不含代書服務費、保險金與農地等免稅項目判斷。</div>
 </footer>
 </div>
 
@@ -182,12 +203,7 @@ const num=id=>{const v=Number(String($(id).value).replace(/[^\d.]/g,''));return 
 const fmt=n=>Math.round(n).toLocaleString('zh-TW');
 const ids=['land','house','cash','debt','excl','claim','units','spouse','kids','minorYrs','parents','disabled','deps'];
 
-function estateTax(net){
-  if(net<=0) return 0;
-  if(net<=56210000) return net*0.10;
-  if(net<=112420000) return net*0.15-2810500;
-  return net*0.20-8431500;
-}
+
 function addMonths(d,m){const r=new Date(d);r.setMonth(r.getMonth()+m);return r}
 function overdueMonths(dod,today){
   const due=addMonths(dod,6); if(today<=due) return {m:0,due};
@@ -201,9 +217,13 @@ function calc(){
   const parents=Math.min(2,Math.round(num('parents'))),disabled=Math.round(num('disabled')),deps=Math.round(num('deps'));
   const heirs=Math.max(1,spouse+kids+parents);
   const gross=land+house+cash;
-  const ded=spouse*5530000+kids*560000+minorYrs*560000+parents*1380000+disabled*6930000+deps*560000+1380000+debt+(spouse?claim:0);
-  const net=Math.max(0,gross-excl-13330000-ded);
-  const tax=Math.round(estateTax(net));
+  const dodY=$('dod').value?Number($('dod').value.slice(0,4)):0;
+  const X=DZTAX.get(dodY||DZTAX.sel)||DZTAX.get(2022);
+  const ded=spouse*X.sp+kids*X.kid+minorYrs*X.kid+parents*X.par+disabled*X.dis+deps*X.dep+X.fun+debt+(spouse?claim:0);
+  const net=Math.max(0,gross-excl-X.ex_e-ded);
+  const tax=Math.round(DZTAX.estate(net,X));
+  $('o_ex').textContent=fmt(X.ex_e);$('o_yr').textContent=(dodY&&dodY<2022)?'111 年前不適用':X.name+(X.st==='預估'?'・預估':'');
+  DZTAX.lock(dodY?('依死亡日適用 '+X.name+' 金額'):'');
   const fee=Math.max(1,Math.round((land+house)*0.001));
   const books=units*heirs; const book=books*80;
   const dodv=$('dod').value; let fine=0,months=0,due=null;
@@ -221,7 +241,8 @@ function calc(){
   else {const left=Math.ceil((due-today)/864e5);st.innerHTML='<span class="pill ok">還剩 '+left+' 天</span>';
     $('o_deadline').textContent='繼承登記期限：'+due.toLocaleDateString('zh-TW')+'。遺產稅也要在同一期限內申報（可申請延長 3 個月）。';}
   const tips=[];
-  if(dodv && new Date(dodv)<new Date('2024-01-01')) tips.push('<b>死亡日在 113 年以前</b>：免稅額與扣除額金額不同，本表數字不適用，請找專人核算。');
+  if(dodv && dodY<2022) tips.push('<b>死亡日在 111 年以前</b>：免稅額、扣除額與級距都不同，本表數字不適用，請找專人核算。');
+  else if(X.st==='預估') tips.push('<b>'+X.name+'金額為預估</b>：依 CPI 累計漲幅推算，財政部公告後本站會更新，送件前請以公告為準。');
   if(spouse&&tax>0&&!claim) tips.push('<b>配偶剩餘財產差額分配請求權</b>：婚後財產差額的一半可從遺產總額扣除，常常一主張就從要繳稅變成免稅。');
   if(tax>0&&land>0&&!excl) tips.push('<b>公共設施保留地、農地農用</b>可不計入遺產總額，土地若有這類地目值得逐筆確認。');
   if(heirs>=2) tips.push('<b>公同共有還是分別共有？</b>先辦公同共有可以爭取時間避免罰鍰，但之後賣房要全體同意，各有利弊。');
@@ -241,7 +262,7 @@ $('copy').addEventListener('click',()=>{
 calc();
 </script>
 
-<footer class="dzfoot"><div class="dzrel"><b>延伸閱讀</b><ul><li><a href="a-inherit-deadline.html">繼承登記六個月內要辦，晚了每個月罰一倍登記費 →</a></li><li><a href="a-estate-tax-2026.html">遺產稅：六個月內申報，2026年免稅額1,333萬 →</a></li><li><a href="a-renounce-3months.html">拋棄繼承只有3個月：從哪天開始算、怎麼辦、誰會接手 →</a></li></ul></div>本工具由<a href="index.html">地政說書人｜玖靈地政士事務所</a>提供，結果為依輸入資料與現行規定的估算，實際稅額與規費以主管機關核定為準。個案請<a href="contact.html">先問地政士</a>，或回到<a href="tools.html">所有工具</a>。</footer><button class="dzres" id="dzres" type="button">看試算結果 ↓</button>
+<footer class="dzfoot"><div class="dzrel"><b>延伸閱讀</b><ul><li><a href="a-inherit-deadline.html">繼承登記六個月內要辦，晚了每個月罰一倍登記費 →</a></li><li><a href="a-estate-tax-2026.html">遺產稅：六個月內申報，2026年免稅額1,333萬、2027年預估1,492萬 →</a></li><li><a href="a-renounce-3months.html">拋棄繼承只有3個月：從哪天開始算、怎麼辦、誰會接手 →</a></li></ul></div>本工具由<a href="index.html">地政說書人｜玖靈地政士事務所</a>提供，結果為依輸入資料與現行規定的估算，實際稅額與規費以主管機關核定為準。個案請<a href="contact.html">先問地政士</a>，或回到<a href="tools.html">所有工具</a>。</footer><button class="dzres" id="dzres" type="button">看試算結果 ↓</button>
 <script>(function(){var r=document.querySelector("#o_total"),b=document.getElementById("dzres");if(!r||!b)return;
 function u(){var t=r.getBoundingClientRect().top,end=document.documentElement.scrollHeight-innerHeight-scrollY;b.classList.toggle("on",scrollY>120&&t>innerHeight-40&&end>500);}
 addEventListener("scroll",u,{passive:true});addEventListener("resize",u);u();

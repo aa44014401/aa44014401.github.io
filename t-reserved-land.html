@@ -27,6 +27,13 @@ input[type=radio],input[type=checkbox]{accent-color:#D5B15C}
 .dzres{position:fixed;left:50%;bottom:calc(14px + env(safe-area-inset-bottom));transform:translate(-50%,140%);z-index:998;border:0;border-radius:999px;background:#D5B15C;color:#14150F;font:600 15px/1 "Noto Sans TC","PingFang TC",sans-serif;padding:13px 22px;box-shadow:0 10px 26px rgba(0,0,0,.45);transition:transform .22s;cursor:pointer}
 .dzres.on{transform:translate(-50%,0)}}
 @media (min-width:761px){.dzres{display:none}}
+.dzyr{max-width:1080px;margin:14px auto 0;padding:0 20px;display:flex;flex-wrap:wrap;align-items:center;gap:8px;font:14px/1.4 "PingFang TC","Microsoft JhengHei",sans-serif;color:#A9A293}
+.dzyr-l{margin-right:4px}
+.dzyr button{font:inherit;min-height:38px;padding:6px 14px;border-radius:999px;border:1px solid #4a4130;background:transparent;color:#EFE9DC;cursor:pointer}
+.dzyr button[aria-pressed="true"]{background:#D5B15C;border-color:#D5B15C;color:#14150F;font-weight:600}
+.dzyr-n{color:#E0B25A;font-size:13px}.dzyr-lock{color:#D5B15C;font-size:13px}
+.dzyr.locked button{opacity:.45}
+.dzest{font-style:normal;font-size:11.5px;margin-left:6px;padding:0 6px;border:1px solid #6d5a33;border-radius:999px;color:#E0B25A}
 </style>
 <nav class="dzbar" aria-label="網站導覽"><a class="dz-brand" href="index.html"><span class="dz-seal" aria-hidden="true">說<br>書</span>地政說書人</a><span class="dz-sp"></span><a class="dz-link" href="tools.html">← 所有工具</a><a class="dz-link dz-hide" href="articles.html">地政知識</a><a class="dz-cta" href="contact.html">問地政士</a></nav>
 
@@ -141,8 +148,8 @@ function calc(){
   if(q4==='inherit') rows.push(['遺產稅', R||U? st('ok'):'tax', R||U?'公共設施保留地因繼承移轉免徵遺產稅（都市計畫法第 50 條之 1），不計入遺產總額。仍要申報並附分區證明。':'非「保留地」不適用，依一般規定計入遺產。']);
   else rows.push(['遺產稅','na','這次不是繼承。']);
   // 贈與稅
-  if(q4==='giftfam') rows.push(['贈與稅', R||U? st('ok'):'tax', R||U?'配偶、直系血親間贈與免徵贈與稅（都市計畫法第 50 條之 1）。仍要申報。':'非保留地依一般規定課稅，每年免稅額 244 萬元。']);
-  else if(q4==='giftother') rows.push(['贈與稅','tax','贈與兄弟姊妹等非直系血親，不適用免稅，依一般規定課稅（每年免稅額 244 萬元）。']);
+  if(q4==='giftfam') rows.push(['贈與稅', R||U? st('ok'):'tax', R||U?'配偶、直系血親間贈與免徵贈與稅（都市計畫法第 50 條之 1）。仍要申報。':'非保留地依一般規定課稅，每年有贈與稅免稅額，2026 年為 244 萬元。']);
+  else if(q4==='giftother') rows.push(['贈與稅','tax','贈與兄弟姊妹等非直系血親，不適用免稅，依一般規定課稅（每年有贈與稅免稅額，2026 年為 244 萬元）。']);
   else rows.push(['贈與稅','na','這次不是贈與。']);
   // 土增稅
   if(q4==='inherit') rows.push(['土地增值稅','ok','因繼承移轉本來就不課土地增值稅（土地稅法第 28 條）。']);

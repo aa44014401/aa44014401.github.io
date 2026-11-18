@@ -3,6 +3,19 @@
 <meta property="og:type" content="website"><meta property="og:title" content="分年贈與規劃｜地政說書人"><meta property="og:description" content="想把財產給孩子，用每年免稅額分幾年給，可以不繳贈與稅。"><meta property="og:url" content="https://aa44014401.github.io/t-gift-years.html"><meta property="og:image" content="https://aa44014401.github.io/og.png"><meta name="theme-color" content="#0F1014">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%230F1014'/%3E%3Crect x='8' y='8' width='48' height='48' rx='4' fill='none' stroke='%23D5B15C' stroke-width='3'/%3E%3Ctext x='32' y='43' font-size='26' text-anchor='middle' fill='%23D5B15C' font-family='serif' font-weight='700'%3E說%3C/text%3E%3C/svg%3E">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "分年贈與規劃", "description": "想把財產給孩子，用每年免稅額分幾年給，可以不繳贈與稅。", "url": "https://aa44014401.github.io/t-gift-years.html", "applicationCategory": "FinanceApplication", "operatingSystem": "Web", "inLanguage": "zh-Hant-TW", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "TWD"}, "publisher": {"@type": "Organization", "name": "地政說書人｜玖靈地政士事務所", "url": "https://aa44014401.github.io/"}}</script>
+<script>window.DZTAX=(function(){var L=[{"from": 2022, "name": "111–113 年", "st": "公告", "ex_e": 13330000, "ex_g": 2440000, "sp": 4930000, "kid": 500000, "par": 1230000, "fun": 1230000, "dis": 6180000, "dep": 500000, "eb": [50000000, 100000000], "gb": [25000000, 50000000], "src": "財政部 110.11.24 公告"}, {"from": 2025, "name": "114–115 年", "st": "公告", "ex_e": 13330000, "ex_g": 2440000, "sp": 5530000, "kid": 560000, "par": 1380000, "fun": 1380000, "dis": 6930000, "dep": 560000, "eb": [56210000, 112420000], "gb": [28110000, 56210000], "src": "財政部 113.11.28、114.11.27 公告"}, {"from": 2027, "name": "116 年", "st": "預估", "ex_e": 14920000, "ex_g": 2730000, "sp": 5530000, "kid": 560000, "par": 1380000, "fun": 1380000, "dis": 6930000, "dep": 560000, "eb": [56210000, 112420000], "gb": [28110000, 56210000], "src": "依主計總處 115 年 10 月 CPI 累計漲幅 11.91% 推估（免稅額）；級距與扣除額 114 年剛調整，預估不變"}],now=new Date().getFullYear(),last=L[L.length-1].from;
+function get(y){y=Number(y)||0;if(y<L[0].from)return null;var r=null;for(var i=0;i<L.length;i++)if(L[i].from<=y)r=L[i];return r}
+function prog(n,b){if(n<=0)return 0;if(n<=b[0])return n*.1;if(n<=b[1])return n*.15-b[0]*.05;return n*.2-b[0]*.05-b[1]*.05}
+var api={get:get,list:L,sel:Math.min(Math.max(now,2026),last),
+ estate:function(n,X){return prog(n,(X||get(api.sel)).eb)},gift:function(n,X){return prog(n,(X||get(api.sel)).gb)},
+ lock:function(msg){var b=document.getElementById('dzyr');if(!b)return;b.classList.toggle('locked',!!msg);var m=b.querySelector('.dzyr-lock');if(m)m.textContent=msg||''},
+ paint:function(){var X=get(api.sel);document.querySelectorAll('[data-tx]').forEach(function(e){var k=e.getAttribute('data-tx');
+   e.textContent=k==='name'?X.name:(X[k]/1e4).toLocaleString('zh-TW')});
+   document.querySelectorAll('#dzyr button').forEach(function(b){b.setAttribute('aria-pressed',String(Number(b.dataset.y)===api.sel))});
+   var n=document.querySelector('#dzyr .dzyr-n');if(n)n.textContent=X.st==='預估'?'預估值，財政部公告後更新':''},
+ set:function(y){api.sel=Number(y);var s=document.getElementById('start');if(s){s.value=api.sel}api.paint();if(typeof calc==='function')calc()}};
+document.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest('#dzyr button');if(b)api.set(b.dataset.y)});
+document.addEventListener('DOMContentLoaded',function(){api.paint();var s=document.getElementById('start');if(s)s.addEventListener('input',function(){var y=Number(s.value);if(y>=2026&&y<2100){api.sel=Math.min(y,last);api.paint()}})});return api})();</script>
 </head><body>
 <style>
 @font-face{font-family:"Noto Serif TC";src:url(dz-serif-tools.woff2) format("woff2");font-weight:100 900;font-display:swap}
@@ -27,8 +40,16 @@ input[type=radio],input[type=checkbox]{accent-color:#D5B15C}
 .dzres{position:fixed;left:50%;bottom:calc(14px + env(safe-area-inset-bottom));transform:translate(-50%,140%);z-index:998;border:0;border-radius:999px;background:#D5B15C;color:#14150F;font:600 15px/1 "Noto Sans TC","PingFang TC",sans-serif;padding:13px 22px;box-shadow:0 10px 26px rgba(0,0,0,.45);transition:transform .22s;cursor:pointer}
 .dzres.on{transform:translate(-50%,0)}}
 @media (min-width:761px){.dzres{display:none}}
+.dzyr{max-width:1080px;margin:14px auto 0;padding:0 20px;display:flex;flex-wrap:wrap;align-items:center;gap:8px;font:14px/1.4 "PingFang TC","Microsoft JhengHei",sans-serif;color:#A9A293}
+.dzyr-l{margin-right:4px}
+.dzyr button{font:inherit;min-height:38px;padding:6px 14px;border-radius:999px;border:1px solid #4a4130;background:transparent;color:#EFE9DC;cursor:pointer}
+.dzyr button[aria-pressed="true"]{background:#D5B15C;border-color:#D5B15C;color:#14150F;font-weight:600}
+.dzyr-n{color:#E0B25A;font-size:13px}.dzyr-lock{color:#D5B15C;font-size:13px}
+.dzyr.locked button{opacity:.45}
+.dzest{font-style:normal;font-size:11.5px;margin-left:6px;padding:0 6px;border:1px solid #6d5a33;border-radius:999px;color:#E0B25A}
 </style>
 <nav class="dzbar" aria-label="網站導覽"><a class="dz-brand" href="index.html"><span class="dz-seal" aria-hidden="true">說<br>書</span>地政說書人</a><span class="dz-sp"></span><a class="dz-link" href="tools.html">← 所有工具</a><a class="dz-link dz-hide" href="articles.html">地政知識</a><a class="dz-cta" href="contact.html">問地政士</a></nav>
+<div class="dzyr" id="dzyr" role="group" aria-label="遺贈稅適用年度"><span class="dzyr-l">起算年度</span><button type="button" data-y="2026" aria-pressed="false">2026</button><button type="button" data-y="2027" aria-pressed="false">2027・預估</button><span class="dzyr-n"></span><span class="dzyr-lock"></span></div>
 
 <title>分年贈與規劃｜地政說書人線上工具</title>
 <style>
@@ -77,7 +98,7 @@ footer{border-top:1px solid var(--line);padding-top:16px;font-size:12.5px;color:
 <header>
   <div class="eyebrow">地政說書人 · 分年贈與</div>
   <h1>想把財產給孩子，分幾年給可以不繳贈與稅？</h1>
-  <p class="lede">父母每人每年各有 244 萬元免稅額，子女結婚時再各多 100 萬元。輸入想給的總額，看一次給要繳多少，分年給要幾年。</p>
+  <p class="lede">父母每人每年各有 <span data-tx="ex_g">244</span> 萬元免稅額，子女結婚時再各多 100 萬元。輸入想給的總額，看一次給要繳多少，分年給要幾年。</p>
 </header>
 
 <form id="f" novalidate>
@@ -113,7 +134,7 @@ footer{border-top:1px solid var(--line);padding-top:16px;font-size:12.5px;color:
 
 <footer>
   <div>玖靈地政士事務所　地政士 張兆億　證號 112中市地士字002314號　台中市北區國泰街97號6樓</div>
-  <div>依據：遺產及贈與稅法第 15、19、20、22 條；115 年贈與稅免稅額 244 萬元、級距 2,811 萬元／5,621 萬元（財政部公告）。假設父母每年無其他贈與、平均分攤。僅供參考。</div>
+  <div>依據：遺產及贈與稅法第 15、19、20、22 條；各年度贈與稅免稅額與級距依財政部公告（2025–2026 年 244 萬元、級距 2,811／5,621 萬元；2027 年起依預估或公告值，逐年套用）。假設父母每年無其他贈與、平均分攤。僅供參考。</div>
 </footer>
 </div>
 
@@ -121,32 +142,33 @@ footer{border-top:1px solid var(--line);padding-top:16px;font-size:12.5px;color:
 const $=id=>document.getElementById(id);
 const num=id=>{const v=Number(String($(id).value).replace(/[^\d.]/g,''));return isFinite(v)&&v>0?v:0};
 const fmt=n=>Math.round(n).toLocaleString('zh-TW');
-const EX=2440000, WED=1000000;
-function giftTax(n){if(n<=0)return 0;if(n<=28110000)return n*.10;if(n<=56210000)return n*.15-1405500;return n*.20-4216000}
+const WED=1000000;
+const exFor=y=>(DZTAX.get(y)||DZTAX.get(DZTAX.sel)).ex_g;
 function calc(){
-  const total=num('total'), start=Math.round(num('start'))||2026, wed=Math.round(num('wed'));
+  const total=num('total'), start=Math.round(num('start'))||DZTAX.sel, wed=Math.round(num('wed'));
   const donors=($('dad').checked?1:0)+($('mom').checked?1:0);
   if(!donors){$('once').textContent='—';$('plan').textContent='—';$('onceNote').textContent='請至少勾選一位贈與人';$('planNote').textContent='';$('years').innerHTML='';return}
   const share=total/donors;
-  const onceTax=donors*giftTax(Math.max(0,share-EX-wed*WED));
+  const X0=DZTAX.get(start)||DZTAX.get(DZTAX.sel), EX=X0.ex_g;
+  const onceTax=donors*DZTAX.gift(Math.max(0,share-EX-wed*WED),X0);
   $('once').textContent=fmt(onceTax)+' 元';
   $('onceNote').textContent=`每位贈與人 ${fmt(share)} 元，扣除免稅額${wed?'與婚嫁贈與':''}後課稅`;
   let left=total,y=0,rows=[];
   while(left>0&&y<60){
-    const cap=donors*EX+(y===0?donors*wed*WED:0);
+    const cap=donors*exFor(start+y)+(y===0?donors*wed*WED:0);
     const give=Math.min(left,cap); left-=give;
-    rows.push({year:start+y,give,cum:total-left,cap}); y++;
+    rows.push({year:start+y,give,cum:total-left,cap,est:(DZTAX.get(start+y)||{}).st==='預估'}); y++;
   }
   $('plan').textContent='0 元';
   $('planNote').textContent=`用 ${rows.length} 個年度的免稅額給完${rows.length>1?`；從 12 月開始，約 ${rows.length-1} 年又 1 個月`:''}`;
-  $('years').innerHTML=rows.map(r=>`<div class="yr"><span class="y">${r.year} 年</span><div class="track"><div class="fill${r.cum>=total?' w':''}" style="width:${(r.cum/total*100).toFixed(1)}%"></div></div><b>${fmt(r.give)}</b></div>`).join('');
+  $('years').innerHTML=rows.map(r=>`<div class="yr"><span class="y">${r.year} 年${r.est?'<i class="dzest">預估</i>':''}</span><div class="track"><div class="fill${r.cum>=total?' w':''}" style="width:${(r.cum/total*100).toFixed(1)}%"></div></div><b>${fmt(r.give)}</b></div>`).join('');
 }
 ['total','start','wed'].forEach(id=>{const el=$(id);el.addEventListener('input',calc);if(id==='total')el.addEventListener('blur',()=>{const v=num(id);el.value=v?fmt(v):'0'})});
 ['dad','mom'].forEach(id=>$(id).addEventListener('change',calc));
 calc();
 </script>
 
-<footer class="dzfoot"><div class="dzrel"><b>延伸閱讀</b><ul><li><a href="a-gift-tax-2026.html">贈與稅：每人每年244萬免稅，婚嫁再加100萬 →</a></li></ul></div>本工具由<a href="index.html">地政說書人｜玖靈地政士事務所</a>提供，結果為依輸入資料與現行規定的估算，實際稅額與規費以主管機關核定為準。個案請<a href="contact.html">先問地政士</a>，或回到<a href="tools.html">所有工具</a>。</footer><button class="dzres" id="dzres" type="button">看試算結果 ↓</button>
+<footer class="dzfoot"><div class="dzrel"><b>延伸閱讀</b><ul><li><a href="a-gift-tax-2026.html">贈與稅：每人每年244萬免稅，2027年預估273萬，婚嫁再加100萬 →</a></li></ul></div>本工具由<a href="index.html">地政說書人｜玖靈地政士事務所</a>提供，結果為依輸入資料與現行規定的估算，實際稅額與規費以主管機關核定為準。個案請<a href="contact.html">先問地政士</a>，或回到<a href="tools.html">所有工具</a>。</footer><button class="dzres" id="dzres" type="button">看試算結果 ↓</button>
 <script>(function(){var r=document.querySelector(".vs"),b=document.getElementById("dzres");if(!r||!b)return;
 function u(){var t=r.getBoundingClientRect().top,end=document.documentElement.scrollHeight-innerHeight-scrollY;b.classList.toggle("on",scrollY>120&&t>innerHeight-40&&end>500);}
 addEventListener("scroll",u,{passive:true});addEventListener("resize",u);u();
