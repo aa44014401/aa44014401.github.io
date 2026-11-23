@@ -584,6 +584,20 @@
   .taxbox thead small{display:block;font-size:12px;font-weight:400;color:var(--paper-3);margin-top:2px}
   .taxbox p.taxbox-n{max-width:none;font-size:13px!important;line-height:1.7;margin:0;padding:10px 16px 12px;font-size:13px;color:var(--paper-3);background:var(--ink-2)}
   @media (max-width:560px){.taxbox th,.taxbox td{padding:9px 10px;font-size:14px}}
+
+  .cls-jump{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 22px}
+  .cls-jump a{display:inline-flex;align-items:center;min-height:40px;padding:6px 16px;border:1px solid var(--line);border-radius:999px;color:var(--paper);text-decoration:none;font-size:14.5px}
+  .cls-jump a:hover{border-color:var(--gold);color:var(--gold)}
+  .cls-course{scroll-margin-top:90px}
+  .cls-deck-n{color:var(--paper-3);font-size:14px;margin:-4px 0 14px}
+  .cls-deck{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px}
+  .deck-btn{display:flex;flex-direction:column;gap:6px;min-height:118px;padding:16px 18px;border:1px solid var(--line-soft);border-radius:var(--r,10px);background:var(--ink-2);color:var(--paper);text-decoration:none;transition:border-color .15s,transform .15s}
+  .deck-btn:hover,.deck-btn:focus-visible{border-color:var(--gold);transform:translateY(-2px)}
+  .deck-no{font-size:13px;letter-spacing:.12em;color:var(--gold)}
+  .deck-t{font-size:16.5px;line-height:1.45;font-weight:600;flex:1}
+  .deck-go{font-size:13px;color:var(--paper-3);align-self:flex-end}
+  .deck-btn.seen .deck-go::before{content:"已看・";color:var(--paper-3)}
+  @media (max-width:560px){.cls-deck{grid-template-columns:1fr 1fr;gap:10px}.deck-btn{min-height:104px;padding:13px 14px}.deck-t{font-size:15px}}
 </style>
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "首頁", "item": "https://aa44014401.github.io/"}, {"@type": "ListItem", "position": 2, "name": "連結", "item": "https://aa44014401.github.io/links.html"}]}

@@ -585,6 +585,20 @@
   .taxbox thead small{display:block;font-size:12px;font-weight:400;color:var(--paper-3);margin-top:2px}
   .taxbox p.taxbox-n{max-width:none;font-size:13px!important;line-height:1.7;margin:0;padding:10px 16px 12px;font-size:13px;color:var(--paper-3);background:var(--ink-2)}
   @media (max-width:560px){.taxbox th,.taxbox td{padding:9px 10px;font-size:14px}}
+
+  .cls-jump{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 22px}
+  .cls-jump a{display:inline-flex;align-items:center;min-height:40px;padding:6px 16px;border:1px solid var(--line);border-radius:999px;color:var(--paper);text-decoration:none;font-size:14.5px}
+  .cls-jump a:hover{border-color:var(--gold);color:var(--gold)}
+  .cls-course{scroll-margin-top:90px}
+  .cls-deck-n{color:var(--paper-3);font-size:14px;margin:-4px 0 14px}
+  .cls-deck{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px}
+  .deck-btn{display:flex;flex-direction:column;gap:6px;min-height:118px;padding:16px 18px;border:1px solid var(--line-soft);border-radius:var(--r,10px);background:var(--ink-2);color:var(--paper);text-decoration:none;transition:border-color .15s,transform .15s}
+  .deck-btn:hover,.deck-btn:focus-visible{border-color:var(--gold);transform:translateY(-2px)}
+  .deck-no{font-size:13px;letter-spacing:.12em;color:var(--gold)}
+  .deck-t{font-size:16.5px;line-height:1.45;font-weight:600;flex:1}
+  .deck-go{font-size:13px;color:var(--paper-3);align-self:flex-end}
+  .deck-btn.seen .deck-go::before{content:"已看・";color:var(--paper-3)}
+  @media (max-width:560px){.cls-deck{grid-template-columns:1fr 1fr;gap:10px}.deck-btn{min-height:104px;padding:13px 14px}.deck-t{font-size:15px}}
 </style>
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "首頁", "item": "https://aa44014401.github.io/"}, {"@type": "ListItem", "position": 2, "name": "會員教室", "item": "https://aa44014401.github.io/classroom.html"}]}
@@ -765,9 +779,27 @@
     var resume = null;
     var cs = (d && d.courses) || [];
     if (!cs.length || !cs.some(function(c){ return c.lessons && c.lessons.length; })) { box.appendChild(el("p", "cls-msg", "課程影片準備中，上架後會在這裡出現。")); return; }
-    cs.forEach(function(c){
-      if (!c.lessons || !c.lessons.length) return;
-      var sec = el("section", "cls-course"); sec.appendChild(el("h2", null, c.name));
+    var live = cs.filter(function(c){ return c.lessons && c.lessons.length; });
+    if (live.length > 1) {
+      var nav = el("nav", "cls-jump"); nav.setAttribute("aria-label", "課程目錄");
+      live.forEach(function(c, i){ var a = el("a", null, c.name.replace(/^\d+\s*/, "")); a.href = "#cls-c" + i; nav.appendChild(a); });
+      box.appendChild(nav);
+    }
+    live.forEach(function(c, ci){
+      var deck = c.lessons.every(function(x){ return x.k === "d"; });
+      var sec = el("section", "cls-course" + (deck ? " is-deck" : "")); sec.id = "cls-c" + ci; sec.appendChild(el("h2", null, c.name));
+      if (deck) {
+        sec.appendChild(el("p", "cls-deck-n", "共 " + c.lessons.length + " 份簡報，點按鈕開啟（需用開通的 Gmail 登入 Google）。"));
+        var g = el("div", "cls-deck");
+        c.lessons.forEach(function(l){
+          var t = l.t.replace(/\.(pptx?|pdf)$/i, ""), m = t.match(/^(第\s*\d+\s*講)\s*(.*)$/);
+          var a = el("a", "deck-btn" + (st.seen[l.id] ? " seen" : "")); a.href = "https://drive.google.com/file/d/" + encodeURIComponent(l.id) + "/view"; a.target = "_blank"; a.rel = "noopener noreferrer";
+          a.appendChild(el("span", "deck-no", m ? m[1].replace(/\s/g, "") : "簡報")); a.appendChild(el("span", "deck-t", m ? m[2] : t)); a.appendChild(el("span", "deck-go", "開啟 ↗"));
+          a.addEventListener("click", function(){ st.seen[l.id] = 1; save(); a.classList.add("seen"); });
+          g.appendChild(a);
+        });
+        sec.appendChild(g); box.appendChild(sec); return;
+      }
       var ol = el("ol", "cls-list");
       c.lessons.forEach(function(l, n){
         var li = el("li"); li.dataset.t = l.t; if (st.seen[l.id]) li.classList.add("seen"); if (l.id === st.last) resume = {li: li, id: l.id, t: l.t}; li.dataset.go = l.k === "d" ? "翻閱簡報" : "播放";
