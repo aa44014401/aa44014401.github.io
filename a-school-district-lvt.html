@@ -598,6 +598,16 @@
   .deck-go{font-size:13px;color:var(--paper-3);align-self:flex-end}
   .deck-btn.seen .deck-go::before{content:"已看・";color:var(--paper-3)}
   @media (max-width:560px){.cls-deck{grid-template-columns:1fr 1fr;gap:10px}.deck-btn{min-height:104px;padding:13px 14px}.deck-t{font-size:15px}}
+
+  ol.lectures li a{display:flex;gap:12px;align-items:baseline;width:100%;padding:13px 16px;color:inherit;text-decoration:none;border-radius:inherit;box-sizing:border-box}
+  ol.lectures li:has(a){padding:0;transition:border-color .15s}
+  ol.lectures li:has(a):hover{border-color:var(--gold)}
+  ol.lectures li a:hover em{color:var(--gold)}
+  ol.lectures li em{font-style:normal;flex:1}
+  ol.lectures li i{font-style:normal;font-size:12.5px;color:var(--paper-3);white-space:nowrap}
+  ol.lectures li.soon{color:var(--paper-3)}
+  ol.lectures li.soon i{border:1px solid var(--line);border-radius:999px;padding:0 8px;font-size:12px}
+  .lec-tip{margin:12px 0 0;font-size:13.5px;color:var(--paper-3)}
 </style>
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "Article", "headline": "為了學區全家遷戶籍，地價稅可能變5倍", "description": "自用住宅地價稅2‰的前提是有人設籍。全戶遷出就改按一般稅率10‰起算，至少留一人戶籍在原址。", "datePublished": "2026-11-08", "dateModified": "2026-11-08", "inLanguage": "zh-TW", "mainEntityOfPage": "https://aa44014401.github.io/a-school-district-lvt.html", "image": "https://aa44014401.github.io/og.png", "author": {"@type": "Person", "name": "張兆億", "jobTitle": "地政士", "url": "https://aa44014401.github.io/about.html"}, "publisher": {"@type": "Organization", "name": "玖靈地政士事務所", "url": "https://aa44014401.github.io/"}}
@@ -705,10 +715,16 @@
 (function(){
   // 24 講清單（兩欄排列）
   var L = ["謄本完全解析","國有地交換實務","108 年案件回顧與案例分享","車位贈與實務","特定工廠登記實務","搭排搭橋與補辦","一般工廠登記","買賣解約實務","繼承登記","抵押權","共有物處分與分割","建物第一次登記","房地合一稅與土增稅","地政士法與洗錢防制","農地與農業用地移轉","預告登記、查封與限制登記","信託登記","都市更新與危老重建","公同共有與祭祀公業","土地徵收與區段徵收","身分核對、印鑑證明與冒名風險","地上權、農育權與不動產役權","時效取得與相鄰關係","遺產稅與贈與稅申報"];
+  // 各講簡報（Google 雲端硬碟檔案 ID；會員用開通的 Gmail 登入即可直接開啟）
+  var D = ["1WWeovNylLcM5PqM0BeIE_axMFgVnEedp", "1nVXZkIohy-Lr6NwIljy0becJ3l0tZw8v", "1KUjyc6zrXswITWQnmznXnCOjC2laBCPZ", "1JCRdZgL_7F1FLEeUgLpxY1QshN3j3kt2", "1xv3TylF9H7nQIpt5chX_fvwDNXvJAGer", "1KyTCH6NPQe5SXjhboWByw-ToiNEJkTjP", "1teomiUf_lmK02p9VjAS1ALKl5udN_ngd", "1JKCiWZn44RsVoyqOb4fnDSG546Rzxduy", "1pnh9acQOA1olbuglA_XIH8yDRSoeT9Mf", "190iXo8SMW3X-19P7XmaxJ291gCVT5ON9", "1kzrOHM43EiOSiRcyOVI2BRbOIjk3HFwD", "1LNd13synMYCQAupXwlFXAxxRIPVPj6ME", "1nyFFlBfasEpAQCk-UjDDHsNGMPkWYCvk", "14wsuCeA8hPhjckt4x1ePrzjVCY_7_pOT", "16AAlHRfqqdUbiIp7R59n7JEnnylfgboMOi88ULnfpKE", "1AF-GqqLS7EecZhrkDQyD26_fk5j5x4_XJ7xCbQaIXxE", "1fsBNj4AKgKVkKsJFR2PDV2RO0hMhBkRYG1yEeRtAVY0", "12thLmuzjn6064D0hX4lfU-VJj9WLswUL7rz_lF0tFMM", "1X_Ff4dzKn6-J0u_PubGRm05kH4TdwAn4npmv_CWn628"];
+  var EXTRA = [[35, "外國人與大陸人士取得不動產", "15mPpi_YgNIM7gPug6Pz9YxZYKn2OPhLFtWSLAVx2qs4"]];
+  function lecItem(no, t, id){
+    var n = '<span>第 ' + (no < 10 ? "0" : "") + no + ' 講</span>';
+    if (!id) return '<li class="soon">' + n + '<em>' + t + '</em><i>準備中</i></li>';
+    return '<li><a href="https://drive.google.com/file/d/' + id + '/view" target="_blank" rel="noopener noreferrer">' + n + '<em>' + t + '</em><i>開啟 ↗</i></a></li>';
+  }
   var lec = document.getElementById("lectures");
-  if (lec) lec.innerHTML = L.map(function(t, i){
-    return '<li><span>第 ' + (i < 9 ? "0" : "") + (i + 1) + ' 講</span>' + t + '</li>';
-  }).join("");
+  if (lec) lec.innerHTML = L.map(function(t, i){ return lecItem(i + 1, t, D[i]); }).join("") + EXTRA.map(function(x){ return lecItem(x[0], x[1], x[2]); }).join("");
   document.getElementById("yr").textContent = new Date().getFullYear();
 
   var cur = document.querySelector('nav.main a[aria-current="page"]');
